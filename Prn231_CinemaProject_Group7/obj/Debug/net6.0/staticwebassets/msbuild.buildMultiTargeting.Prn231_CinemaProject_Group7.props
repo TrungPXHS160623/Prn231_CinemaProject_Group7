@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Prn231_CinemaProject_Group7.props" />
+</Project>
