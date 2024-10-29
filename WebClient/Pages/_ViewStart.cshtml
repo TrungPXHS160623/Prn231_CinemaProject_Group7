@@ -1,4 +1,12 @@
 ﻿@{
-    Layout = "_Layout";
+    var currentPath = ViewContext.HttpContext.Request.Path;
+    if (currentPath.StartsWithSegments("/Admin", StringComparison.OrdinalIgnoreCase))
+    {
+        Layout = "_AdminLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
 }
 

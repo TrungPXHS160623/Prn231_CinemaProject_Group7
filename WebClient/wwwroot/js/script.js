@@ -1,7 +1,13 @@
 /* global initMap:true */
 
 initMap = false;
-
+$(document).ready(function () {
+    $('.data-table').DataTable({
+        "columnDefs": [
+            { "orderable": false, "targets": -1 } // Disable sorting on the last column (Edit/Delete)
+        ]
+    });
+});
 (function (fn) {
     if (typeof jQuery === 'undefined') {
         throw 'Requires jQuery to be loaded first';

@@ -12,7 +12,7 @@ namespace Prn231_CinemaProject_Group7.Models
         public string? ReviewText { get; set; }
         public DateTime? ReviewDate { get; set; }
 
-        public virtual Customer Customer { get; set; } = null!;
+        public virtual User Customer { get; set; } = null!;
         public virtual Movie Movie { get; set; } = null!;
     }
 }

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.DTO;
 using Prn231_CinemaProject_Group7.IRespository;
-using Prn231_CinemaProject_Group7.Models;
+
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
@@ -29,14 +23,18 @@ namespace Prn231_CinemaProject_Group7.Controllers
 			return Ok(data);
 		}
 
-		[HttpGet("GetConcession/{id}")]
-		public IActionResult GetConcession(int id)
-		{
-			var data = respository.GetConcession(id);
-			return Ok(data);
-		}
+        [HttpGet("GetConcession/{id}")]
+        public async Task<IActionResult> GetConcession(int id)
+        {
+            var data = await respository.GetConcession(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
+            return Ok(data);
+        }
 
-		[HttpPost("CreateConcession")]
+        [HttpPost("CreateConcession")]
 		public IActionResult CreateConcession(ConcessionDTO concession)
 		{
 			var data = respository.CreateConcession(concession);
@@ -52,7 +50,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 		[HttpPut("UpdateConcession/{id}")]
 		public IActionResult UpdateConcession(int id, ConcessionDTO concession)
 		{
-			var data = respository.UpdateConcession(id,concession);
+			var data = respository.UpdateConcession(id, concession);
 			if (data.Result)
 			{
 				return Ok();

@@ -5,22 +5,20 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Prn231_CinemaProject_Group7.Models
 {
-    public partial class PRN231_CinemaContext : DbContext
+    public partial class Prn231_Project_FinalContext : DbContext
     {
-        public PRN231_CinemaContext()
+        public Prn231_Project_FinalContext()
         {
         }
 
-        public PRN231_CinemaContext(DbContextOptions<PRN231_CinemaContext> options)
+        public Prn231_Project_FinalContext(DbContextOptions<Prn231_Project_FinalContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Concession> Concessions { get; set; } = null!;
-        public virtual DbSet<ConcessionsCategory> ConcessionsCategories { get; set; } = null!;
         public virtual DbSet<Coupon> Coupons { get; set; } = null!;
-        public virtual DbSet<Customer> Customers { get; set; } = null!;
         public virtual DbSet<Employee> Employees { get; set; } = null!;
         public virtual DbSet<GiftCard> GiftCards { get; set; } = null!;
         public virtual DbSet<Movie> Movies { get; set; } = null!;
@@ -30,23 +28,25 @@ namespace Prn231_CinemaProject_Group7.Models
         public virtual DbSet<OrderConcession> OrderConcessions { get; set; } = null!;
         public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
         public virtual DbSet<OrderStatus> OrderStatuses { get; set; } = null!;
+        public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<Room> Rooms { get; set; } = null!;
         public virtual DbSet<Seat> Seats { get; set; } = null!;
         public virtual DbSet<SeatType> SeatTypes { get; set; } = null!;
         public virtual DbSet<Showtime> Showtimes { get; set; } = null!;
         public virtual DbSet<Theater> Theaters { get; set; } = null!;
+        public virtual DbSet<User> Users { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-				IConfiguration config = new ConfigurationBuilder()
-				.SetBasePath(Directory.GetCurrentDirectory())
-				.AddJsonFile("appsettings.json", true, true)
-				.Build();
-				var strConn = config["ConnectionStrings:MyDatabase"];
-				optionsBuilder.UseSqlServer(strConn);
-			}
+                IConfiguration config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", true, true)
+                .Build();
+                var strConn = config["ConnectionStrings:MyDatabase"];
+                optionsBuilder.UseSqlServer(strConn);
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -69,7 +69,7 @@ namespace Prn231_CinemaProject_Group7.Models
             modelBuilder.Entity<Concession>(entity =>
             {
                 entity.HasKey(e => e.ProductId)
-                    .HasName("PK__Concessi__B40CC6CDAF048034");
+                    .HasName("PK__Concessi__B40CC6CD698920D9");
 
                 entity.Property(e => e.CreatedAt)
                     .HasColumnType("datetime")
@@ -80,32 +80,6 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
 
                 entity.Property(e => e.ProductName).HasMaxLength(255);
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.HasOne(d => d.Category)
-                    .WithMany(p => p.Concessions)
-                    .HasForeignKey(d => d.CategoryId)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK__Concessio__Categ__4F7CD00D");
-            });
-
-            modelBuilder.Entity<ConcessionsCategory>(entity =>
-            {
-                entity.HasKey(e => e.CategoryId)
-                    .HasName("PK__Concessi__19093A0BC12606E7");
-
-                entity.ToTable("Concessions_Categories");
-
-                entity.Property(e => e.CategoryName).HasMaxLength(100);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
 
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
@@ -131,35 +105,9 @@ namespace Prn231_CinemaProject_Group7.Models
                     .HasDefaultValueSql("(getdate())");
             });
 
-            modelBuilder.Entity<Customer>(entity =>
-            {
-                entity.HasIndex(e => e.Email, "UQ__Customer__A9D10534E3269778")
-                    .IsUnique();
-
-                entity.Property(e => e.City).HasMaxLength(100);
-
-                entity.Property(e => e.CreatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.Email).HasMaxLength(255);
-
-                entity.Property(e => e.FirstName).HasMaxLength(100);
-
-                entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.LastName).HasMaxLength(100);
-
-                entity.Property(e => e.Phone).HasMaxLength(15);
-
-                entity.Property(e => e.UpdatedAt)
-                    .HasColumnType("datetime")
-                    .HasDefaultValueSql("(getdate())");
-            });
-
             modelBuilder.Entity<Employee>(entity =>
             {
-                entity.HasIndex(e => e.Email, "UQ__Employee__A9D10534BBC81A58")
+                entity.HasIndex(e => e.Email, "UQ__Employee__A9D10534DA2E3FE2")
                     .IsUnique();
 
                 entity.Property(e => e.Address).HasMaxLength(255);
@@ -232,11 +180,11 @@ namespace Prn231_CinemaProject_Group7.Models
                     .WithMany(p => p.Movies)
                     .UsingEntity<Dictionary<string, object>>(
                         "MovieCategory",
-                        l => l.HasOne<Category>().WithMany().HasForeignKey("CategoryId").HasConstraintName("FK__Movie_Cat__Categ__2F10007B"),
-                        r => r.HasOne<Movie>().WithMany().HasForeignKey("MovieId").HasConstraintName("FK__Movie_Cat__Movie__2E1BDC42"),
+                        l => l.HasOne<Category>().WithMany().HasForeignKey("CategoryId").HasConstraintName("FK__Movie_Cat__Categ__6B24EA82"),
+                        r => r.HasOne<Movie>().WithMany().HasForeignKey("MovieId").HasConstraintName("FK__Movie_Cat__Movie__6C190EBB"),
                         j =>
                         {
-                            j.HasKey("MovieId", "CategoryId").HasName("PK__Movie_Ca__EA4207BA2A8034DD");
+                            j.HasKey("MovieId", "CategoryId").HasName("PK__Movie_Ca__EA4207BA951FE84A");
 
                             j.ToTable("Movie_Categories");
                         });
@@ -245,7 +193,7 @@ namespace Prn231_CinemaProject_Group7.Models
             modelBuilder.Entity<MovieReview>(entity =>
             {
                 entity.HasKey(e => e.ReviewId)
-                    .HasName("PK__MovieRev__74BC79CE4D75B309");
+                    .HasName("PK__MovieRev__74BC79CE4909BE5D");
 
                 entity.HasIndex(e => new { e.MovieId, e.CustomerId, e.ReviewDate }, "UQ_Customer_Movie")
                     .IsUnique();
@@ -257,12 +205,12 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.MovieReviews)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__MovieRevi__Custo__70DDC3D8");
+                    .HasConstraintName("FK__MovieRevi__Custo__6D0D32F4");
 
                 entity.HasOne(d => d.Movie)
                     .WithMany(p => p.MovieReviews)
                     .HasForeignKey(d => d.MovieId)
-                    .HasConstraintName("FK__MovieRevi__Movie__6FE99F9F");
+                    .HasConstraintName("FK__MovieRevi__Movie__6E01572D");
             });
 
             modelBuilder.Entity<News>(entity =>
@@ -302,24 +250,24 @@ namespace Prn231_CinemaProject_Group7.Models
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CouponId)
                     .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK__Orders__CouponId__787EE5A0");
+                    .HasConstraintName("FK__Orders__CouponId__73BA3083");
 
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__Orders__Customer__7A672E12");
+                    .HasConstraintName("FK__Orders__Customer__74AE54BC");
 
                 entity.HasOne(d => d.GiftCard)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.GiftCardId)
                     .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK__Orders__GiftCard__797309D9");
+                    .HasConstraintName("FK__Orders__GiftCard__75A278F5");
 
                 entity.HasOne(d => d.Status)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StatusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Orders__StatusId__778AC167");
+                    .HasConstraintName("FK__Orders__StatusId__76969D2E");
             });
 
             modelBuilder.Entity<OrderConcession>(entity =>
@@ -331,12 +279,12 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Concession)
                     .WithMany(p => p.OrderConcessions)
                     .HasForeignKey(d => d.ConcessionId)
-                    .HasConstraintName("FK__Order_Con__Conce__02FC7413");
+                    .HasConstraintName("FK__Order_Con__Conce__6EF57B66");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderConcessions)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__Order_Con__Order__02084FDA");
+                    .HasConstraintName("FK__Order_Con__Order__6FE99F9F");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -346,29 +294,36 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__OrderDeta__Order__7D439ABD");
+                    .HasConstraintName("FK__OrderDeta__Order__70DDC3D8");
 
                 entity.HasOne(d => d.Seat)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.SeatId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderDeta__SeatI__7F2BE32F");
+                    .HasConstraintName("FK__OrderDeta__SeatI__71D1E811");
 
                 entity.HasOne(d => d.Showtime)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.ShowtimeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__OrderDeta__Showt__7E37BEF6");
+                    .HasConstraintName("FK__OrderDeta__Showt__72C60C4A");
             });
 
             modelBuilder.Entity<OrderStatus>(entity =>
             {
                 entity.HasKey(e => e.StatusId)
-                    .HasName("PK__Order_St__C8EE20635E2D5A7F");
+                    .HasName("PK__Order_St__C8EE2063C3B95D56");
 
                 entity.ToTable("Order_Status");
 
                 entity.Property(e => e.StatusName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                entity.ToTable("Role");
+
+                entity.Property(e => e.RoleName).HasMaxLength(255);
             });
 
             modelBuilder.Entity<Room>(entity =>
@@ -380,7 +335,7 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Theater)
                     .WithMany(p => p.Rooms)
                     .HasForeignKey(d => d.TheaterId)
-                    .HasConstraintName("FK__Rooms__TheaterId__35BCFE0A");
+                    .HasConstraintName("FK__Rooms__TheaterId__778AC167");
             });
 
             modelBuilder.Entity<Seat>(entity =>
@@ -394,12 +349,12 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Room)
                     .WithMany(p => p.Seats)
                     .HasForeignKey(d => d.RoomId)
-                    .HasConstraintName("FK__Seats__RoomId__4222D4EF");
+                    .HasConstraintName("FK__Seats__RoomId__787EE5A0");
 
                 entity.HasOne(d => d.SeatType)
                     .WithMany(p => p.Seats)
                     .HasForeignKey(d => d.SeatTypeId)
-                    .HasConstraintName("FK__Seats__SeatTypeI__4316F928");
+                    .HasConstraintName("FK__Seats__SeatTypeI__797309D9");
             });
 
             modelBuilder.Entity<SeatType>(entity =>
@@ -422,12 +377,12 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.HasOne(d => d.Movie)
                     .WithMany(p => p.Showtimes)
                     .HasForeignKey(d => d.MovieId)
-                    .HasConstraintName("FK__Showtimes__Movie__398D8EEE");
+                    .HasConstraintName("FK__Showtimes__Movie__7A672E12");
 
                 entity.HasOne(d => d.Room)
                     .WithMany(p => p.Showtimes)
                     .HasForeignKey(d => d.RoomId)
-                    .HasConstraintName("FK__Showtimes__RoomI__3A81B327");
+                    .HasConstraintName("FK__Showtimes__RoomI__7B5B524B");
             });
 
             modelBuilder.Entity<Theater>(entity =>
@@ -443,6 +398,35 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.Property(e => e.OpeningHour).HasMaxLength(100);
 
                 entity.Property(e => e.Phone).HasMaxLength(15);
+            });
+
+            modelBuilder.Entity<User>(entity =>
+            {
+                entity.HasKey(e => e.CustomerId)
+                    .HasName("PK__Users__A4AE64D83400182D");
+
+                entity.HasIndex(e => e.Email, "UQ__Users__A9D105348B435CD1")
+                    .IsUnique();
+
+                entity.Property(e => e.City).HasMaxLength(100);
+
+                entity.Property(e => e.CreatedAt)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
+
+                entity.Property(e => e.Email).HasMaxLength(255);
+
+                entity.Property(e => e.FirstName).HasMaxLength(100);
+
+                entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.LastName).HasMaxLength(100);
+
+                entity.Property(e => e.Phone).HasMaxLength(15);
+
+                entity.Property(e => e.UpdatedAt)
+                    .HasColumnType("datetime")
+                    .HasDefaultValueSql("(getdate())");
             });
 
             OnModelCreatingPartial(modelBuilder);

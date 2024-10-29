@@ -1,71 +1,70 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using Prn231_CinemaProject_Group7.Models;
+﻿using Microsoft.AspNetCore.Mvc;
+using Prn231_CinemaProject_Group7.DTO;
+using Prn231_CinemaProject_Group7.IRespository;
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
-    public class GiftCardsController : Controller
-    {
-        private readonly PRN231_CinemaContext _context;
+	public class GiftCardsController : Controller
+	{
+        private readonly IGiftCardRepository respository;
 
-        public GiftCardsController(PRN231_CinemaContext context)
+        public GiftCardsController(IGiftCardRepository respository)
         {
-            _context = context;
+            this.respository = respository;
         }
 
-		[HttpGet("GetAllGiftCards")]
-		public IActionResult GetAllGiftCards()
-		{
-
-			return Ok();
-		}
-
-		[HttpGet("GetGiftCard/{id}")]
-		public IActionResult GetGiftCard(int id)
-		{
-
-			return Ok();
-		}
-
-		[HttpPost("CreateGiftCard")]
-		public IActionResult CreateGiftCard()
-		{
-
-			return Ok();
-		}
-		[HttpPut("UpdateGiftCard/{id}")]
-		public IActionResult UpdateGiftCard(int id)
-		{
-
-			return Ok();
-		}
-		[HttpDelete("DeactivateGiftCard/{id}")]
-		public IActionResult DeactivateGiftCard(int id)
-		{
-			if(!GiftCardExists(id))
-			{
-				return NotFound();
-			}
-			try
-			{
-				var giftCard = _context.GiftCards.Find(id);
-				giftCard.IsActive = false;
-			}
-			catch (Exception)
-			{
-				return BadRequest();
-			}
-			return Ok();
-		}
-
-		private bool GiftCardExists(int id)
+        [HttpGet("GetAllGiftCards")]
+        public async Task<IActionResult> GetAllGiftCards()
         {
-          return (_context.GiftCards?.Any(e => e.GiftCardId == id)).GetValueOrDefault();
+            var data = await respository.GetAllGiftCards();
+            return Ok(data);
+        }
+
+        [HttpGet("GetGiftCard/{id}")]
+        public IActionResult GetGiftCard(int id)
+        {
+            var data = respository.GetGiftCard(id);
+            return Ok(data);
+        }
+
+        [HttpPost("CreateGiftCard")]
+        public IActionResult CreateGiftCard(GiftCardDTO GiftCard)
+        {
+            var data = respository.CreateGiftCard(GiftCard);
+            if (data.Result)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("UpdateGiftCard/{id}")]
+        public IActionResult UpdateGiftCard(int id, GiftCardDTO GiftCard)
+        {
+            var data = respository.UpdateGiftCard(id, GiftCard);
+            if (data.Result)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("DeactivateGiftCard/{id}")]
+        public IActionResult DeactivateGiftCard(int id)
+        {
+            var data = respository.DeleteGiftCard(id);
+            if (data.Result)
+            {
+                return Ok();
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

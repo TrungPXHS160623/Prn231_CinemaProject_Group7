@@ -20,7 +20,6 @@ namespace Prn231_CinemaProject_Group7.Models
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
 
-        public virtual ConcessionsCategory? Category { get; set; }
         public virtual ICollection<OrderConcession> OrderConcessions { get; set; }
     }
 }

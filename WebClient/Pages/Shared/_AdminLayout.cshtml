@@ -28,7 +28,7 @@
     <header class="header header-horizontal header-view-pannel">
         <div class="container">
             <nav class="navbar">
-                <a class="footer-logo" href="./">
+                <a class="footer-logo" asp-page="/Admin/Index">
                     <span class="logo-element">
                         <span class="logo-tape">
                             <span class="svg-content svg-fill-theme" data-svg="/lib/images/svg/logo-part.svg"></span>
@@ -48,14 +48,42 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Concessions/List">Movie</a>
+                            <a class="nav-link" asp-page="/Admin/Thearter/List">Thearter</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/Movie/List">Movie</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/User/List">User</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/Order/List">Order</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/News/List">News</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/Concession/List">Concession</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" asp-page="/Admin/Coupons/List">Coupons</a>
                         </li>
                         <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
-                            <a class="nav-link" asp-page="/Admin/Concessions/List">Thearter</a>
+                            <a class="nav-link">Misc</a>
+                            <div class="nav-arrow"><i class="fas fa-chevron-down"></i></div>
+                            <ul class="collapse nav">
+                                <li class="nav-item ">
+                                    <a class="nav-link" asp-page="/Admin/Category/List">Category</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" asp-page="/Admin/Role/List">Role</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" asp-page="/Admin/SeatType/List">Seat Type</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Admin/Concessions/List">News</a>
-                        </li>
+                        
                     </ul>
                     <div class="navbar-extra">
                         <ul class="navbar-nav">
@@ -65,12 +93,6 @@
                                 <ul class="collapse nav">
                                     <li class="nav-item">
                                         <a class="nav-link" asp-page="/Admin/Concessions/List">Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Admin/Concessions/List">My Ticket</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" asp-page="/Admin/Concessions/List">My Coupon & Gift Card</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" asp-page="/Admin/Concessions/List">Log out</a>
@@ -86,7 +108,7 @@
     <main role="main" class="pb-3">
         @RenderBody()
     </main>
-    <a class="scroll-top disabled" asp-page="/Admin/Concessions/List"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    <a class="scroll-top disabled" asp-page="/Admin/Index"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
     <footer class="section-text-white footer footer-links bg-darken">
         <div class="footer-body container">
             <div class="row">
@@ -103,31 +125,44 @@
                     </a>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer-title text-uppercase">Movies</h5>
                     <ul class="list-unstyled list-wide footer-content">
                         <li>
-                            <a class="content-link" asp-page="/Admin/Concessions/List">All Movies</a>
+                            <a class="content-link" asp-page="/Admin/Thearter/List">Thearter</a>
                         </li>
                         <li>
-                            <a class="content-link" asp-page="/Admin/Concessions/List">Upcoming movies</a>
+                            <a class="content-link" asp-page="/Admin/Movie/List">Movie</a>
+                        </li>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/Category/List">Category</a>
+                        </li>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/SeatType/List">Seat Type</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer-title text-uppercase">Information</h5>
                     <ul class="list-unstyled list-wide footer-content">
                         <li>
-                            <a class="content-link" asp-page="/Admin/Concessions/List">News</a>
+                            <a class="content-link" asp-page="/Admin/User/List">User</a>
+                        </li>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/Order/List">Order</a>
+                        </li>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/Role/List">Role</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
-                    <h5 class="footer-title text-uppercase">Follow</h5>
-                    <ul class="list-wide footer-content list-inline">
-                        <li class="list-inline-item">
-                            <a class="content-link" asp-page="/Admin/Concessions/List"><i class="fab fa-twitter"></i></a>
+                    <ul class="list-unstyled list-wide footer-content">
+                        <li>
+                            <a class="content-link" asp-page="/Admin/News/List">News</a>
                         </li>
-                        <li class="list-inline-item">
-                            <a class="content-link" asp-page="/Admin/Concessions/List"><i class="fab fa-facebook-f"></i></a>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/Concession/List">Concession</a>
+                        </li>
+                        <li>
+                            <a class="content-link" asp-page="/Admin/Coupon/List">Coupon</a>
                         </li>
                     </ul>
                 </div>

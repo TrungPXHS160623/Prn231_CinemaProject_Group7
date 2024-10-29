@@ -7,9 +7,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 {
 	public class CouponRepository : ICouponRepository
 	{
-		private readonly PRN231_CinemaContext _context;
+		private readonly Prn231_Project_FinalContext _context;
 
-		public CouponRepository(PRN231_CinemaContext _context)
+		public CouponRepository(Prn231_Project_FinalContext _context)
 		{
 			this._context = _context;
 		}
@@ -22,8 +22,8 @@ namespace Prn231_CinemaProject_Group7.Repository
 				data.Discount = Coupon.Discount;
 				data.ExpirationDate = Coupon.ExpirationDate;
 				data.IsActive = Coupon.IsActive;
-				data.CreatedAt = DateTime.Now;
-				_context.SaveChanges();
+				_context.Coupons.Add(data);
+                _context.SaveChanges();
 				return await Task.FromResult(true);
 			}
 			catch (Exception)
@@ -61,12 +61,11 @@ namespace Prn231_CinemaProject_Group7.Repository
 		{
 			try
 			{
-				var data = new Coupon();
-				data.Code = Coupon.Code;
+				var data = _context.Coupons.Find(id);
+                data.Code = Coupon.Code;
 				data.Discount = Coupon.Discount;
 				data.ExpirationDate = Coupon.ExpirationDate;
 				data.IsActive = Coupon.IsActive;
-				data.UpdatedAt = DateTime.Now;
 				_context.SaveChanges();
 				return await Task.FromResult(true);
 			}

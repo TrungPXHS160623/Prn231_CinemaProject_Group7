@@ -1,0 +1,43 @@
+﻿@page "{id:int}"
+@model WebClient.Pages.Admin.Coupons.UpdateModel
+@{
+    ViewData["Title"] = "Update Coupon";
+}
+
+<h1>Update Coupon</h1>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <input type="hidden" asp-for="Coupon.Id" />
+                <div class="form-group">
+                    <label asp-for="Coupon.Code" class="control-label"></label>
+                    <input asp-for="Coupon.Code" class="form-control" />
+                    <span asp-validation-for="Coupon.Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Coupon.Discount" class="control-label"></label>
+                    <input asp-for="Coupon.Discount" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="Coupon.Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Coupon.ExpirationDate" class="control-label"></label>
+                    <input asp-for="Coupon.ExpirationDate" class="form-control" type="date" />
+                    <span asp-validation-for="Coupon.ExpirationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <input asp-for="Coupon.IsActive" class="form-check-input" type="checkbox" />
+                    <label asp-for="Coupon.IsActive" class="form-check-label"></label>
+                    <span asp-validation-for="Coupon.IsActive" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

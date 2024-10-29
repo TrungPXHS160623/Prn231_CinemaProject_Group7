@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using NuGet.Protocol.Core.Types;
+﻿using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.DTO;
 using Prn231_CinemaProject_Group7.IRespository;
-using Prn231_CinemaProject_Group7.Models;
-using static Microsoft.AspNetCore.Razor.Language.TagHelperMetadata;
+
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
-    public class CouponsController : Controller
-    {
+	public class CouponsController : Controller
+	{
 
 		private readonly ICouponRepository respository;
 

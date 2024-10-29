@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Prn231_CinemaProject_Group7.Models
 {
-    public partial class Customer
+    public partial class User
     {
-        public Customer()
+        public User()
         {
             MovieReviews = new HashSet<MovieReview>();
             Orders = new HashSet<Order>();
@@ -20,6 +20,7 @@ namespace Prn231_CinemaProject_Group7.Models
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
         public bool? IsActive { get; set; }
+        public int? RoleId { get; set; }
 
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
         public virtual ICollection<Order> Orders { get; set; }

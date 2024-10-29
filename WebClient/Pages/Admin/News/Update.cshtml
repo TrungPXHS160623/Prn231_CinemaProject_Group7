@@ -1,0 +1,43 @@
+﻿@page "{id:int}"
+@model WebClient.Pages.Admin.News.UpdateModel
+@{
+    ViewData["Title"] = "Update New";
+}
+
+<h1>Update News</h1>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <input type="hidden" asp-for="New.Id" />
+                <div class="form-group">
+                    <label asp-for="New.Code" class="control-label"></label>
+                    <input asp-for="New.Code" class="form-control" />
+                    <span asp-validation-for="New.Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="New.Discount" class="control-label"></label>
+                    <input asp-for="New.Discount" class="form-control" type="number" step="0.01" />
+                    <span asp-validation-for="New.Discount" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="New.ExpirationDate" class="control-label"></label>
+                    <input asp-for="New.ExpirationDate" class="form-control" type="date" />
+                    <span asp-validation-for="New.ExpirationDate" class="text-danger"></span>
+                </div>
+                <div class="form-group form-check">
+                    <input asp-for="New.IsActive" class="form-check-input" type="checkbox" />
+                    <label asp-for="New.IsActive" class="form-check-label"></label>
+                    <span asp-validation-for="New.IsActive" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

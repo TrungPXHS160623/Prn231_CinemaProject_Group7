@@ -7,9 +7,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 {
 	public class GiftCardRepository : IGiftCardRepository
 	{
-		private readonly PRN231_CinemaContext _context;
+		private readonly Prn231_Project_FinalContext _context;
 
-		public GiftCardRepository(PRN231_CinemaContext _context)
+		public GiftCardRepository(Prn231_Project_FinalContext _context)
 		{
 			this._context = _context;
 		}
@@ -22,7 +22,6 @@ namespace Prn231_CinemaProject_Group7.Repository
 				data.Balance = GiftCard.Balance;
 				data.ExpirationDate = GiftCard.ExpirationDate;
 				data.IsActive = GiftCard.IsActive;
-				data.CreatedAt = DateTime.Now;
 				_context.SaveChanges();
 				return await Task.FromResult(true);
 			}
@@ -66,7 +65,6 @@ namespace Prn231_CinemaProject_Group7.Repository
 				data.Balance = GiftCard.Balance;
 				data.ExpirationDate = GiftCard.ExpirationDate;
 				data.IsActive = GiftCard.IsActive;
-				data.UpdatedAt = DateTime.Now;
 				_context.SaveChanges();
 				return await Task.FromResult(true);
 			}
