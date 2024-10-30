@@ -1,4 +1,123 @@
 ﻿@page
 @model WebClient.Pages.Admin.Orders.AddModel
 @{
+    ViewData["Title"] = "Add New Order";
+}
+
+<div class="container mt-4">
+    <h1>Add New Order</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="Order.CustomerId" class="control-label"></label>
+                    <input asp-for="Order.CustomerId" class="form-control" type="number" />
+                    <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Order.OrderDate" class="control-label"></label>
+                    <input asp-for="Order.OrderDate" class="form-control" type="datetime-local" />
+                    <span asp-validation-for="Order.OrderDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Order.PaymentMethod" class="control-label"></label>
+                    <input asp-for="Order.PaymentMethod" class="form-control" />
+                    <span asp-validation-for="Order.PaymentMethod" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Order.StatusId" class="control-label"></label>
+                    <input asp-for="Order.StatusId" class="form-control" type="number" />
+                    <span asp-validation-for="Order.StatusId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Order.CouponId" class="control-label"></label>
+                    <input asp-for="Order.CouponId" class="form-control" type="number" />
+                    <span asp-validation-for="Order.CouponId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Order.GiftCardId" class="control-label"></label>
+                    <input asp-for="Order.GiftCardId" class="form-control" type="number" />
+                    <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsPaid" class="control-label"></label>
+                    <input asp-for="IsPaid" class="form-control" type="checkbox" />
+                    <span asp-validation-for="IsPaid" class="text-danger"></span>
+                </div>
+
+                <h3>Order Concessions</h3>
+                <div id="orderConcessions">
+                    <div class="form-group">
+                        <label>Concession ID</label>
+                        <input name="Order.OrderConcessions[0].ConcessionId" class="form-control" type="number" />
+                        <label>Price</label>
+                        <input name="Order.OrderConcessions[0].Price" class="form-control" type="number" />
+                        <label>Quantity</label>
+                        <input name="Order.OrderConcessions[0].Quantity" class="form-control" type="number" />
+                    </div>
+                </div>
+                <button type="button" onclick="addConcession()">Add Concession</button>
+
+                <h3>Order Details</h3>
+                <div id="orderDetails">
+                    <div class="form-group">
+                        <label>Showtime ID</label>
+                        <input name="Order.OrderDetails[0].ShowtimeId" class="form-control" type="number" />
+                        <label>Seat ID</label>
+                        <input name="Order.OrderDetails[0].SeatId" class="form-control" type="number" />
+                        <label>Price</label>
+                        <input name="Order.OrderDetails[0].Price" class="form-control" type="number" />
+                        <label>Quantity</label>
+                        <input name="Order.OrderDetails[0].Quantity" class="form-control" type="number" />
+                    </div>
+                </div>
+                <button type="button" onclick="addDetail()">Add Detail</button>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        let concessionIndex = 1;
+        let detailIndex = 1;
+
+        function addConcession() {
+            const container = document.getElementById('orderConcessions');
+            const newConcession = document.createElement('div');
+            newConcession.classList.add('form-group');
+            newConcession.innerHTML = `
+                        <label>Concession ID</label>
+                        <input name="Order.OrderConcessions[${concessionIndex}].ConcessionId" class="form-control" type="number" />
+                        <label>Price</label>
+                        <input name="Order.OrderConcessions[${concessionIndex}].Price" class="form-control" type="number" />
+                        <label>Quantity</label>
+                        <input name="Order.OrderConcessions[${concessionIndex}].Quantity" class="form-control" type="number" />
+                    `;
+            container.appendChild(newConcession);
+            concessionIndex++;
+        }
+
+        function addDetail() {
+            const container = document.getElementById('orderDetails');
+            const newDetail = document.createElement('div');
+            newDetail.classList.add('form-group');
+            newDetail.innerHTML = `
+                        <label>Showtime ID</label>
+                        <input name="Order.OrderDetails[${detailIndex}].ShowtimeId" class="form-control" type="number" />
+                        <label>Seat ID</label>
+                        <input name="Order.OrderDetails[${detailIndex}].SeatId" class="form-control" type="number" />
+                        <label>Price</label>
+                        <input name="Order.OrderDetails[${detailIndex}].Price" class="form-control" type="number" />
+                        <label>Quantity</label>
+                        <input name="Order.OrderDetails[${detailIndex}].Quantity" class="form-control" type="number" />
+                    `;
+            container.appendChild(newDetail);
+            detailIndex++;
+        }
+    </script>
 }

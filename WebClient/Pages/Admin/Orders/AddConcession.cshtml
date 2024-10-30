@@ -1,0 +1,41 @@
+﻿@page
+@model WebClient.Pages.Admin.Orders.AddConcessionModel
+@{
+    ViewData["Title"] = "Add New Order Concession";
+}
+
+<div class="container mt-4">
+    <h1>Add New Order Concession</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="OrderConcession.OrderId" class="control-label"></label>
+                    <input asp-for="OrderConcession.OrderId" class="form-control" type="number" />
+                    <span asp-validation-for="OrderConcession.OrderId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderConcession.ConcessionId" class="control-label"></label>
+                    <input asp-for="OrderConcession.ConcessionId" class="form-control" type="number" />
+                    <span asp-validation-for="OrderConcession.ConcessionId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderConcession.Quantity" class="control-label"></label>
+                    <input asp-for="OrderConcession.Quantity" class="form-control" type="number" />
+                    <span asp-validation-for="OrderConcession.Quantity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="OrderConcession.Price" class="control-label"></label>
+                    <input asp-for="OrderConcession.Price" class="form-control" type="number" step="1000" />
+                    <span asp-validation-for="OrderConcession.Price" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

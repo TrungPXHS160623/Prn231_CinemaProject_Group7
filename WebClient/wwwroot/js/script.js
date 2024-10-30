@@ -2,11 +2,14 @@
 
 initMap = false;
 $(document).ready(function () {
-    $('.data-table').DataTable({
-        "columnDefs": [
-            { "orderable": false, "targets": -1 } // Disable sorting on the last column (Edit/Delete)
-        ]
-    });
+    // Ensure the table exists before initializing DataTable
+    if ($('.data-table').length) {
+        $('.data-table').DataTable({
+            "columnDefs": [
+                { "orderable": false, "targets": -1 } // Disable sorting on the last column (Edit/Delete)
+            ]
+        });
+    }
 });
 (function (fn) {
     if (typeof jQuery === 'undefined') {

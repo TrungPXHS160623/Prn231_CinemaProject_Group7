@@ -13,6 +13,8 @@
                 <th>Discount</th>
                 <th>Expiration Date</th>
                 <th>Is Active</th>
+                <th>Created At</th>
+                <th>Updated At</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -24,6 +26,8 @@
                     <td>@coupon.Discount</td>
                     <td>@coupon.ExpirationDate?.ToString("yyyy-MM-dd")</td>
                     <td>@coupon.IsActive</td>
+                    <td>@coupon.CreatedAt</td>
+                    <td>@coupon.UpdatedAt</td>
                     <td>
                         <a asp-page="./Update" asp-route-id="@coupon.CouponId" class="btn btn-primary">Edit</a>
                         <button class="btn btn-danger" onclick="deleteCoupon(@coupon.CouponId)">Delete</button>

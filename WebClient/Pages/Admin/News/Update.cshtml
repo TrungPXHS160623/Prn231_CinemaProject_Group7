@@ -1,7 +1,7 @@
 ﻿@page "{id:int}"
 @model WebClient.Pages.Admin.News.UpdateModel
 @{
-    ViewData["Title"] = "Update New";
+    ViewData["Title"] = "Update News";
 }
 
 <h1>Update News</h1>
@@ -10,21 +10,31 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form method="post">
-                <input type="hidden" asp-for="New.Id" />
+                <input type="hidden" asp-for="New.NewsId" />
                 <div class="form-group">
-                    <label asp-for="New.Code" class="control-label"></label>
-                    <input asp-for="New.Code" class="form-control" />
-                    <span asp-validation-for="New.Code" class="text-danger"></span>
+                    <label asp-for="New.Title" class="control-label"></label>
+                    <input asp-for="New.Title" class="form-control" />
+                    <span asp-validation-for="New.Title" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="New.Discount" class="control-label"></label>
-                    <input asp-for="New.Discount" class="form-control" type="number" step="0.01" />
-                    <span asp-validation-for="New.Discount" class="text-danger"></span>
+                    <label asp-for="New.Content" class="control-label"></label>
+                    <textarea asp-for="New.Content" class="form-control"></textarea>
+                    <span asp-validation-for="New.Content" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="New.ExpirationDate" class="control-label"></label>
-                    <input asp-for="New.ExpirationDate" class="form-control" type="date" />
-                    <span asp-validation-for="New.ExpirationDate" class="text-danger"></span>
+                    <label asp-for="New.Author" class="control-label"></label>
+                    <input asp-for="New.Author" class="form-control" />
+                    <span asp-validation-for="New.Author" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="New.PublishedDate" class="control-label"></label>
+                    <input asp-for="New.PublishedDate" class="form-control" type="date" />
+                    <span asp-validation-for="New.PublishedDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="New.ImageUrl" class="control-label"></label>
+                    <input asp-for="New.ImageUrl" class="form-control" />
+                    <span asp-validation-for="New.ImageUrl" class="text-danger"></span>
                 </div>
                 <div class="form-group form-check">
                     <input asp-for="New.IsActive" class="form-check-input" type="checkbox" />

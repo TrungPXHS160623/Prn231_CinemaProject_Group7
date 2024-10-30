@@ -1,8 +1,40 @@
 [
   {
-    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.TestApiController",
-    "Method": "Get",
-    "RelativePath": "api/TestApi",
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ConcessionsController",
+    "Method": "CreateConcession",
+    "RelativePath": "api/Concessions/CreateConcession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "concession",
+        "Type": "Prn231_CinemaProject_Group7.DTO.ConcessionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ConcessionsController",
+    "Method": "DeactivateConcession",
+    "RelativePath": "api/Concessions/DeactivateConcession/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ConcessionsController",
+    "Method": "GetAllConcessions",
+    "RelativePath": "api/Concessions/GetAllConcessions",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,24 +42,514 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ConcessionsController",
+    "Method": "GetConcession",
+    "RelativePath": "api/Concessions/GetConcession/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ConcessionsController",
+    "Method": "UpdateConcession",
+    "RelativePath": "api/Concessions/UpdateConcession/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "concession",
+        "Type": "Prn231_CinemaProject_Group7.DTO.ConcessionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CouponsController",
+    "Method": "CreateCoupon",
+    "RelativePath": "api/Coupons/CreateCoupon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Coupon",
+        "Type": "Prn231_CinemaProject_Group7.DTO.CouponDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CouponsController",
+    "Method": "DeactivateCoupon",
+    "RelativePath": "api/Coupons/DeactivateCoupon/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CouponsController",
+    "Method": "GetAllCoupons",
+    "RelativePath": "api/Coupons/GetAllCoupons",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CouponsController",
+    "Method": "GetCoupon",
+    "RelativePath": "api/Coupons/GetCoupon/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[Prn231_CinemaProject_Group7.WeatherForecast, Prn231_CinemaProject_Group7, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CouponsController",
+    "Method": "UpdateCoupon",
+    "RelativePath": "api/Coupons/UpdateCoupon/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Coupon",
+        "Type": "Prn231_CinemaProject_Group7.DTO.CouponDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.GiftCardsController",
+    "Method": "CreateGiftCard",
+    "RelativePath": "api/GiftCards/CreateGiftCard",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "GiftCard",
+        "Type": "Prn231_CinemaProject_Group7.DTO.GiftCardDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.GiftCardsController",
+    "Method": "DeactivateGiftCard",
+    "RelativePath": "api/GiftCards/DeactivateGiftCard/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.GiftCardsController",
+    "Method": "GetAllGiftCards",
+    "RelativePath": "api/GiftCards/GetAllGiftCards",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.GiftCardsController",
+    "Method": "GetGiftCard",
+    "RelativePath": "api/GiftCards/GetGiftCard/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.GiftCardsController",
+    "Method": "UpdateGiftCard",
+    "RelativePath": "api/GiftCards/UpdateGiftCard/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "GiftCard",
+        "Type": "Prn231_CinemaProject_Group7.DTO.GiftCardDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.NewsController",
+    "Method": "CreateNew",
+    "RelativePath": "api/News/CreateNew",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "New",
+        "Type": "Prn231_CinemaProject_Group7.DTO.NewsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.NewsController",
+    "Method": "DeactivateNew",
+    "RelativePath": "api/News/DeactivateNew/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.NewsController",
+    "Method": "GetAllNews",
+    "RelativePath": "api/News/GetAllNews",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.NewsController",
+    "Method": "GetNews",
+    "RelativePath": "api/News/GetNew/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.NewsController",
+    "Method": "UpdateNew",
+    "RelativePath": "api/News/UpdateNew/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "New",
+        "Type": "Prn231_CinemaProject_Group7.DTO.NewsDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderConcessionsController",
+    "Method": "CreateOrderConcession",
+    "RelativePath": "api/OrderConcessions/CreateOrderConcession",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "OrderConcession",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderConcessionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderConcessionsController",
+    "Method": "DeactivateOrderConcession",
+    "RelativePath": "api/OrderConcessions/DeactivateOrderConcession/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderConcessionsController",
+    "Method": "GetAllOrderConcessions",
+    "RelativePath": "api/OrderConcessions/GetAllOrderConcessions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderConcessionsController",
+    "Method": "GetOrderConcession",
+    "RelativePath": "api/OrderConcessions/GetOrderConcession/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderConcessionsController",
+    "Method": "UpdateOrderConcession",
+    "RelativePath": "api/OrderConcessions/UpdateOrderConcession/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "OrderConcession",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderConcessionDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderDetailsController",
+    "Method": "CreateOrderDetail",
+    "RelativePath": "api/OrderDetails/CreateOrderDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "OrderDetail",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderDetailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderDetailsController",
+    "Method": "DeactivateOrderDetail",
+    "RelativePath": "api/OrderDetails/DeactivateOrderDetail/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderDetailsController",
+    "Method": "GetAllOrderDetails",
+    "RelativePath": "api/OrderDetails/GetAllOrderDetails",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderDetailsController",
+    "Method": "GetOrderDetail",
+    "RelativePath": "api/OrderDetails/GetOrderDetail/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrderDetailsController",
+    "Method": "UpdateOrderDetail",
+    "RelativePath": "api/OrderDetails/UpdateOrderDetail/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "OrderDetail",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderDetailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/Orders/CreateOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Order",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "DeactivateOrder",
+    "RelativePath": "api/Orders/DeactivateOrder/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/Orders/GetAllOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "GetOrder",
+    "RelativePath": "api/Orders/GetOrder/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "UpdateOrder",
+    "RelativePath": "api/Orders/UpdateOrder/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "Order",
+        "Type": "Prn231_CinemaProject_Group7.DTO.OrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

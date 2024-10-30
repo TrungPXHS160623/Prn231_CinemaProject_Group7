@@ -1,248 +1,764 @@
 {
   "Files": [
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebClient.bundle.scp.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebClient.bundle.scp.css",
       "PackagePath": "staticwebassets\\WebClient.bundle.scp.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\css\\site.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\css\\dot-icons.css",
+      "PackagePath": "staticwebassets\\css\\dot-icons.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\favicon.ico",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\css\\theme.css",
+      "PackagePath": "staticwebassets\\css\\theme.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\js\\site.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\js\\jquery-3.3.1.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.3.1.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\js\\script.js",
+      "PackagePath": "staticwebassets\\js\\script.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\animate.css\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\animate.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\animate.css\\animate.css",
+      "PackagePath": "staticwebassets\\lib\\animate.css\\animate.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\animate.css\\animate.min.css",
+      "PackagePath": "staticwebassets\\lib\\animate.css\\animate.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\bootstrap\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-brands.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-brands.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-brands.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-brands.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-regular.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-regular.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-regular.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-regular.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-solid.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-solid.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fa-solid.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fa-solid.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fontawesome-all.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fontawesome-all.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fontawesome-all.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fontawesome-all.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_animated.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_animated.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_bordered-pulled.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_bordered-pulled.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_core.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_core.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_fixed-width.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_fixed-width.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_icons.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_icons.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_larger.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_larger.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_list.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_list.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_mixins.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_mixins.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_rotated-flipped.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_rotated-flipped.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_screen-reader.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_screen-reader.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_stacked.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_stacked.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\_variables.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\_variables.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\fa-brands.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\fa-brands.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\fa-regular.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\fa-regular.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\fa-solid.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\fa-solid.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\less\\fontawesome.less",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\less\\fontawesome.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_animated.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_animated.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_bordered-pulled.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_bordered-pulled.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_core.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_core.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_fixed-width.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_fixed-width.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_icons.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_icons.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_larger.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_larger.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_list.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_list.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_rotated-flipped.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_rotated-flipped.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_stacked.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_stacked.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\fa-brands.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\fa-brands.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\fa-regular.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\fa-regular.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\fa-solid.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\fa-solid.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\scss\\fontawesome.scss",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\scss\\fontawesome.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\lib\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\images\\parts\\map-marker.png",
+      "PackagePath": "staticwebassets\\lib\\images\\parts\\map-marker.png"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\images\\parts\\movie-pattern.png",
+      "PackagePath": "staticwebassets\\lib\\images\\parts\\movie-pattern.png"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\images\\parts\\white-square.png",
+      "PackagePath": "staticwebassets\\lib\\images\\parts\\white-square.png"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\images\\svg\\logo-part.svg",
+      "PackagePath": "staticwebassets\\lib\\images\\svg\\logo-part.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\images\\svg\\tape-pattern.svg",
+      "PackagePath": "staticwebassets\\lib\\images\\svg\\tape-pattern.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\C#Source\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\magnific-popup\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\magnific-popup"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\magnific-popup\\jquery.magnific-popup.js",
+      "PackagePath": "staticwebassets\\lib\\magnific-popup\\jquery.magnific-popup.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\magnific-popup\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\lib\\magnific-popup\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\magnific-popup\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\lib\\magnific-popup\\magnific-popup.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\parallax.js\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\parallax.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\parallax.js\\package-lock.json",
+      "PackagePath": "staticwebassets\\lib\\parallax.js\\package-lock.json"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\parallax.js\\package.json",
+      "PackagePath": "staticwebassets\\lib\\parallax.js\\package.json"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\parallax.js\\parallax.js",
+      "PackagePath": "staticwebassets\\lib\\parallax.js\\parallax.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\parallax.js\\parallax.min.js",
+      "PackagePath": "staticwebassets\\lib\\parallax.js\\parallax.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\slick"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\lib\\slick\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\config.rb",
+      "PackagePath": "staticwebassets\\lib\\slick\\config.rb"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\fonts\\slick.eot",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.eot"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\fonts\\slick.svg",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.svg"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\fonts\\slick.ttf",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.ttf"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\fonts\\slick.woff",
+      "PackagePath": "staticwebassets\\lib\\slick\\fonts\\slick.woff"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick-theme.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick-theme.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick-theme.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick-theme.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick.css",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.css"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick.less",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.less"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick.min.js",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\slick\\slick.scss",
+      "PackagePath": "staticwebassets\\lib\\slick\\slick.scss"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\jquery.waypoints.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\jquery.waypoints.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\jquery.waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\jquery.waypoints.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\licenses.txt",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\licenses.txt"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\noframework.waypoints.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\noframework.waypoints.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\noframework.waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\noframework.waypoints.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\infinite.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\infinite.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\infinite.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\infinite.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\inview.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\inview.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\inview.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\inview.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\sticky.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\sticky.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\shortcuts\\sticky.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\shortcuts\\sticky.min.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\waypoints.debug.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\waypoints.debug.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\zepto.waypoints.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\zepto.waypoints.js"
+    },
+    {
+      "Id": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\wwwroot\\lib\\waypoints\\zepto.waypoints.min.js",
+      "PackagePath": "staticwebassets\\lib\\waypoints\\zepto.waypoints.min.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.WebClient.Microsoft.AspNetCore.StaticWebAssets.props",

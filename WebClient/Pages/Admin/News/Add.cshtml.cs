@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Prn231_CinemaProject_Group7.Models;
+using WebClient.Models;
 
 namespace WebClient.Pages.Admin.News
 {
@@ -14,7 +14,7 @@ namespace WebClient.Pages.Admin.News
         }
 
         [BindProperty]
-        public Prn231_CinemaProject_Group7.Models.News New { get; set; }
+        public Models.News New { get; set; }
 
         [BindProperty]
         public bool IsActive { get; set; }

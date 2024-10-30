@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Prn231_CinemaProject_Group7.Models;
+using WebClient.Models;
 
 namespace WebClient.Pages.Admin.News
 {
@@ -14,14 +14,14 @@ namespace WebClient.Pages.Admin.News
         }
 
         [BindProperty]
-        public Prn231_CinemaProject_Group7.Models.News New { get; set; }
+        public WebClient.Models.News New { get; set; }
 
         [BindProperty]
         public bool IsActive { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            var concession = await _httpClient.GetFromJsonAsync<Prn231_CinemaProject_Group7.Models.News>($"http://localhost:5280/api/Concessions/GetNew/{id}");
+            var concession = await _httpClient.GetFromJsonAsync<WebClient.Models.News>($"http://localhost:5280/api/Concessions/GetNew/{id}");
             if (concession == null)
             {
                 return NotFound();
@@ -42,7 +42,7 @@ namespace WebClient.Pages.Admin.News
 
             New.IsActive = IsActive;
 
-            var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/News/UpdateNew/{New.NewId}", New);
+            var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/News/UpdateNew/{New.NewsId}", New);
 
             if (response.IsSuccessStatusCode)
             {
@@ -55,3 +55,4 @@ namespace WebClient.Pages.Admin.News
             }
         }
     }
+}

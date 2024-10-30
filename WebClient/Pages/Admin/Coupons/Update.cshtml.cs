@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Prn231_CinemaProject_Group7.Models;
+using WebClient.Models;
 
 namespace WebClient.Pages.Admin.Coupons
 {
@@ -55,3 +55,4 @@ namespace WebClient.Pages.Admin.Coupons
             }
         }
     }
+}

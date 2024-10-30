@@ -1,38 +1,40 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.DTO;
-using Prn231_CinemaProject_Group7.IRespository;
+using Prn231_CinemaProject_Group7.Irepository;
 
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
-	public class CouponsController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class CouponsController : Controller
 	{
 
-		private readonly ICouponRepository respository;
+		private readonly ICouponRepository repository;
 
-		public CouponsController(ICouponRepository respository)
+		public CouponsController(ICouponRepository repository)
 		{
-			this.respository = respository;
+			this.repository = repository;
 		}
 
 		[HttpGet("GetAllCoupons")]
 		public async Task<IActionResult> GetAllCoupons()
 		{
-			var data = await respository.GetAllCoupons();
+			var data = await repository.GetAllCoupons();
 			return Ok(data);
 		}
 
 		[HttpGet("GetCoupon/{id}")]
 		public IActionResult GetCoupon(int id)
 		{
-			var data = respository.GetCoupon(id);
+			var data = repository.GetCoupon(id);
 			return Ok(data);
 		}
 
 		[HttpPost("CreateCoupon")]
 		public IActionResult CreateCoupon(CouponDTO Coupon)
 		{
-			var data = respository.CreateCoupon(Coupon);
+			var data = repository.CreateCoupon(Coupon);
 			if (data.Result)
 			{
 				return Ok();
@@ -45,7 +47,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 		[HttpPut("UpdateCoupon/{id}")]
 		public IActionResult UpdateCoupon(int id, CouponDTO Coupon)
 		{
-			var data = respository.UpdateCoupon(id, Coupon);
+			var data = repository.UpdateCoupon(id, Coupon);
 			if (data.Result)
 			{
 				return Ok();
@@ -58,7 +60,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 		[HttpPut("DeactivateCoupon/{id}")]
 		public IActionResult DeactivateCoupon(int id)
 		{
-			var data = respository.DeleteCoupon(id);
+			var data = repository.DeleteCoupon(id);
 			if (data.Result)
 			{
 				return Ok();

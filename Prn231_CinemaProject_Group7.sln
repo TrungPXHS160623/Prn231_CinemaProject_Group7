@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prn231_CinemaProject_Group7", "Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7.csproj", "{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prn231_CinemaProject_Group7", "Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7.csproj", "{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebClient", "WebClient\WebClient.csproj", "{46FDD20A-4771-4E99-A925-8B82E382F653}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebClient", "WebClient\WebClient.csproj", "{46FDD20A-4771-4E99-A925-8B82E382F653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

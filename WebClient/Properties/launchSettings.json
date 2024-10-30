@@ -12,7 +12,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5160/Cinema/Index",
+      "launchUrl": "http://localhost:5160/Admin/Index",
       "applicationUrl": "http://localhost:5160",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
