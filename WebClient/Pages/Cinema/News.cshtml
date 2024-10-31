@@ -1,4 +1,52 @@
 ﻿@page
 @model WebClient.Pages.Cinema.NewsModel
 @{
+    ViewData["Title"] = "News List";
 }
+<section class="after-head d-flex section-text-white position-relative">
+    <div class="d-background bg-black-80"></div>
+    <div class="top-block top-inner container">
+        <h1 class="section-title">News blocks</h1>
+        <div class="page-breadcrumbs">
+            <a class="content-link" asp-page="./Index">Home</a>
+            <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+            <span>News</span>
+        </div>
+    </div>
+</section>
+<div class="container">
+    <div class="sidebar-container">
+        <div class="content">
+            <section class="section-long">
+                @foreach (var news in Model.News)
+                {
+                    <article class="article-tape-entity">
+                        <a class="entity-preview" href="#" data-role="hover-wrap">
+                            <span class="embed-responsive embed-responsive-16by9">
+                                <img class="embed-responsive-item" src="@news.ImageUrl" alt="@news.Title" />
+                            </span>
+                            <span class="entity-date">
+                                <span class="tape-block tape-horizontal tape-single bg-theme text-white">
+                                    <span class="tape-dots"></span>
+                                    <span class="tape-content m-auto">@news.PublishedDate.Value.ToString("dd/MM/yyyy")</span>
+                                    <span class="tape-dots"></span>
+                                </span>
+                            </span>
+                            <span class="d-over bg-black-80 collapse animated faster" data-show-class="fadeIn show" data-hide-class="fadeOut show">
+                                <span class="m-auto"><i class="fas fa-search"></i></span>
+                            </span>
+                        </a>
+                        <div class="entity-content">
+                            <h4 class="entity-title">
+                                <a class="content-link" href="#">@news.Title</a>
+                            </h4>
+                            <p class="text-short entity-text">
+                                @news.Content
+                            </p>
+                        </div>
+                    </article>
+                }    
+            </section>
+        </div>
+    </div>
+</div>
