@@ -1,0 +1,349 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#Source\\Prn231_CinemaProject_Group7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\prn231_projectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\prn231_projectcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\controllers\\theatercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\controllers\\theatercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\irepository\\itheaterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\irepository\\itheaterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\addtheaterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\addtheaterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\updatetheaterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\updatetheaterrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\theaterdtocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\theaterdtos\\theaterdtocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\theater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\theater.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\theaterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\theaterrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\seatrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\controllers\\seatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\roomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\irepository\\iroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\irepository\\iroomrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\addroomrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\addroomrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\updateroomrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\updateroomrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\c#source\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\roomdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\models\\dtos\\roomdtos\\roomdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 634,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SeatRepository.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\SeatRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\SeatRepository.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\SeatRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\SeatRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:22:15.779Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 555,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Prn231_ProjectContext.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Prn231_ProjectContext.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Prn231_ProjectContext.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Prn231_ProjectContext.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Prn231_ProjectContext.cs",
+              "ViewState": "AgIAAGgBAAAAAAAAAAD4v40BAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T20:04:37.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TheaterController.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\TheaterController.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\TheaterController.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\TheaterController.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Controllers\\TheaterController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T20:02:59.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Mapping\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Mapping\\AutoMapperProfile.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Mapping\\AutoMapperProfile.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Mapping\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:32:56.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITheaterRepository.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\ITheaterRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\IRepository\\ITheaterRepository.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\ITheaterRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\IRepository\\ITheaterRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:47:28.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddTheaterRequestDto.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\AddTheaterRequestDto.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\AddTheaterRequestDto.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\AddTheaterRequestDto.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\AddTheaterRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:56:17.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Program.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Program.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Program.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:36:17.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateTheaterRequestDto.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\UpdateTheaterRequestDto.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\UpdateTheaterRequestDto.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\UpdateTheaterRequestDto.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\UpdateTheaterRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:56:50.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TheaterDtocs.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\TheaterDtocs.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\TheaterDtocs.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\TheaterDtocs.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\TheaterDtos\\TheaterDtocs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:54:27.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TheaterRepository.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\TheaterRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\TheaterRepository.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\TheaterRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\TheaterRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowBcAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:49:20.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Theater.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Theater.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Theater.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Theater.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Theater.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:25:02.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SeatController.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\SeatController.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\SeatController.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\SeatController.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Controllers\\SeatController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:42:53.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IRoomRepository.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\IRoomRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\IRepository\\IRoomRepository.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\IRoomRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\IRepository\\IRoomRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:38:07.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\RoomController.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:36:13.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RoomRepository.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\RoomRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\RoomRepository.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\RoomRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\RoomRepository.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAwwBEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:22:15.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Room.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Room.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:22:26.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddRoomRequestDto.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\AddRoomRequestDto.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\AddRoomRequestDto.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\AddRoomRequestDto.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\AddRoomRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:32:03.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateRoomRequestDto.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\UpdateRoomRequestDto.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\UpdateRoomRequestDto.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\UpdateRoomRequestDto.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\UpdateRoomRequestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:32:42.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RoomDtos.cs",
+              "DocumentMoniker": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\RoomDtos.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\RoomDtos.cs",
+              "ToolTip": "D:\\C#Source\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\RoomDtos.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Dtos\\RoomDtos\\RoomDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T19:30:09.861Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

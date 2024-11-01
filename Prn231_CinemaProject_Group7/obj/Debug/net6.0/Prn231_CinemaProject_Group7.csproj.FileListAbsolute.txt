@@ -67,3 +67,4 @@ D:\C#Source\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\ne
 D:\C#Source\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\Prn231_CinemaProject_Group7.pdb
 D:\C#Source\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\Prn231_CinemaProject_Group7.genruntimeconfig.cache
 D:\C#Source\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\ref\Prn231_CinemaProject_Group7.dll
+D:\C#Source\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\Prn231_CinemaProject_Group7.sourcelink.json
