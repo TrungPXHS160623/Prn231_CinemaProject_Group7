@@ -6,9 +6,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 {
     public class SeatTypeRepository : ISeatTypeRepository
     {
-        private readonly Prn231_ProjectContext dbContext;
+        private readonly Prn231_Project_FinalContext dbContext;
 
-        public SeatTypeRepository(Prn231_ProjectContext _dbContext)
+        public SeatTypeRepository(Prn231_Project_FinalContext _dbContext)
         {
             dbContext = _dbContext;
         }

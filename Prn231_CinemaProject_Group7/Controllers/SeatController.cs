@@ -78,7 +78,12 @@ namespace Prn231_CinemaProject_Group7.Controllers
             var seats = await seatRepository.GetActiveSeatsByRoomId(roomId);
             return Ok(mapper.Map<List<SeatDto>>(seats));
         }
-
+        [HttpGet("GetSeatByShowTime/{showtimeId}")]
+        public async Task<IActionResult> GetSeatByShowTime(int showtimeId)
+        {
+            var seats = await seatRepository.GetSeatByShowTime(showtimeId);
+            return Ok(mapper.Map<List<SeatDto>>(seats));
+        }
         // Lấy ghế theo ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetSeatById(int id)

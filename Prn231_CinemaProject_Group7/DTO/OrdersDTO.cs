@@ -53,6 +53,7 @@ namespace Prn231_CinemaProject_Group7.DTO
 
     public class OrderConcessionInfoDTO
     {
+        public int OrderConcessionId { get; set; }
         public ConcessionInfoDTO Concession { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
@@ -65,6 +66,7 @@ namespace Prn231_CinemaProject_Group7.DTO
 
     public class OrderDetailInfoDTO
     {
+        public int OrderDetailId { get; set; }
         public ShowtimeInfoDTO Showtime { get; set; }
         public SeatInfoDTO Seat { get; set; }
         public int Quantity { get; set; }

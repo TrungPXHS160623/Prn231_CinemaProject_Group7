@@ -15,12 +15,29 @@ namespace WebClient.Pages.Admin.Orders
 
         [BindProperty]
         public Order Order { get; set; } = new Order();
-
-        [BindProperty]
-        public bool IsPaid { get; set; } = false;
-
-        public void OnGet()
+        public bool IsPaid { get; set; }
+        //public List<User> Customers { get; set; }
+        public List<OrderStatus> Statuses { get; set; }
+        public List<Coupon> Coupons { get; set; }
+        public List<GiftCard> GiftCards { get; set; }
+        public IList<Concession> Concessions { get; set; }
+        public async Task<IActionResult> OnGetAsync()
         {
+            //Customers = await _httpClient.GetFromJsonAsync<List<User>>("http://localhost:5280/api/Users");
+            Coupons = await _httpClient.GetFromJsonAsync<List<Coupon>>("http://localhost:5280/api/Coupons/GetAllCoupons");
+            Coupons = Coupons.Where(c => c.IsActive == true).ToList();
+            GiftCards = await _httpClient.GetFromJsonAsync<List<GiftCard>>("http://localhost:5280/api/GiftCards/GetAllGiftCards");
+            GiftCards = GiftCards.Where(c => c.IsActive == true).ToList();
+            Statuses = new List<OrderStatus>()
+            {
+                new OrderStatus { StatusId = 1, StatusName = "Active" },
+                new OrderStatus { StatusId = 2, StatusName = "Used" },
+                new OrderStatus { StatusId = 3, StatusName = "Canceled" },
+                new OrderStatus { StatusId = 4, StatusName = "NotPay" }
+            };
+            Concessions = await _httpClient.GetFromJsonAsync<IList<Concession>>("http://localhost:5280/api/Concessions/GetAllConcessions");
+            Concessions = Concessions.Where(c => c.IsActive == true).ToList();
+            return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()

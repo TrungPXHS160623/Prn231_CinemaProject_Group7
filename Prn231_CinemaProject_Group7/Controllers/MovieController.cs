@@ -19,6 +19,13 @@ namespace Prn231_CinemaProject_Group7.Controllers
         {
             return Ok(await repository.GetAllMovies());
         }
+
+        [HttpGet("GetMovieByTheater/{theaterId}")]
+        public async Task<IActionResult> GetMovieByTheater(int theaterId)
+        {
+            return Ok(await repository.GetMovieByTheater(theaterId));
+        }
+
         [HttpGet("GetMovie/{id}")]
         public IActionResult GetMovie(int id)
         {

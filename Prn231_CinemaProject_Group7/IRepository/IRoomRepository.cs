@@ -1,4 +1,5 @@
 ﻿using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos;
 
 namespace Prn231_CinemaProject_Group7.IRepository
 {
@@ -23,7 +24,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<List<Room>> GetRoomsByTheaterId(int theaterId);
 
         // Lấy danh sách các phòng đang hoạt động
-        Task<List<Room>> GetActiveRooms();
+        Task<List<RoomDtos>> GetActiveRooms();
 
         // Vô hiệu hóa phòng
         Task<Room?> DeactivateRoom(int roomId);

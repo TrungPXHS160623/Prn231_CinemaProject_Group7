@@ -46,7 +46,10 @@ namespace Prn231_CinemaProject_Group7.Repository
         {
             return await _context.Categories.ToListAsync();
         }
-
+        public async Task<List<int>> GetMovieCountByCategories()
+        {
+            return await _context.Categories.Include(c => c.Movies).Select(c => c.Movies.Count()).ToListAsync();
+        }
         public Category GetCategories(int id)
         {
             return _context.Categories.FirstOrDefault(c => c.CategoryId == id);

@@ -40,6 +40,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<List<Seat>> GetAvailableSeatsByRoomId(int roomId);
 
         // Tìm kiếm ghế theo loại ghế trong một phòng chiếu
+        Task<List<Seat>> GetSeatByShowTime(int showtimeId);
         Task<List<Seat>> SearchSeatsByType(int roomId, int seatTypeId);
     }
 }

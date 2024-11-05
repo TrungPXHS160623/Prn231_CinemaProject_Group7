@@ -7,9 +7,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 {
     public class SeatRepository : ISeatRepository
     {
-        private readonly Prn231_ProjectContext dbContext;
+        private readonly Prn231_Project_FinalContext dbContext;
 
-        public SeatRepository(Prn231_ProjectContext _dbContext)
+        public SeatRepository(Prn231_Project_FinalContext _dbContext)
         {
             dbContext = _dbContext;
         }
@@ -68,7 +68,14 @@ namespace Prn231_CinemaProject_Group7.Repository
             var list  = dbContext.Seats.Where(s => s.RoomId == roomId && s.IsActive == true).ToListAsync();
             return list;
         }
-
+        public async Task<List<Seat>> GetSeatByShowTime(int showtimeId)
+        {
+            // Lọc và lấy danh sách ghế theo showtimeId
+            var seats = await dbContext.Seats
+                .Where(s => s.Room.Showtimes.Any(st => st.ShowtimeId == showtimeId))
+                .ToListAsync();
+            return seats;
+        }
         public Task<List<Seat>> GetAvailableSeatsByRoomId(int roomId)
         {
             // Lọc và lấy danh sách ghế đang có sẵn theo phòng

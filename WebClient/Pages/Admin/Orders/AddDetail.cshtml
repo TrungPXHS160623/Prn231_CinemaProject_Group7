@@ -9,18 +9,31 @@
         <div class="col-md-8">
             <form method="post">
                 <div class="form-group">
-                    <label asp-for="OrderDetail.OrderId" class="control-label"></label>
-                    <input asp-for="OrderDetail.OrderId" class="form-control" type="number" />
-                    <span asp-validation-for="OrderDetail.OrderId" class="text-danger"></span>
+                    <label asp-for="SelectedTheaterId" class="control-label">Theater</label>
+                    <select asp-for="SelectedTheaterId" class="form-control" asp-items="Model.Theaters">
+                        <option value="">Select a theater</option>
+                    </select>
+                    <span asp-validation-for="SelectedTheaterId" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="OrderDetail.ShowtimeId" class="control-label"></label>
-                    <input asp-for="OrderDetail.ShowtimeId" class="form-control" type="number" />
+                <div class="form-group" id="movie-select" style="display:none;">
+                    <label asp-for="SelectedMovieId" class="control-label">Movie</label>
+                    <select asp-for="SelectedMovieId" class="form-control" asp-items="Model.Movies">
+                        <option value="">Select a movie</option>
+                    </select>
+                    <span asp-validation-for="SelectedMovieId" class="text-danger"></span>
+                </div>
+                <div class="form-group" id="showtime-select" style="display:none;">
+                    <label asp-for="OrderDetail.ShowtimeId" class="control-label">Showtime</label>
+                    <select asp-for="OrderDetail.ShowtimeId" class="form-control" asp-items="Model.Showtimes">
+                        <option value="">Select a showtime</option>
+                    </select>
                     <span asp-validation-for="OrderDetail.ShowtimeId" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="OrderDetail.SeatId" class="control-label"></label>
-                    <input asp-for="OrderDetail.SeatId" class="form-control" type="number" />
+                <div class="form-group" id="seat-select" style="display:none;">
+                    <label asp-for="OrderDetail.SeatId" class="control-label">Seat</label>
+                    <select asp-for="OrderDetail.SeatId" class="form-control" asp-items="Model.Seats">
+                        <option value="">Select a seat</option>
+                    </select>
                     <span asp-validation-for="OrderDetail.SeatId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -42,4 +55,74 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            $('#SelectedTheaterId').change(function () {
+                var theaterId = $(this).val();
+                if (theaterId) {
+                    // Fetch movies based on the selected theater through showtimes
+                    $.get(`http://localhost:5280/api/Movie/GetMovieByTheater/${theaterId}`, function (data) {
+                        var movieSelect = $('#SelectedMovieId');
+                        movieSelect.empty();
+                        movieSelect.append($('<option>', { value: '', text: 'Select a movie' }));
+                        $.each(data, function (index, movie) {
+                            movieSelect.append($('<option>', {
+                                value: movie.id,
+                                text: movie.title
+                            }));
+                        });
+                        $('#movie-select').show();
+                    });
+                } else {
+                    $('#movie-select').hide();
+                    $('#showtime-select').hide();
+                    $('#seat-select').hide();
+                }
+            });
+
+            $('#SelectedMovieId').change(function () {
+                var theaterId = $('#SelectedTheaterId').val();
+                var movieId = $(this).val();
+                if (movieId && theaterId) {
+                    // Fetch showtimes based on the selected movie and theater
+                    $.get(`http://localhost:5280/api/Seat/GetShowTimeByMovieTheater/${movieId}/${theaterId}`, function (data) {
+                        var showtimeSelect = $('#OrderDetail_ShowtimeId');
+                        showtimeSelect.empty();
+                        showtimeSelect.append($('<option>', { value: '', text: 'Select a showtime' }));
+                        $.each(data, function (index, showtime) {
+                            showtimeSelect.append($('<option>', {
+                                value: showtime.id,
+                                text: showtime.time
+                            }));
+                        });
+                        $('#showtime-select').show();
+                    });
+                } else {
+                    $('#showtime-select').hide();
+                    $('#seat-select').hide();
+                }
+            });
+
+            $('#OrderDetail_ShowtimeId').change(function () {
+                var showtimeId = $(this).val();
+                if (showtimeId) {
+                    // Fetch seats based on the selected showtime
+                    $.get(`http://localhost:5280/api/Seat/GetSeatByShowTime/${showtimeId}`, function (data) {
+                        var seatSelect = $('#OrderDetail_SeatId');
+                        seatSelect.empty();
+                        seatSelect.append($('<option>', { value: '', text: 'Select a seat' }));
+                        $.each(data, function (index, seat) {
+                            seatSelect.append($('<option>', {
+                                value: seat.id,
+                                text: seat.number
+                            }));
+                        });
+                        $('#seat-select').show();
+                    });
+                } else {
+                    $('#seat-select').hide();
+                }
+            });
+        });
+    </script>
 }

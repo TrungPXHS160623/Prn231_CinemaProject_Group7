@@ -12,7 +12,16 @@ namespace Prn231_CinemaProject_Group7.Repository
         {
             this._context = context;
         }
-
+        public async Task<List<Movie>> GetMovieByTheater(int theaterId)
+        {
+            return await _context.Theaters
+                .Where(t => t.TheaterId == theaterId)
+                .SelectMany(t => t.Rooms)
+                .SelectMany(r => r.Showtimes)
+                .Select(st => st.Movie)
+                .Distinct()
+                .ToListAsync();
+        }
         public async Task<bool> CreateMovies(MovieDTO Movies)
         {
             try

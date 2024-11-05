@@ -10,7 +10,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<bool> CreateMovies(MovieDTO Movies);
         Task<bool> UpdateMovies(int id, MovieDTO Movies);
         Task<bool> ChangeStatus(int id);
-
+        Task<List<Movie>> GetMovieByTheater(int theaterId);
         Task<bool> EditCategories(int id,List<int> categories);
     }
 }

@@ -3,6 +3,7 @@ using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Irepository;
 using Prn231_CinemaProject_Group7.Models;
 using Prn231_CinemaProject_Group7.Repository;
+using Prn231_CinemaProject_Group7.Mapping;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,12 @@ builder.Services.AddScoped<ICouponRepository, CouponRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IGiftCardRepository, GiftCardRepository>();
 builder.Services.AddScoped<INewsRepository, NewsRepository>();
+builder.Services.AddScoped<ISeatTypeRepository, SeatTypeRepository>();
+builder.Services.AddScoped<ISeatRepository, SeatRepository>();
+builder.Services.AddScoped<IRoomRepository, RoomRepository>();
+builder.Services.AddScoped<ITheaterRepository, TheaterRepository>();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 var app = builder.Build();

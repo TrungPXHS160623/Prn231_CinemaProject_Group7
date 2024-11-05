@@ -107,6 +107,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                     } : null,
                     OrderConcessions = order.OrderConcessions.Select(oc => new OrderConcessionInfoDTO
                     {
+                        OrderConcessionId = oc.OrderConcessionId,
                         Concession = new ConcessionInfoDTO
                         {
                             ProductName = oc.Concession.ProductName
@@ -116,6 +117,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                     }).ToList(),
                     OrderDetails = order.OrderDetails.Select(od => new OrderDetailInfoDTO
                     {
+                        OrderDetailId = od.OrderDetailId,
                         Showtime = new ShowtimeInfoDTO
                         {
                             StartTime = od.Showtime.StartTime,

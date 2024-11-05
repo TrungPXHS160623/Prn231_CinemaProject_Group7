@@ -2,3 +2,92 @@
 @model WebClient.Pages.Admin.IndexModel
 @{
 }
+
+<div style="width:80%;margin-top:20px">
+    <h2>Dashboard</h2>
+    <div style="margin-top:20px">
+        <h3>Movies by Category</h3>
+        <canvas id="moviesByCategoryChart" width="400" height="200"></canvas>
+    </div>
+    <div style="margin-top:20px">
+        <h3>Concessions Sales</h3>
+        <canvas id="concessionsSalesChart" width="400" height="200"></canvas>
+    </div>
+    <div style="margin-top:20px">
+        <h3>Room Utilization</h3>
+        <canvas id="roomUtilizationChart" width="400" height="200"></canvas>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var ctx1 = document.getElementById('moviesByCategoryChart').getContext('2d');
+            var moviesByCategoryChart = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: @Html.Raw(Json.Serialize(Model.Categories)),
+                    datasets: [{
+                        label: 'Number of Movies',
+                        data: @Html.Raw(Json.Serialize(Model.MovieCounts)),
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            var ctx2 = document.getElementById('concessionsSalesChart').getContext('2d');
+            var concessionsSalesChart = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: @Html.Raw(Json.Serialize(Model.SalesDates)),
+                    datasets: [{
+                        label: 'Sales',
+                        data: @Html.Raw(Json.Serialize(Model.SalesAmounts)),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            var ctx5 = document.getElementById('roomUtilizationChart').getContext('2d');
+            var roomUtilizationChart = new Chart(ctx5, {
+                type: 'bar', // Changed to 'bar' as 'horizontalBar' is deprecated
+                data: {
+                    labels: @Html.Raw(Json.Serialize(Model.Rooms)),
+                    datasets: [{
+                        label: 'Utilization',
+                        data: @Html.Raw(Json.Serialize(Model.RoomUtilization)),
+                        backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Added to make the bar chart horizontal
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+}

@@ -7,5 +7,6 @@
         public string Name { get; set; } = null!;
         public int SeatCapacity { get; set; }
         public bool? IsActive { get; set; }
+        public int? RoomUtilazation { get; set; }
     }
 }

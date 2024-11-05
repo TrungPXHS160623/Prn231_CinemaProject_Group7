@@ -20,6 +20,12 @@ namespace Prn231_CinemaProject_Group7.Controllers
             var categories = await _categoryRepository.GetAllCategories();
             return Ok(categories);
         }
+        [HttpGet("GetMovieCountByCategories")]
+        public async Task<IActionResult> GetMovieCountByCategories()
+        {
+            var categories = await _categoryRepository.GetMovieCountByCategories();
+            return Ok(categories);
+        }
         [HttpGet("GetCategoryById/{id}")]
         public IActionResult GetCategory(int id)
         {
@@ -33,6 +39,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
                 return Ok(cate);
             }
         }
+        
         [HttpPut("UpdateCategory/{id}")]
         public IActionResult UpdateCategory(int id, CategoryDTO categoryDTO)
         {

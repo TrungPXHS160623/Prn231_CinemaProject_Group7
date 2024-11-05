@@ -1,15 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos;
 using System.ComponentModel.Design;
 
 namespace Prn231_CinemaProject_Group7.Repository
 {
     public class RoomRepository : IRoomRepository
     {
-        private readonly Prn231_ProjectContext dbContext;
+        private readonly Prn231_Project_FinalContext dbContext;
 
-        public RoomRepository(Prn231_ProjectContext _dbContext)
+        public RoomRepository(Prn231_Project_FinalContext _dbContext)
         {
             dbContext = _dbContext;
         }
@@ -50,10 +51,21 @@ namespace Prn231_CinemaProject_Group7.Repository
             return false;
         }
 
-        public async Task<List<Room>> GetActiveRooms()
+        public async Task<List<RoomDtos>> GetActiveRooms()
         {
             return await dbContext.Rooms
                 .Where(r => r.IsActive == true)
+                .Include(r => r.Showtimes)
+                .ThenInclude(st => st.OrderDetails)
+                .Select(r => new RoomDtos
+                {
+                    RoomId = r.RoomId,
+                    IsActive = r.IsActive,
+                    Name = r.Name,
+                    SeatCapacity = r.SeatCapacity,
+                    TheaterId = r.TheaterId,
+                    RoomUtilazation = r.Showtimes.SelectMany(st => st.OrderDetails).Count()
+                })
                 .ToListAsync();
         }
 

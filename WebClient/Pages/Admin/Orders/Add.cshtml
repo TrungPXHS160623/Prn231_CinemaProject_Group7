@@ -11,7 +11,13 @@
             <form method="post">
                 <div class="form-group">
                     <label asp-for="Order.CustomerId" class="control-label"></label>
-                    <input asp-for="Order.CustomerId" class="form-control" type="number" />
+                    <select asp-for="Order.CustomerId" class="form-control">
+                        <option value="">Select Customer</option>
+                        @* @foreach (var customer in Model.Customers)
+                        {
+                            <option value="@customer.CustomerId">@customer.FirstName @customer.LastName</option>
+                        } *@
+                    </select>
                     <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -26,17 +32,35 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="Order.StatusId" class="control-label"></label>
-                    <input asp-for="Order.StatusId" class="form-control" type="number" />
+                    <select asp-for="Order.StatusId" class="form-control">
+                        <option value="">Select Status</option>
+                        @foreach (var status in Model.Statuses)
+                        {
+                            <option value="@status.StatusId">@status.StatusName</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.StatusId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Order.CouponId" class="control-label"></label>
-                    <input asp-for="Order.CouponId" class="form-control" type="number" />
+                    <select asp-for="Order.CouponId" class="form-control">
+                        <option value="">Select Coupon</option>
+                        @foreach (var coupon in Model.Coupons)
+                        {
+                            <option value="@coupon.">@coupon.Code</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.CouponId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Order.GiftCardId" class="control-label"></label>
-                    <input asp-for="Order.GiftCardId" class="form-control" type="number" />
+                    <select asp-for="Order.GiftCardId" class="form-control">
+                        <option value="">Select Gift Card</option>
+                        @foreach (var giftCard in Model.GiftCards)
+                        {
+                            <option value="@giftCard.">@giftCard.Code</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
@@ -49,9 +73,13 @@
                 <div id="orderConcessions">
                     <div class="form-group">
                         <label>Concession ID</label>
-                        <input name="Order.OrderConcessions[0].ConcessionId" class="form-control" type="number" />
-                        <label>Price</label>
-                        <input name="Order.OrderConcessions[0].Price" class="form-control" type="number" />
+                        <select name="Order.OrderConcessions[0].ConcessionId" class="form-control">
+                            <option value="">Select Concession</option>
+                            @foreach (var concession in Model.Concessions)
+                            {
+                                <option value="@concession.ProductId">@concession.ProductName</option>
+                            }
+                        </select>
                         <label>Quantity</label>
                         <input name="Order.OrderConcessions[0].Quantity" class="form-control" type="number" />
                     </div>
@@ -65,8 +93,6 @@
                         <input name="Order.OrderDetails[0].ShowtimeId" class="form-control" type="number" />
                         <label>Seat ID</label>
                         <input name="Order.OrderDetails[0].SeatId" class="form-control" type="number" />
-                        <label>Price</label>
-                        <input name="Order.OrderDetails[0].Price" class="form-control" type="number" />
                         <label>Quantity</label>
                         <input name="Order.OrderDetails[0].Quantity" class="form-control" type="number" />
                     </div>
@@ -91,13 +117,14 @@
             const newConcession = document.createElement('div');
             newConcession.classList.add('form-group');
             newConcession.innerHTML = `
-                        <label>Concession ID</label>
-                        <input name="Order.OrderConcessions[${concessionIndex}].ConcessionId" class="form-control" type="number" />
-                        <label>Price</label>
-                        <input name="Order.OrderConcessions[${concessionIndex}].Price" class="form-control" type="number" />
-                        <label>Quantity</label>
-                        <input name="Order.OrderConcessions[${concessionIndex}].Quantity" class="form-control" type="number" />
-                    `;
+            <h4>Order Concessions ${concessionIndex}</h4>
+            <label>Concession ID</label>
+            <input name="Order.OrderConcessions[${concessionIndex}].ConcessionId" class="form-control" type="number" />
+            <label>Price</label>
+            <input name="Order.OrderConcessions[${concessionIndex}].Price" class="form-control" type="number" />
+            <label>Quantity</label>
+            <input name="Order.OrderConcessions[${concessionIndex}].Quantity" class="form-control" type="number" />
+                            `;
             container.appendChild(newConcession);
             concessionIndex++;
         }
@@ -107,15 +134,16 @@
             const newDetail = document.createElement('div');
             newDetail.classList.add('form-group');
             newDetail.innerHTML = `
-                        <label>Showtime ID</label>
-                        <input name="Order.OrderDetails[${detailIndex}].ShowtimeId" class="form-control" type="number" />
-                        <label>Seat ID</label>
-                        <input name="Order.OrderDetails[${detailIndex}].SeatId" class="form-control" type="number" />
-                        <label>Price</label>
-                        <input name="Order.OrderDetails[${detailIndex}].Price" class="form-control" type="number" />
-                        <label>Quantity</label>
-                        <input name="Order.OrderDetails[${detailIndex}].Quantity" class="form-control" type="number" />
-                    `;
+            <h4>Order Details ${detailIndex}</h4>
+            <label>Showtime ID</label>
+            <input name="Order.OrderDetails[${detailIndex}].ShowtimeId" class="form-control" type="number" />
+            <label>Seat ID</label>
+            <input name="Order.OrderDetails[${detailIndex}].SeatId" class="form-control" type="number" />
+            <label>Price</label>
+            <input name="Order.OrderDetails[${detailIndex}].Price" class="form-control" type="number" />
+            <label>Quantity</label>
+            <input name="Order.OrderDetails[${detailIndex}].Quantity" class="form-control" type="number" />
+                            `;
             container.appendChild(newDetail);
             detailIndex++;
         }

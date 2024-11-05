@@ -25,6 +25,8 @@ namespace Prn231_CinemaProject_Group7.Repository
                     Price = OrderConcession.Price
                 };
                 _context.OrderConcessions.Add(data);
+                var concession = _context.Concessions.Find(OrderConcession.ConcessionId);
+                concession.StockQuantity -= OrderConcession.Quantity;
                 _context.SaveChanges();
                 return await Task.FromResult(true);
             }
@@ -39,6 +41,8 @@ namespace Prn231_CinemaProject_Group7.Repository
             try
             {
                 var OrderConcession = _context.OrderConcessions.Find(id);
+                var concession = _context.Concessions.Find(OrderConcession.ConcessionId);
+                concession.StockQuantity += OrderConcession.Quantity;
                 _context.OrderConcessions.Remove(OrderConcession);
                 _context.SaveChanges();
                 return await Task.FromResult(true);
@@ -66,8 +70,11 @@ namespace Prn231_CinemaProject_Group7.Repository
                 var data = _context.OrderConcessions.Find(id);
                 data.OrderId = OrderConcession.OrderId;
                 data.ConcessionId = OrderConcession.ConcessionId;
+                var concession = _context.Concessions.Find(OrderConcession.ConcessionId);
+                concession.StockQuantity += data.Quantity - OrderConcession.Quantity;
                 data.Quantity = OrderConcession.Quantity;
                 data.Price = OrderConcession.Price;
+                
                 _context.SaveChanges();
                 return await Task.FromResult(true);
             }

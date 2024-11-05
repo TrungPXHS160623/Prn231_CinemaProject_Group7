@@ -342,7 +342,7 @@ namespace Prn231_CinemaProject_Group7.Models
             {
                 entity.Property(e => e.IsAvailable).HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.Row).HasMaxLength(5);
+                entity.Property(e => e.RowName).HasMaxLength(5);
 
                 entity.Property(e => e.SeatNumber).HasMaxLength(10);
 

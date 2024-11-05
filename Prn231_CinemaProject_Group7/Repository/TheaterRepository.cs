@@ -6,9 +6,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 {
     public class TheaterRepository : ITheaterRepository
     {
-        private readonly Prn231_ProjectContext dbContext;
+        private readonly Prn231_Project_FinalContext dbContext;
 
-        public TheaterRepository(Prn231_ProjectContext _dbContext)
+        public TheaterRepository(Prn231_Project_FinalContext _dbContext)
         {
             dbContext = _dbContext;
         }
@@ -53,7 +53,7 @@ namespace Prn231_CinemaProject_Group7.Repository
         {
             return await dbContext.Theaters.FindAsync(theaterId);
         }
-
+        
         // Lấy danh sách tất cả các rạp chiếu
         public async Task<List<Theater>> GetAllTheaters()
         {
