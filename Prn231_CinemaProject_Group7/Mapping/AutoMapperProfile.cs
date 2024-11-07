@@ -3,6 +3,7 @@ using Prn231_CinemaProject_Group7.Models;
 using Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos;
 using Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos;
 using Prn231_CinemaProject_Group7.Models.Dtos.SeatTypeDtos;
+using Prn231_CinemaProject_Group7.Models.Dtos.ShowtimeDtos;
 using Prn231_CinemaProject_Group7.Models.Dtos.TheaterDtos;
 
 namespace Prn231_CinemaProject_Group7.Mapping
@@ -26,6 +27,12 @@ namespace Prn231_CinemaProject_Group7.Mapping
             CreateMap<Theater, TheaterDtocs>().ReverseMap();
             CreateMap<AddTheaterRequestDto, Theater>().ReverseMap();
             CreateMap<UpdateTheaterRequestDto, Theater>().ReverseMap();
+
+            CreateMap<Showtime, ShowtimeDto>().ReverseMap();
+            CreateMap<AddShowtimeRequestDto, Showtime>().ReverseMap();
+            CreateMap<UpdateShowtimeRequest, Showtime>().ReverseMap();
+
+
         }
     }
 }
