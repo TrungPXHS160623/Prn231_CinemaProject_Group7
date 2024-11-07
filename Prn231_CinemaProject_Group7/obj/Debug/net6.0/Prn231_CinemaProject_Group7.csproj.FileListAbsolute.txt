@@ -137,3 +137,11 @@ D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\
 D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\Prn231_C.21CB4414.Up2Date
 D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\Prn231_CinemaProject_Group7.genruntimeconfig.cache
 D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\obj\Debug\net6.0\ref\Prn231_CinemaProject_Group7.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\API\Prn231_CinemaProject_Group7\Prn231_CinemaProject_Group7\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll

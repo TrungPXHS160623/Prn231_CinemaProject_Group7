@@ -13,10 +13,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.35",
           "Microsoft.EntityFrameworkCore.Design": "6.0.33",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
-          "Microsoft.EntityFrameworkCore.Tools": "6.0.33",
-          "Microsoft.IdentityModel.Tokens": "6.35.0",
-          "Swashbuckle.AspNetCore": "6.5.0",
-          "System.IdentityModel.Tokens.Jwt": "6.35.0"
+          "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
+          "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
           "Prn231_CinemaProject_Group7.dll": {}
@@ -202,11 +200,6 @@
             "assemblyVersion": "6.0.33.0",
             "fileVersion": "6.0.3324.36105"
           }
-        }
-      },
-      "Microsoft.EntityFrameworkCore.Tools/6.0.33": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "6.0.33"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {},
@@ -726,13 +719,6 @@
       "sha512": "sha512-e/b7Kl5J0l97lKVWtOzEVEP2W7oYJRKDjfqpxYNqpyiYV9A+TQlszIjyHU2BL9BBeAFIulElJlK1COWGulIfCQ==",
       "path": "microsoft.entityframeworkcore.sqlserver/6.0.33",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.6.0.33.nupkg.sha512"
-    },
-    "Microsoft.EntityFrameworkCore.Tools/6.0.33": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-qF15mub7CfSoHiFg4mW0vR4Js2hSWBYUKZrEVkpy26GBpKT+M83v4fr1rDV5uopofa27JaEd65VscxkNMuaQqQ==",
-      "path": "microsoft.entityframeworkcore.tools/6.0.33",
-      "hashPath": "microsoft.entityframeworkcore.tools.6.0.33.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
       "type": "package",
