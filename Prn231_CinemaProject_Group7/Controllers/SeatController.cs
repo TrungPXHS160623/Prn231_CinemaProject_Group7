@@ -59,7 +59,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
             if (seat == null)
                 return NotFound();
 
-            var deleted = await seatRepository.DeleteSeat(seat);
+            var deleted = await seatRepository.DeleteSeat(id);
             return deleted ? Ok() : StatusCode(StatusCodes.Status500InternalServerError);
         }
 

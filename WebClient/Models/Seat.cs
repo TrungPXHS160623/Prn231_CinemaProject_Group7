@@ -16,7 +16,7 @@ namespace WebClient.Models
         public string SeatNumber { get; set; } = null!;
         public string Row { get; set; } = null!;
         public bool? IsAvailable { get; set; }
-
+        public decimal? Price {  get; set; }
         public virtual Room Room { get; set; } = null!;
         public virtual SeatType SeatType { get; set; } = null!;
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.ShowtimeDtos;
 
 namespace Prn231_CinemaProject_Group7.Repository
 {
@@ -114,7 +115,24 @@ namespace Prn231_CinemaProject_Group7.Repository
 
             return showtimes;
         }
+        public async Task<List<ShowtimeDto>> GetShowTimeByMovieTheater(int movieId, int theaterId)
+        {
+            var showtimes = await dbContext.Showtimes
+                .Include(s => s.Room)
+                .Where(s => s.MovieId == movieId && s.IsActive == true && s.Room.Theater.TheaterId == theaterId)
+                .Select(x => new ShowtimeDto {
+                    ShowtimeId = x.ShowtimeId,
+                    MovieId = x.MovieId,
+                    RoomId = x.RoomId,
+                    StartTime = x.StartTime,
+                    EndTime = x.EndTime,
+                    IsActive = x.IsActive,
+                    RoomeName = x.Room.Name
+                })
+                .ToListAsync();
 
+            return showtimes;
+        }
 
         public async Task<bool> IsShowtimeAvailable(int roomId, DateTime startTime, DateTime endTime)
         {

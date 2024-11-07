@@ -9,5 +9,7 @@
         public string RowName { get; set; } = null!;
         public bool? IsAvailable { get; set; }
         public bool? IsActive { get; set; }
+        public string? TypeName { get; set; }
+        public decimal? Price { get; set; }
     }
 }

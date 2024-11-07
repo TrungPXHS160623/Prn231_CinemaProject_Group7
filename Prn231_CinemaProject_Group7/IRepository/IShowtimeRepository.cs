@@ -1,4 +1,5 @@
 ﻿using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.ShowtimeDtos;
 
 namespace Prn231_CinemaProject_Group7.IRepository
 {
@@ -13,6 +14,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<List<Showtime>> GetActiveShowtimes(); // Lấy danh sách các suất chiếu đang hoạt động
         Task<List<Showtime>> GetShowtimesByRoomId(int roomId); // Lấy các suất chiếu theo ID phòng
         Task<List<Showtime>> GetShowtimesByMovieId(int movieId); // Lấy các suất chiếu theo ID phim
+        Task<List<ShowtimeDto>> GetShowTimeByMovieTheater(int movieId, int theaterId);
         Task<bool> IsShowtimeAvailable(int roomId, DateTime startTime, DateTime endTime); // Kiểm tra suất chiếu có trùng thời gian
         Task<bool> ShowtimeExists(int showtimeId); // Kiểm tra suất chiếu có tồn tại
         Task<List<Showtime>> GetShowtimesByDate(DateTime date); // Lấy các suất chiếu theo ngày

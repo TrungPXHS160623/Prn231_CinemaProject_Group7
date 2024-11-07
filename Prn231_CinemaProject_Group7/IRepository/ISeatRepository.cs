@@ -1,4 +1,5 @@
 ﻿using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos;
 
 namespace Prn231_CinemaProject_Group7.IRepository
 {
@@ -11,13 +12,13 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<Seat> UpdateSeat(Seat seat);
 
         //Xoá ghế theo Id
-        Task<bool> DeleteSeat(Seat seat);
+        Task<bool> DeleteSeat(int seatId);
 
         //Lấy thông tin tất cả các ghế trong 1 phòng chiếu(theo roomid)
         Task<List<Seat>> GetSeatByRoomId(int roomId);
 
         //Lấy ghế theo Id
-        Task<Seat> GetSeatById(int seatId);
+        Task<SeatDto> GetSeatById(int seatId);
 
         //Lấy danh sách ghế theo trạng thái hoạt động
         Task<List<Seat>> GetActiveSeatsByRoomId(int roomId);
@@ -40,7 +41,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<List<Seat>> GetAvailableSeatsByRoomId(int roomId);
 
         // Tìm kiếm ghế theo loại ghế trong một phòng chiếu
-        Task<List<Seat>> GetSeatByShowTime(int showtimeId);
+        Task<List<SeatDto>> GetSeatByShowTime(int showtimeId);
         Task<List<Seat>> SearchSeatsByType(int roomId, int seatTypeId);
     }
 }

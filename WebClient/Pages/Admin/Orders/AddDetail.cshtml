@@ -41,11 +41,6 @@
                     <input asp-for="OrderDetail.Quantity" class="form-control" type="number" />
                     <span asp-validation-for="OrderDetail.Quantity" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="OrderDetail.Price" class="control-label"></label>
-                    <input asp-for="OrderDetail.Price" class="form-control" type="number" step="1000" />
-                    <span asp-validation-for="OrderDetail.Price" class="text-danger"></span>
-                </div>
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a asp-page="./List" class="btn btn-secondary">Cancel</a>
             </form>
@@ -65,9 +60,9 @@
                         var movieSelect = $('#SelectedMovieId');
                         movieSelect.empty();
                         movieSelect.append($('<option>', { value: '', text: 'Select a movie' }));
-                        $.each(data, function (index, movie) {
+                        data.forEach(function (movie) {
                             movieSelect.append($('<option>', {
-                                value: movie.id,
+                                value: movie.movieId,
                                 text: movie.title
                             }));
                         });
@@ -85,14 +80,16 @@
                 var movieId = $(this).val();
                 if (movieId && theaterId) {
                     // Fetch showtimes based on the selected movie and theater
-                    $.get(`http://localhost:5280/api/Seat/GetShowTimeByMovieTheater/${movieId}/${theaterId}`, function (data) {
+                    $.get(`http://localhost:5280/api/Showtime/GetShowTimeByMovieTheater/${movieId}/${theaterId}`, function (data) {
                         var showtimeSelect = $('#OrderDetail_ShowtimeId');
                         showtimeSelect.empty();
                         showtimeSelect.append($('<option>', { value: '', text: 'Select a showtime' }));
                         $.each(data, function (index, showtime) {
+                            var startTime = new Date(showtime.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                            var endTime = new Date(showtime.endTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
                             showtimeSelect.append($('<option>', {
-                                value: showtime.id,
-                                text: showtime.time
+                                value: showtime.showtimeId,
+                                text: startTime + " - " + endTime + " - " + showtime.roomeName
                             }));
                         });
                         $('#showtime-select').show();
@@ -113,8 +110,8 @@
                         seatSelect.append($('<option>', { value: '', text: 'Select a seat' }));
                         $.each(data, function (index, seat) {
                             seatSelect.append($('<option>', {
-                                value: seat.id,
-                                text: seat.number
+                                value: seat.seatId,
+                                text: seat.seatNumber + " - " + seat.typeName
                             }));
                         });
                         $('#seat-select').show();

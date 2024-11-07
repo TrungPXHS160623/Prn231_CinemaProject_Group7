@@ -21,7 +21,7 @@ namespace WebClient.Pages.Admin.News
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            var concession = await _httpClient.GetFromJsonAsync<WebClient.Models.News>($"http://localhost:5280/api/Concessions/GetNew/{id}");
+            var concession = await _httpClient.GetFromJsonAsync<WebClient.Models.News>($"http://localhost:5280/api/News/GetNew/{id}");
             if (concession == null)
             {
                 return NotFound();

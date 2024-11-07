@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Hosting;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos;
 
 namespace Prn231_CinemaProject_Group7.Repository
 {
@@ -50,9 +52,9 @@ namespace Prn231_CinemaProject_Group7.Repository
             return myseat;
         }
 
-        public async Task<bool> DeleteSeat(Seat seat)
+        public async Task<bool> DeleteSeat(int seatId)
         {
-            var myseat = await dbContext.Seats.FirstOrDefaultAsync(s => s.SeatId == seat.SeatId);
+            var myseat = await dbContext.Seats.FirstOrDefaultAsync(s => s.SeatId == seatId);
             if (myseat != null)
             {
                 dbContext.Seats.Remove(myseat);
@@ -68,11 +70,25 @@ namespace Prn231_CinemaProject_Group7.Repository
             var list  = dbContext.Seats.Where(s => s.RoomId == roomId && s.IsActive == true).ToListAsync();
             return list;
         }
-        public async Task<List<Seat>> GetSeatByShowTime(int showtimeId)
+        public async Task<List<SeatDto>> GetSeatByShowTime(int showtimeId)
         {
             // Lọc và lấy danh sách ghế theo showtimeId
             var seats = await dbContext.Seats
-                .Where(s => s.Room.Showtimes.Any(st => st.ShowtimeId == showtimeId))
+                .Include(s => s.SeatType)
+                .Where(s => s.Room.Showtimes.Any(st => st.ShowtimeId == showtimeId)
+                && s.IsActive != false
+                && s.IsAvailable != false)
+                .Select(s => new SeatDto
+                {
+                    SeatId = s.SeatId,
+                    RoomId = s.RoomId,
+                    SeatTypeId = s.SeatTypeId,
+                    SeatNumber = s.SeatNumber,
+                    RowName = s.RowName,
+                    IsAvailable = s.IsAvailable,
+                    IsActive = s.IsActive,
+                    TypeName = s.SeatType.TypeName
+                })
                 .ToListAsync();
             return seats;
         }
@@ -83,11 +99,22 @@ namespace Prn231_CinemaProject_Group7.Repository
             return list;
         }
 
-        public async Task<Seat> GetSeatById(int seatId)
+        public async Task<SeatDto> GetSeatById(int seatId)
         {
             var seat = await dbContext.Seats
            .Include(s => s.Room)
            .Include(s => s.SeatType)
+           .Select(s => new SeatDto
+           {
+               SeatId = s.SeatId,
+               RoomId = s.RoomId,
+               SeatTypeId = s.SeatTypeId,
+               SeatNumber = s.SeatNumber,
+               RowName = s.RowName,
+               IsAvailable = s.IsAvailable,
+               IsActive = s.IsActive,
+               Price = s.SeatType.Price,
+           })
            .SingleOrDefaultAsync(s => s.SeatId == seatId);
 
             if (seat == null)

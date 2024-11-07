@@ -24,9 +24,9 @@ namespace Prn231_CinemaProject_Group7.Controllers
         }
 
         [HttpGet("GetNew/{id}")]
-        public IActionResult GetNews(int id)
+        public async Task<IActionResult> GetNews(int id)
         {
-            var data = repository.GetNews(id);
+            var data = await repository.GetNews(id);
             return Ok(data);
         }
 

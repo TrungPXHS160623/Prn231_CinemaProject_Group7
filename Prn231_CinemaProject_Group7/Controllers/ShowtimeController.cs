@@ -105,6 +105,12 @@ namespace Prn231_CinemaProject_Group7.Controllers
             var showtimes = await showtimeRepository.GetShowtimesByMovieId(movieId);
             return Ok(mapper.Map<List<ShowtimeDto>>(showtimes));
         }
+        [HttpGet("GetShowTimeByMovieTheater/{movieId}/{theaterId}")]
+        public async Task<IActionResult> GetShowTimeByMovieTheater(int movieId, int theaterId)
+        {
+            var showtimes = await showtimeRepository.GetShowTimeByMovieTheater(movieId,theaterId);
+            return Ok(mapper.Map<List<ShowtimeDto>>(showtimes));
+        }
 
         // 10. Check if a showtime is available
         [HttpGet("availability")]
