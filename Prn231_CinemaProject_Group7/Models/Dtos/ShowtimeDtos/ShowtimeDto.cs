@@ -9,5 +9,6 @@
         public DateTime EndTime { get; set; }
         public bool? IsActive { get; set; }
         public string? RoomeName { get; set; }
+        public int? TheaterId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Prn231_CinemaProject_Group7.IRepository
         Task<Showtime?> UpdateShowtime(Showtime showtime); // Cập nhật thông tin suất chiếu
         Task<bool> DeleteShowtime(int showtimeId); // Xóa suất chiếu theo ID
         Task<Showtime?> DeactivateShowtime(int showtimeId); // Vô hiệu hóa suất chiếu theo ID
-        Task<Showtime?> GetShowtimeById(int showtimeId); // Lấy thông tin suất chiếu theo ID
+        Task<ShowtimeDto?> GetShowtimeById(int showtimeId); // Lấy thông tin suất chiếu theo ID
         Task<List<Showtime>> GetAllShowtimes(); // Lấy danh sách tất cả suất chiếu
         Task<List<Showtime>> GetActiveShowtimes(); // Lấy danh sách các suất chiếu đang hoạt động
         Task<List<Showtime>> GetShowtimesByRoomId(int roomId); // Lấy các suất chiếu theo ID phòng

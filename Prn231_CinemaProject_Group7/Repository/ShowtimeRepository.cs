@@ -87,10 +87,20 @@ namespace Prn231_CinemaProject_Group7.Repository
             return await dbContext.Showtimes.ToListAsync();
         }
 
-        public async Task<Showtime?> GetShowtimeById(int showtimeId)
+        public async Task<ShowtimeDto> GetShowtimeById(int showtimeId)
         {
             // Tìm suất chiếu theo ID
             var showtime = await dbContext.Showtimes
+                .Select(st => new ShowtimeDto
+                {
+                    ShowtimeId = st.ShowtimeId,
+                    MovieId = st.MovieId,
+                    RoomId = st.RoomId,
+                    StartTime = st.StartTime,
+                    EndTime = st.EndTime,
+                    IsActive = st.IsActive,
+                    TheaterId = st.Room.TheaterId
+                })
                 .FirstOrDefaultAsync(s => s.ShowtimeId == showtimeId);
 
             return showtime;

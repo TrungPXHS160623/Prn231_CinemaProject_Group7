@@ -11,7 +11,6 @@ namespace WebClient.Models
         public int SeatId { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
-
         public virtual Order Order { get; set; } = null!;
         public virtual Seat Seat { get; set; } = null!;
         public virtual Showtime Showtime { get; set; } = null!;

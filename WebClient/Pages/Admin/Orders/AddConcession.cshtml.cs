@@ -30,11 +30,7 @@ namespace WebClient.Pages.Admin.Orders
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-            var couponResponse = _httpClient.GetFromJsonAsync<Concession>($"http://localhost:5280/api/Concessions/GetConcession{OrderConcession.ConcessionId}").Result;
+            var couponResponse = _httpClient.GetFromJsonAsync<Concession>($"http://localhost:5280/api/Concessions/GetConcession/{OrderConcession.ConcessionId}").Result;
             if (couponResponse != null)
             {
                 OrderConcession.Price = couponResponse.Price * OrderConcession.Quantity;

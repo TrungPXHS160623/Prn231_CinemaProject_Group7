@@ -26,7 +26,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                     Price = OrderDetail.Price
                 };
                 _context.OrderDetails.Add(data);
-                _context.SaveChanges();
+                //_context.SaveChanges();
                 return await Task.FromResult(true);
             }
             catch (Exception)

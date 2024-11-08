@@ -16,7 +16,7 @@ namespace WebClient.Models
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public bool? IsActive { get; set; }
-
+        public int TheaterId { get; set; }
         public virtual Movie Movie { get; set; } = null!;
         public virtual Room Room { get; set; } = null!;
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net.Http.Json;
 using WebClient.Models;
 
 namespace WebClient.Pages.Admin.Orders
@@ -14,7 +15,7 @@ namespace WebClient.Pages.Admin.Orders
             _httpClient = httpClient;
         }
         [BindProperty]
-        public OrderDetail OrderDetail { get; set; }
+        public OrderDetail OrderDetail { get; set; } = new OrderDetail();
 
         [BindProperty]
         public int SelectedTheaterId { get; set; }
@@ -48,15 +49,16 @@ namespace WebClient.Pages.Admin.Orders
 
             if (response.IsSuccessStatusCode)
             {
-                response = await _httpClient.PostAsJsonAsync($"http://localhost:5280/api/Seat/{OrderDetail.SeatId}/reserve", OrderDetail);
+                response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/Seat/{OrderDetail.SeatId}/reserve", new {});
                 if(response.IsSuccessStatusCode)
+
                     return RedirectToPage("./List");
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while adding the Detail.");
             }
-            return RedirectToPage();
+            return RedirectToPage("./List");
         }
     }
 }

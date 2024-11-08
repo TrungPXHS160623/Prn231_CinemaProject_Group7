@@ -15,6 +15,7 @@ namespace WebClient.Pages.Admin.Orders
 
         [BindProperty]
         public OrderConcession OrderConcession { get; set; }
+        public IList<Concession> Concessions { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
@@ -23,19 +24,19 @@ namespace WebClient.Pages.Admin.Orders
             {
                 return NotFound();
             }
-
             OrderConcession = concession;
-
+            Concessions = await _httpClient.GetFromJsonAsync<IList<Concession>>("http://localhost:5280/api/Concessions/GetAllConcessions");
+            Concessions = Concessions.Where(c => c.IsActive == true).ToList();
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            var couponResponse = _httpClient.GetFromJsonAsync<Concession>($"http://localhost:5280/api/Concessions/GetConcession/{OrderConcession.ConcessionId}").Result;
+            if (couponResponse != null)
             {
-                return Page();
+                OrderConcession.Price = couponResponse.Price * OrderConcession.Quantity;
             }
-
             var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/OrderConcessions/UpdateOrderConcession/{OrderConcession.OrderConcessionId}", OrderConcession);
 
             if (response.IsSuccessStatusCode)
