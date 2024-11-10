@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequestDtos",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.LoginRequestDtos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRequestDto",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CategoryController",
     "Method": "ChangeStatusMovie",
     "RelativePath": "api/Category/ChangeStatus/{id}",
@@ -1192,6 +1224,201 @@
         "Name": "typeName",
         "Type": "System.String",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "AddShowtime",
+    "RelativePath": "api/Showtime",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.ShowtimeDtos.AddShowtimeRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetAllShowtimes",
+    "RelativePath": "api/Showtime",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "UpdateShowtime",
+    "RelativePath": "api/Showtime/{showtimeId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "showtimeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateDto",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.ShowtimeDtos.UpdateShowtimeRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "DeleteShowtime",
+    "RelativePath": "api/Showtime/{showtimeId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "showtimeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetShowtimeById",
+    "RelativePath": "api/Showtime/{showtimeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "showtimeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "DeactivateShowtime",
+    "RelativePath": "api/Showtime/{showtimeId}/deactivate",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "showtimeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "ShowtimeExists",
+    "RelativePath": "api/Showtime/{showtimeId}/exists",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "showtimeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetActiveShowtimes",
+    "RelativePath": "api/Showtime/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "IsShowtimeAvailable",
+    "RelativePath": "api/Showtime/availability",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "startTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "endTime",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetShowtimesByDate",
+    "RelativePath": "api/Showtime/date/{date}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetShowtimesByMovieId",
+    "RelativePath": "api/Showtime/movie/{movieId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "movieId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+    "Method": "GetShowtimesByRoomId",
+    "RelativePath": "api/Showtime/room/{roomId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
