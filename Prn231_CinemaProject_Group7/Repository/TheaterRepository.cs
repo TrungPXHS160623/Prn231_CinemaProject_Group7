@@ -77,5 +77,16 @@ namespace Prn231_CinemaProject_Group7.Repository
         {
             return await dbContext.Rooms.Where(r => r.TheaterId == theaterId).ToListAsync();
         }
+
+        public async Task<List<Theater>> GetTheaterByMovieId(int movieId)
+        {
+            return await dbContext.Movies
+                .Where(m => m.MovieId == movieId)
+                .SelectMany(m => m.Showtimes)
+                .Select(s => s.Room)
+                .Select(r => r.Theater)
+                .Distinct()
+                .ToListAsync();
+        }
     }
 }

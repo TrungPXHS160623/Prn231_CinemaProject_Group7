@@ -1,0 +1,235 @@
+﻿@page
+@model WebClient.Pages.Cinema.OrderModel
+@{
+}
+
+<form method="post" id="orderForm">
+    <input type="hidden" asp-for="Order.ShowtimeId" name="ShowtimeId" id="ShowtimeId" />
+    <input type="hidden" asp-for="Order.SeatId" name="SeatId" id="SeatId" />
+    <div class="form-group">
+        <label asp-for="Order.CouponId" class="control-label"></label>
+        <select asp-for="Order.CouponId" class="form-control">
+            <option value="">Select Coupon</option>
+            @foreach (var coupon in Model.Coupons)
+            {
+                <option value="@coupon.">@coupon.Code</option>
+            }
+        </select>
+        <span asp-validation-for="Order.CouponId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.GiftCardId" class="control-label"></label>
+        <select asp-for="Order.GiftCardId" class="form-control">
+            <option value="">Select Gift Card</option>
+            @foreach (var giftCard in Model.GiftCards)
+            {
+                <option value="@giftCard.">@giftCard.Code</option>
+            }
+        </select>
+        <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
+    </div>
+    <button type="submit" id="submitOrder" style="display:none;">Submit Order</button>
+</form>
+
+<button id="backButton" style="display:none;">Go Back</button>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const movieId = urlParams.get('movieId');
+            const theaterId = urlParams.get('theaterId');
+            const contentDiv = document.getElementById('content');
+            const orderForm = document.getElementById('orderForm');
+            const showtimeInput = document.getElementById('ShowtimeId');
+            const seatInput = document.getElementById('SeatId');
+            const submitOrderButton = document.getElementById('submitOrder');
+            const backButton = document.getElementById('backButton');
+
+            let historyStack = [];
+
+            if (movieId) {
+                fetch(`http://localhost:5280/api/Theater/GetTheaterByMovieId/${movieId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        contentDiv.innerHTML = `<h2>Theaters showing the movie</h2><ul>${data.map(theater => `<li><a href="#" class="theater-link" data-theater-id="${theater.theaterId}">${theater.name}</a></li>`).join('')}</ul>`;
+                        attachTheaterLinks();
+                    })
+                    .catch(error => {
+                        contentDiv.innerHTML = `<p>Error loading theaters: ${error}</p>`;
+                    });
+            } else if (theaterId) {
+                fetch(`http://localhost:5280/api/Movie/GetMovieByTheater/${theaterId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        contentDiv.innerHTML = `<h2>Movies showing at the theater</h2><ul>${data.map(movie => `<li><a href="#" class="movie-link" data-movie-id="${movie.movieId}">${movie.title}</a></li>`).join('')}</ul>`;
+                        attachMovieLinks();
+                    })
+                    .catch(error => {
+                        contentDiv.innerHTML = `<p>Error loading movies: ${error}</p>`;
+                    });
+            } else {
+                contentDiv.innerHTML = `<p>Please provide either a movieId or theaterId in the query string.</p>`;
+            }
+
+            function attachTheaterLinks() {
+                document.querySelectorAll('.theater-link').forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const selectedTheaterId = this.getAttribute('data-theater-id');
+                        historyStack.push(contentDiv.innerHTML);
+                        fetchShowtimes(movieId, selectedTheaterId);
+                        backButton.style.display = 'block';
+                    });
+                });
+            }
+
+            function attachMovieLinks() {
+                document.querySelectorAll('.movie-link').forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const selectedMovieId = this.getAttribute('data-movie-id');
+                        historyStack.push(contentDiv.innerHTML);
+                        fetchShowtimes(selectedMovieId, theaterId);
+                        backButton.style.display = 'block';
+                    });
+                });
+            }
+
+            function fetchShowtimes(movieId, theaterId) {
+                fetch(`http://localhost:5280/api/Showtime/GetShowTimeByMovieTheater/${movieId}/${theaterId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        contentDiv.innerHTML = `<h2>Showtimes</h2><ul>${data.map(showtime => `<li><a href="#" class="showtime-link" data-showtime-id="${showtime.showtimeId}">${new Date(showtime.startTime).toLocaleString()} - ${new Date(showtime.endTime).toLocaleString()} - ${showtime.roomName}</a></li>`).join('')}</ul>`;
+                        attachShowtimeLinks();
+                    })
+                    .catch(error => {
+                        contentDiv.innerHTML = `<p>Error loading showtimes: ${error}</p>`;
+                    });
+            }
+
+            function attachShowtimeLinks() {
+                document.querySelectorAll('.showtime-link').forEach(link => {
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const selectedShowtimeId = this.getAttribute('data-showtime-id');
+                        showtimeInput.value = selectedShowtimeId;
+                        historyStack.push(contentDiv.innerHTML);
+                        fetchSeats(selectedShowtimeId);
+                        backButton.style.display = 'block';
+                    });
+                });
+            }
+
+            function fetchSeats(showtimeId) {
+                fetch(`http://localhost:5280/api/Seat/GetSeatByShowTime/${showtimeId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        const rows = [...new Set(data.map(seat => seat.rowName))].sort();
+                        const columns = [...new Set(data.map(seat => seat.seatNumber.replace(/^\D+/g, '')))].sort((a, b) => a - b);
+                        contentDiv.innerHTML = `<h2>Seats</h2><div class="seat-container">${generateSeatGrid(rows, columns, data)}</div>`;
+                        applySeatStyles();
+                        attachSeatLinks();
+                    })
+                    .catch(error => {
+                        contentDiv.innerHTML = `<p>Error loading seats: ${error}</p>`;
+                    });
+            }
+
+            function generateSeatGrid(rows, columns, seats) {
+                let grid = '<div class="seat-grid">';
+                grid += '<div class="seat-row"><div class="seat-label"></div>' + columns.map(col => `<div class="seat-label">${col}</div>`).join('') + '</div>';
+                rows.forEach(row => {
+                    grid += `<div class="seat-row"><div class="seat-label">${row}</div>`;
+                    columns.forEach(col => {
+                        const seat = seats.find(seat => seat.rowName === row && seat.seatNumber.endsWith(col));
+                        if (seat) {
+                            grid += `<div class="seat-box ${seat.typeName.toLowerCase()}" data-seat-id="${seat.seatId}" title="${seat.seatNumber}">${seat.seatNumber}</div>`;
+                        } else {
+                            grid += '<div class="seat-box empty"></div>';
+                        }
+                    });
+                    grid += '</div>';
+                });
+                grid += '</div>';
+                return grid;
+            }
+
+            function attachSeatLinks() {
+                document.querySelectorAll('.seat-box').forEach(box => {
+                    if (!box.classList.contains('empty')) {
+                        box.addEventListener('click', function () {
+                            seatInput.value = this.getAttribute('data-seat-id');
+                            submitOrderButton.click();
+                        });
+                    }
+                });
+            }
+
+            function applySeatStyles() {
+                const style = document.createElement('style');
+                style.innerHTML = `
+                            .seat-container {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            .seat-grid {
+                                display: grid;
+                                gap: 5px;
+                            }
+                            .seat-row {
+                                display: flex;
+                            }
+                            .seat-label {
+                                width: 50px;
+                                height: 50px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-weight: bold;
+                            }
+                            .seat-box {
+                                width: 50px;
+                                height: 50px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                border: 1px solid #000;
+                                cursor: pointer;
+                            }
+                            .seat-box.economic {
+                                background-color: #4CAF50; /* Green */
+                            }
+                            .seat-box.vip {
+                                background-color: #FFD700; /* Gold */
+                            }
+                            .seat-box.premium {
+                                background-color: #FF4500; /* OrangeRed */
+                            }
+                            .seat-box.empty {
+                                background-color: #E0E0E0; /* Light Gray */
+                            }
+                        `;
+                document.head.appendChild(style);
+            }
+
+            backButton.addEventListener('click', function () {
+                if (historyStack.length > 0) {
+                    contentDiv.innerHTML = historyStack.pop();
+                    if (historyStack.length === 0) {
+                        backButton.style.display = 'none';
+                    }
+                    reattachEventListeners();
+                }
+            });
+
+            function reattachEventListeners() {
+                attachTheaterLinks();
+                attachMovieLinks();
+                attachShowtimeLinks();
+                attachSeatLinks();
+            }
+        });
+    </script>
+}

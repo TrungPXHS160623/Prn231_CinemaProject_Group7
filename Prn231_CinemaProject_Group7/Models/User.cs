@@ -7,6 +7,8 @@ namespace Prn231_CinemaProject_Group7.Models
     {
         public User()
         {
+            CouponUsers = new HashSet<CouponUser>();
+            GiftCardUsers = new HashSet<GiftCardUser>();
             MovieReviews = new HashSet<MovieReview>();
             Orders = new HashSet<Order>();
         }
@@ -22,6 +24,8 @@ namespace Prn231_CinemaProject_Group7.Models
         public bool? IsActive { get; set; }
         public int? RoleId { get; set; }
 
+        public virtual ICollection<CouponUser> CouponUsers { get; set; }
+        public virtual ICollection<GiftCardUser> GiftCardUsers { get; set; }
         public virtual ICollection<MovieReview> MovieReviews { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }

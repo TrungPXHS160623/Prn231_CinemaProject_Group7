@@ -24,7 +24,7 @@ namespace Prn231_CinemaProject_Group7.Models
         public virtual Coupon? Coupon { get; set; }
         public virtual User Customer { get; set; } = null!;
         public virtual GiftCard? GiftCard { get; set; }
-        public virtual OrderStatus Status { get; set; } = null!;
+        public virtual OrderStatus OrderStatus { get; set; } = null!;
         public virtual ICollection<OrderConcession> OrderConcessions { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }

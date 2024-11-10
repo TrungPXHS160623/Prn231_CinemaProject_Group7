@@ -1,9 +1,11 @@
 ﻿using Prn231_CinemaProject_Group7.Models;
+using System.Net.Http;
 
 namespace Prn231_CinemaProject_Group7.DTO
 {
     public class OrderDTO
     {
+        public int OrderId { get; set; }
         public int CustomerId { get; set; }
         public DateTime? OrderDate { get; set; }
         public decimal TotalAmount { get; set; }
@@ -23,7 +25,7 @@ namespace Prn231_CinemaProject_Group7.DTO
         public decimal TotalAmount { get; set; }
         public bool? IsPaid { get; set; }
         public string PaymentMethod { get; set; } = null!;
-        public OrderStatusDTO Status { get; set; }
+        public OrderStatusDTO OrderStatus { get; set; }
         public CouponInfoDTO? Coupon { get; set; }
         public GiftCardInfoDTO? GiftCard { get; set; }
         public List<OrderConcessionInfoDTO> OrderConcessions { get; set; } = new();

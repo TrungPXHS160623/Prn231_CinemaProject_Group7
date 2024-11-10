@@ -28,10 +28,25 @@ namespace Prn231_CinemaProject_Group7.Controllers
 		public IActionResult GetCoupon(int id)
 		{
 			var data = repository.GetCoupon(id);
-			return Ok(data);
+            if (data == null)
+            {
+                return NotFound();
+            }
+            return Ok(data);
 		}
 
-		[HttpPost("CreateCoupon")]
+        [HttpGet("GetCouponsByUserId/{id}")]
+        public IActionResult GetCouponsByUserId(int id)
+        {
+            var data = repository.GetCouponsByUserId(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
+            return Ok(data);
+        }
+
+        [HttpPost("CreateCoupon")]
 		public IActionResult CreateCoupon(CouponDTO Coupon)
 		{
 			var data = repository.CreateCoupon(Coupon);

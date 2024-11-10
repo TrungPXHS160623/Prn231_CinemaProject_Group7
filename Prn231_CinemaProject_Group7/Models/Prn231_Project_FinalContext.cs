@@ -19,8 +19,10 @@ namespace Prn231_CinemaProject_Group7.Models
         public virtual DbSet<Category> Categories { get; set; } = null!;
         public virtual DbSet<Concession> Concessions { get; set; } = null!;
         public virtual DbSet<Coupon> Coupons { get; set; } = null!;
+        public virtual DbSet<CouponUser> CouponUsers { get; set; } = null!;
         public virtual DbSet<Employee> Employees { get; set; } = null!;
         public virtual DbSet<GiftCard> GiftCards { get; set; } = null!;
+        public virtual DbSet<GiftCardUser> GiftCardUsers { get; set; } = null!;
         public virtual DbSet<Movie> Movies { get; set; } = null!;
         public virtual DbSet<MovieReview> MovieReviews { get; set; } = null!;
         public virtual DbSet<News> News { get; set; } = null!;
@@ -40,12 +42,8 @@ namespace Prn231_CinemaProject_Group7.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                IConfiguration config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", true, true)
-                .Build();
-                var strConn = config["ConnectionStrings:MyDatabase"];
-                optionsBuilder.UseSqlServer(strConn);
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=MSI\\MSSQLSERVER01;uid=sa;pwd=1;database=Prn231_Project_Final;TrustServerCertificate=true;Encrypt = false;Trusted_Connection=true;");
             }
         }
 
@@ -105,6 +103,29 @@ namespace Prn231_CinemaProject_Group7.Models
                     .HasDefaultValueSql("(getdate())");
             });
 
+            modelBuilder.Entity<CouponUser>(entity =>
+            {
+                entity.HasKey(e => new { e.CouponId, e.UserId });
+
+                entity.ToTable("Coupon_User");
+
+                entity.Property(e => e.CreateAt).HasColumnType("datetime");
+
+                entity.Property(e => e.UpdateAt).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Coupon)
+                    .WithMany(p => p.CouponUsers)
+                    .HasForeignKey(d => d.CouponId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Coupon_User_Coupons");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.CouponUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Coupon_User_Users");
+            });
+
             modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasIndex(e => e.Email, "UQ__Employee__A9D10534DA2E3FE2")
@@ -152,6 +173,29 @@ namespace Prn231_CinemaProject_Group7.Models
                 entity.Property(e => e.UpdatedAt)
                     .HasColumnType("datetime")
                     .HasDefaultValueSql("(getdate())");
+            });
+
+            modelBuilder.Entity<GiftCardUser>(entity =>
+            {
+                entity.HasKey(e => new { e.GiftCardId, e.UserId });
+
+                entity.ToTable("GiftCard_User");
+
+                entity.Property(e => e.CreateAt).HasColumnType("datetime");
+
+                entity.Property(e => e.UpdateAt).HasColumnType("datetime");
+
+                entity.HasOne(d => d.GiftCard)
+                    .WithMany(p => p.GiftCardUsers)
+                    .HasForeignKey(d => d.GiftCardId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GiftCard_User_GiftCards");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.GiftCardUsers)
+                    .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_GiftCard_User_Users");
             });
 
             modelBuilder.Entity<Movie>(entity =>
@@ -263,7 +307,7 @@ namespace Prn231_CinemaProject_Group7.Models
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("FK__Orders__GiftCard__75A278F5");
 
-                entity.HasOne(d => d.Status)
+                entity.HasOne(d => d.OrderStatus)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.StatusId)
                     .OnDelete(DeleteBehavior.ClientSetNull)

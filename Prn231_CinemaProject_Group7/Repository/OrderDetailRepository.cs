@@ -26,7 +26,20 @@ namespace Prn231_CinemaProject_Group7.Repository
                     Price = OrderDetail.Price
                 };
                 _context.OrderDetails.Add(data);
-                //_context.SaveChanges();
+
+                var order = _context.Orders.Find(OrderDetail.OrderId);
+                var coupon = _context.Coupons.Find(order.CouponId);
+
+                if (coupon != null)
+                {
+                    order.TotalAmount += OrderDetail.Price * (100 - coupon.Discount);
+                }
+                else
+                {
+                    order.TotalAmount += OrderDetail.Price;
+                }
+
+                _context.SaveChanges();
                 return await Task.FromResult(true);
             }
             catch (Exception)
@@ -65,10 +78,27 @@ namespace Prn231_CinemaProject_Group7.Repository
             try
             {
                 var data = _context.OrderDetails.Find(id);
+                if (data == null)
+                {
+                    return await Task.FromResult(false);
+                }
                 data.OrderId = OrderDetail.OrderId;
                 data.ShowtimeId = OrderDetail.ShowtimeId;
                 data.SeatId = OrderDetail.SeatId;
                 data.Quantity = OrderDetail.Quantity;
+
+                var order = _context.Orders.Find(OrderDetail.OrderId);
+                var coupon = _context.Coupons.Find(order.CouponId);
+
+                if (coupon != null)
+                {
+                    order.TotalAmount += OrderDetail.Price * (100 - coupon.Discount) - data.Price;
+                }
+                else
+                {
+                    order.TotalAmount += OrderDetail.Price - data.Price;
+                }
+
                 data.Price = OrderDetail.Price;
                 _context.SaveChanges();
                 return await Task.FromResult(true);

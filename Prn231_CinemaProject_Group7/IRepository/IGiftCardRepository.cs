@@ -7,7 +7,8 @@ namespace Prn231_CinemaProject_Group7.Irepository
 	{
 		Task<List<GiftCard>> GetAllGiftCards();
 		Task<GiftCard> GetGiftCard(int id);
-		Task<bool> CreateGiftCard(GiftCardDTO giftCard);
+		Task<List<GiftCard>> GetGiftCardsByUserId(int id);
+        Task<bool> CreateGiftCard(GiftCardDTO giftCard);
 		Task<bool> UpdateGiftCard(int id, GiftCardDTO giftCard);
 		Task<bool> DeleteGiftCard(int id);
 	}

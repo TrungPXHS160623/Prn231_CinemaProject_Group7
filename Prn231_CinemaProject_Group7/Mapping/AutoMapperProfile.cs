@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Prn231_CinemaProject_Group7.DTO;
 using Prn231_CinemaProject_Group7.Models;
 using Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos;
 using Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos;
@@ -32,7 +33,7 @@ namespace Prn231_CinemaProject_Group7.Mapping
             CreateMap<AddShowtimeRequestDto, Showtime>().ReverseMap();
             CreateMap<UpdateShowtimeRequest, Showtime>().ReverseMap();
 
-
+            CreateMap<Order, OrderDTO>().ReverseMap();
         }
     }
 }

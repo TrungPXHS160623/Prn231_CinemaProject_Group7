@@ -27,5 +27,6 @@ namespace Prn231_CinemaProject_Group7.IRepository
 
         // Lấy danh sách các phòng chiếu thuộc một rạp
         Task<List<Room>> GetRoomsByTheaterId(int theaterId);
+        Task<List<Theater>> GetTheaterByMovieId(int movieId);
     }
 }

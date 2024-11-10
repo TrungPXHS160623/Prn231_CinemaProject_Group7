@@ -53,10 +53,17 @@ namespace Prn231_CinemaProject_Group7.Repository
 
 		public async Task<GiftCard> GetGiftCard(int id)
 		{
-			return await _context.GiftCards.FirstOrDefaultAsync(x => x.GiftCardId == id);
+			return _context.GiftCards.FirstOrDefault(x => x.GiftCardId == id);
 		}
 
-		public async Task<bool> UpdateGiftCard(int id, GiftCardDTO GiftCard)
+        public async Task<List<GiftCard>> GetGiftCardsByUserId(int id)
+        {
+            return await _context.GiftCardUsers
+                                 .Where(cu => cu.UserId == id)
+                                 .Select(cu => cu.GiftCard)
+                                 .ToListAsync();
+        }
+        public async Task<bool> UpdateGiftCard(int id, GiftCardDTO GiftCard)
 		{
 			try
 			{

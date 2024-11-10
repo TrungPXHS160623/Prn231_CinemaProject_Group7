@@ -22,7 +22,7 @@ namespace WebClient.Pages.Admin.Orders
             else
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while deactivating the OrderDetail.");
-                return Page();
+                return RedirectToPage("./List");
             }
         }
     }

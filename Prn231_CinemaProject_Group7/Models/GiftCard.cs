@@ -7,6 +7,7 @@ namespace Prn231_CinemaProject_Group7.Models
     {
         public GiftCard()
         {
+            GiftCardUsers = new HashSet<GiftCardUser>();
             Orders = new HashSet<Order>();
         }
 
@@ -18,6 +19,7 @@ namespace Prn231_CinemaProject_Group7.Models
         public DateTime? UpdatedAt { get; set; }
         public bool? IsActive { get; set; }
 
+        public virtual ICollection<GiftCardUser> GiftCardUsers { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

@@ -9,46 +9,57 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form method="post">
-                <input type="hidden" asp-for="Order.OrderId"/>
+                <input asp-for="Order.OrderId" type="hidden" />
+                <input asp-for="Order.OrderDate" type="hidden" />
+                <input asp-for="Order.TotalAmount" type="hidden" />
+                <input asp-for="Order.OrderStatus" type="hidden" />
                 <div class="form-group">
                     <label asp-for="Order.CustomerId" class="control-label"></label>
-                    <input asp-for="Order.CustomerId" class="form-control" type="number"/>
+                    <input asp-for="Order.CustomerId" class="form-control" />
                     <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Order.OrderDate" class="control-label"></label>
-                    <input asp-for="Order.OrderDate" class="form-control" type="datetime-local"/>
-                    <span asp-validation-for="Order.OrderDate" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Order.TotalAmount" class="control-label"></label>
-                    <input asp-for="Order.TotalAmount" class="form-control" type="number" step="1000"/>
-                    <span asp-validation-for="Order.TotalAmount" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Order.IsPaid" class="control-label"></label>
-                    <input asp-for="Order.IsPaid" class="form-control" type="checkbox" />
-                    <span asp-validation-for="Order.IsPaid" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Order.PaymentMethod" class="control-label"></label>
-                    <input asp-for="Order.PaymentMethod" class="form-control" type="text" />
-                    <span asp-validation-for="Order.PaymentMethod" class="text-danger"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="Order.StatusId" class="control-label"></label>
-                    <input asp-for="Order.StatusId" class="form-control" type="number" />
+                    <select asp-for="Order.StatusId" class="form-control">
+                        <option value="">Select Status</option>
+                        @foreach (var status in Model.Statuses)
+                        {
+                            <option value="@status.StatusId" selected="@(status.StatusId == Model.Order.StatusId ? "selected" : null)">@status.StatusName</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.StatusId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
+                    <label asp-for="Order.PaymentMethod" class="control-label"></label>
+                    <input asp-for="Order.PaymentMethod" class="form-control" />
+                    <span asp-validation-for="Order.PaymentMethod" class="text-danger"></span>
+                </div>
+                <div class="form-group">
                     <label asp-for="Order.CouponId" class="control-label"></label>
-                    <input asp-for="Order.CouponId" class="form-control" type="number" />
+                    <select asp-for="Order.CouponId" class="form-control">
+                        <option value="">Select Coupon</option>
+                        @foreach (var coupon in Model.Coupons)
+                        {
+                            <option value="@coupon.CouponId" selected="@(coupon.CouponId == Model.Order.CouponId ? "selected" : null)">@coupon.Code</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.CouponId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Order.GiftCardId" class="control-label"></label>
-                    <input asp-for="Order.GiftCardId" class="form-control" type="number" />
+                    <select asp-for="Order.GiftCardId" class="form-control">
+                        <option value="">Select Gift Card</option>
+                        @foreach (var giftCard in Model.GiftCards)
+                        {
+                            <option value="@giftCard.GiftCardId" selected="@(giftCard.GiftCardId == Model.Order.GiftCardId ? "selected" : null)">@giftCard.Code</option>
+                        }
+                    </select>
                     <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="IsPaid" class="control-label"></label>
+                    <input asp-for="IsPaid" class="form-control" type="checkbox" />
+                    <span asp-validation-for="IsPaid" class="text-danger"></span>
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
                 <a asp-page="./List" class="btn btn-secondary">Cancel</a>

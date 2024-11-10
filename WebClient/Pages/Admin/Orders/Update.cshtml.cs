@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Text.Json;
 using WebClient.Models;
 
 namespace WebClient.Pages.Admin.Orders
@@ -15,26 +16,85 @@ namespace WebClient.Pages.Admin.Orders
 
         [BindProperty]
         public Order Order { get; set; }
+        public bool IsPaid { get; set; }
+        public int StatusId { get; set; }
+        public List<OrderStatus> Statuses { get; set; }
+        public List<Coupon> Coupons { get; set; }
+        public List<GiftCard> GiftCards { get; set; }
+        public IList<Concession> Concessions { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int id)
         {
-            var concession = await _httpClient.GetFromJsonAsync<Order>($"http://localhost:5280/api/Orders/GetOrder/{id}");
-            if (concession == null)
+            var response = await _httpClient.GetStringAsync($"http://localhost:5280/api/Orders/GetOrder/{id}");
+            var jsonDocument = JsonDocument.Parse(response);
+            var orderElement = jsonDocument.RootElement.GetProperty("result");
+
+            if (orderElement.ValueKind == JsonValueKind.Null)
             {
                 return NotFound();
             }
 
-            Order = concession;
+            Order = new Order
+            {
+                OrderId = orderElement.GetProperty("orderId").GetInt32(),
+                CustomerId = orderElement.GetProperty("customerId").GetInt32(),
+                OrderDate = orderElement.GetProperty("orderDate").GetDateTime(),
+                TotalAmount = orderElement.GetProperty("totalAmount").GetDecimal(),
+                IsPaid = orderElement.GetProperty("isPaid").GetBoolean(),
+                PaymentMethod = orderElement.GetProperty("paymentMethod").GetString(),
+                StatusId = orderElement.GetProperty("statusId").GetInt32(),
+                CouponId = orderElement.TryGetProperty("couponId", out var couponIdElement) && couponIdElement.ValueKind != JsonValueKind.Null ? couponIdElement.GetInt32() : (int?)null,
+                GiftCardId = orderElement.TryGetProperty("giftCardId", out var giftCardIdElement) && giftCardIdElement.ValueKind != JsonValueKind.Null ? giftCardIdElement.GetInt32() : (int?)null
+            };
+
+            Statuses = new List<OrderStatus>()
+            {
+                new OrderStatus { StatusId = 1, StatusName = "Active" },
+                new OrderStatus { StatusId = 2, StatusName = "Used" },
+                new OrderStatus { StatusId = 3, StatusName = "Canceled" },
+                new OrderStatus { StatusId = 4, StatusName = "NotPay" }
+            };
+
+            Coupons = await _httpClient.GetFromJsonAsync<List<Coupon>>("http://localhost:5280/api/Coupons/GetAllCoupons");
+            if (Coupons != null)
+            {
+                Coupons = Coupons.Where(c => c.IsActive == true).ToList();
+            }
+
+            GiftCards = await _httpClient.GetFromJsonAsync<List<GiftCard>>("http://localhost:5280/api/GiftCards/GetAllGiftCards");
+            if (GiftCards != null)
+            {
+                GiftCards = GiftCards.Where(c => c.IsActive == true).ToList();
+            }
 
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
+            decimal totalAmount = Order.TotalAmount;
+
+            // Apply Coupon discount if applicable using API
+            if (Order.CouponId.HasValue && Order.CouponId.Value != 0)
             {
-                return Page();
+                var couponResponse = await _httpClient.GetFromJsonAsync<Coupon>($"http://localhost:5280/api/Coupons/GetCoupon/{Order.CouponId.Value}");
+                if (couponResponse != null)
+                {
+                    totalAmount = totalAmount * ((100 - couponResponse.Discount) / 100);
+                }
             }
+
+            // Apply GiftCard discount if applicable using API
+            if (Order.GiftCardId.HasValue && Order.GiftCardId.Value != 0)
+            {
+                var giftCardResponse = await _httpClient.GetFromJsonAsync<GiftCard>($"http://localhost:5280/api/GiftCards/GetGiftCard/{Order.GiftCardId.Value}");
+                if (giftCardResponse != null)
+                {
+                    totalAmount -= giftCardResponse.Balance;
+                }
+            }
+
+            Order.TotalAmount = totalAmount;
 
             var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/Orders/UpdateOrder/{Order.OrderId}", Order);
 
@@ -44,7 +104,7 @@ namespace WebClient.Pages.Admin.Orders
             }
             else
             {
-                ModelState.AddModelError(string.Empty, "An error occurred while updating the concession.");
+                ModelState.AddModelError(string.Empty, "An error occurred while updating the order.");
                 return Page();
             }
         }

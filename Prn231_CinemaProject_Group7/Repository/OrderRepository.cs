@@ -70,7 +70,7 @@ namespace Prn231_CinemaProject_Group7.Repository
         {
             return await _context.Orders
                 .Include(o => o.Customer)
-                .Include(o => o.Status)
+                .Include(o => o.OrderStatus)
                 .Include(o => o.Coupon)
                 .Include(o => o.GiftCard)
                 .Include(o => o.OrderConcessions)
@@ -93,9 +93,9 @@ namespace Prn231_CinemaProject_Group7.Repository
                     TotalAmount = order.TotalAmount,
                     IsPaid = order.IsPaid,
                     PaymentMethod = order.PaymentMethod,
-                    Status = new OrderStatusDTO
+                    OrderStatus = new OrderStatusDTO
                     {
-                        StatusName = order.Status.StatusName
+                        StatusName = order.OrderStatus.StatusName
                     },
                     Coupon = order.Coupon != null ? new CouponInfoDTO
                     {
@@ -142,9 +142,9 @@ namespace Prn231_CinemaProject_Group7.Repository
                 .ToListAsync();
         }
 
-        public async Task<Order> GetOrder(int id)
+        public async Task<Order?> GetOrder(int id)
         {
-            return await _context.Orders.FirstOrDefaultAsync(x => x.OrderId == id);
+            return _context.Orders.Find(id);
         }
 
         public async Task<bool> UpdateOrder(int id, OrderDTO orderDto)
@@ -152,30 +152,13 @@ namespace Prn231_CinemaProject_Group7.Repository
             try
             {
                 var data = _context.Orders.Find(id);
-                data = new Order
-                {
-                    CustomerId = orderDto.CustomerId,
-                    OrderDate = orderDto.OrderDate,
-                    TotalAmount = orderDto.TotalAmount,
-                    IsPaid = orderDto.IsPaid,
-                    PaymentMethod = orderDto.PaymentMethod,
-                    StatusId = orderDto.StatusId,
-                    CouponId = orderDto.CouponId,
-                    GiftCardId = orderDto.GiftCardId,
-                    OrderConcessions = orderDto.OrderConcessions.Select(oc => new OrderConcession
-                    {
-                        ConcessionId = oc.ConcessionId,
-                        Quantity = oc.Quantity,
-                        Price = oc.Price
-                    }).ToList(),
-                    OrderDetails = orderDto.OrderDetails.Select(od => new OrderDetail
-                    {
-                        ShowtimeId = od.ShowtimeId,
-                        SeatId = od.SeatId,
-                        Quantity = od.Quantity,
-                        Price = od.Price
-                    }).ToList()
-                };
+                data.TotalAmount = orderDto.TotalAmount;
+                data.IsPaid = orderDto.IsPaid;
+                data.PaymentMethod = orderDto.PaymentMethod;
+                data.StatusId = orderDto.StatusId;
+                data.CouponId = orderDto.CouponId;
+                data.GiftCardId = orderDto.GiftCardId;
+
                 _context.SaveChanges();
                 return await Task.FromResult(true);
             }

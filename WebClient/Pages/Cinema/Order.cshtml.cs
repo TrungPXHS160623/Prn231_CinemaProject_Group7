@@ -1,54 +1,45 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Net.Http;
 using WebClient.Models;
 
-namespace WebClient.Pages.Admin.Orders
+namespace WebClient.Pages.Cinema
 {
-    public class AddModel : PageModel
+    public class OrderModel : PageModel
     {
         private readonly HttpClient _httpClient;
 
-        public AddModel(HttpClient httpClient)
+        public OrderModel(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
         [BindProperty]
         public Order Order { get; set; } = new Order();
-        public bool IsPaid { get; set; }
         public List<Coupon> Coupons { get; set; }
         public List<GiftCard> GiftCards { get; set; }
-        public IList<Concession> Concessions { get; set; }
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGet()
         {
-            //Customers = await _httpClient.GetFromJsonAsync<List<User>>("http://localhost:5280/api/Users");
             Coupons = await _httpClient.GetFromJsonAsync<List<Coupon>>("http://localhost:5280/api/Coupons/GetAllCoupons");
             Coupons = Coupons.Where(c => c.IsActive == true).ToList();
             GiftCards = await _httpClient.GetFromJsonAsync<List<GiftCard>>("http://localhost:5280/api/GiftCards/GetAllGiftCards");
             GiftCards = GiftCards.Where(c => c.IsActive == true).ToList();
-            Concessions = await _httpClient.GetFromJsonAsync<IList<Concession>>("http://localhost:5280/api/Concessions/GetAllConcessions");
-            Concessions = Concessions.Where(c => c.IsActive == true).ToList();
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            // Calculate TotalAmount
-            Order.StatusId = 1;
+            Order.CustomerId = 1;
+            Order.StatusId = 4;
             Order.TotalAmount = CalculateTotalAmount(Order);
-            Order.IsPaid = IsPaid;
+            Order.IsPaid = false;
 
             // Save Order to the database using API
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/Orders/CreateOrder", Order);
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToPage("./List");
+                return RedirectToPage("./MyTicket");
             }
             else
             {

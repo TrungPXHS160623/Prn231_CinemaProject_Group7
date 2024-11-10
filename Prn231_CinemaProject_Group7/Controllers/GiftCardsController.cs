@@ -26,6 +26,21 @@ namespace Prn231_CinemaProject_Group7.Controllers
         public IActionResult GetGiftCard(int id)
         {
             var data = repository.GetGiftCard(id);
+            if(data == null)
+            {
+                return NotFound();
+            }
+            return Ok(data);
+        }
+
+        [HttpGet("GetGiftCardsByUserId/{id}")]
+        public IActionResult GetGiftCardsByUserId(int id)
+        {
+            var data = repository.GetGiftCard(id);
+            if (data == null)
+            {
+                return NotFound();
+            }
             return Ok(data);
         }
 

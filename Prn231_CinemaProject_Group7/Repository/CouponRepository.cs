@@ -52,12 +52,19 @@ namespace Prn231_CinemaProject_Group7.Repository
 			return await _context.Coupons.ToListAsync();
 		}
 
-		public async Task<Coupon> GetCoupon(int id)
+		public async Task<Coupon?> GetCoupon(int id)
 		{
-			return await _context.Coupons.FirstOrDefaultAsync(x => x.CouponId == id);
-		}
+			return _context.Coupons.First(x => x.CouponId == id);
+        }
+        public async Task<List<Coupon>> GetCouponsByUserId(int id)
+        {
+            return await _context.CouponUsers
+                                 .Where(cu => cu.UserId == id)
+                                 .Select(cu => cu.Coupon)
+                                 .ToListAsync();
+        }
 
-		public async Task<bool> UpdateCoupon(int id, CouponDTO Coupon)
+        public async Task<bool> UpdateCoupon(int id, CouponDTO Coupon)
 		{
 			try
 			{

@@ -103,6 +103,12 @@ namespace Prn231_CinemaProject_Group7.Controllers
             var exists = await theaterRepository.TheaterExists(theaterId);
             return Ok(new { exists });
         }
+        [HttpGet("GetTheaterByMovieId/{movieId}")]
+        public async Task<List<Theater>> GetTheaterByMovieId(int movieId)
+        {
+            var theaters = await theaterRepository.GetTheaterByMovieId(movieId);
+            return theaters;
+        }
     }
 
 }
