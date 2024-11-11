@@ -1863,8 +1863,8 @@ textarea.form-control {
   font-family: 'Oswald';
 }
 .top-block-content {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  /* padding-top: 6rem; */
+  /* padding-bottom: 6rem; */
 }
 .top-block-content .page-breadcrumbs {
   margin-top: 0.75rem;

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text.Json;
 using WebClient.Models;
 
-namespace WebClient.Pages.Admin.Orders
+namespace WebClient.Pages.Staff.Orders
 {
     public class UpdateModel : PageModel
     {
@@ -53,10 +53,8 @@ namespace WebClient.Pages.Admin.Orders
             {
                 new OrderStatus { StatusId = 1, StatusName = "Active" },
                 new OrderStatus { StatusId = 2, StatusName = "Used" },
-                new OrderStatus { StatusId = 3, StatusName = "Canceled" },
                 new OrderStatus { StatusId = 4, StatusName = "NotPay" }
             };
-
             return Page();
         }
 
@@ -86,7 +84,7 @@ namespace WebClient.Pages.Admin.Orders
 
             Order.TotalAmount = totalAmount;
             Order.IsPaid = IsPaid;
-            
+
             var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/Orders/UpdateOrder/{Order.OrderId}", Order);
 
             if (response.IsSuccessStatusCode)

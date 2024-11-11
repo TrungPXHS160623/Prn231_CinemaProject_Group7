@@ -1,0 +1,410 @@
+﻿@page
+@model WebClient.Pages.Staff.Orders.AddModel
+@{
+    ViewData["Title"] = "Add New Order";
+}
+<div id="content">
+</div>
+<div id="concession-title" class="concession-title"></div>
+<div id="concession-container" class="concession-grid"></div>
+<form method="post" id="orderForm">
+    <input type="hidden" asp-for="ShowtimeId" name="ShowtimeId" id="ShowtimeId" />
+    <div class="form-group">
+        <label asp-for="Order.CustomerId" class="control-label"></label>
+        <input asp-for="Order.CustomerId" id="CustomerId" class="form-control" />
+        <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Order.PaymentMethod" class="control-label"></label>
+        <select asp-for="Order.PaymentMethod" class="form-control">
+            <option value="Transfer">Transfer</option>
+            <option value="Cash">Cash</option>
+        </select>
+        <span asp-validation-for="Order.PaymentMethod" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Movie</label>
+        <select asp-for="SelectedMovieId" id="SelectedMovieId" class="form-control" asp-items="Model.Movies">
+            <option value="">Select a movie</option>
+        </select>
+    </div>
+    <div class="form-group" id="coupon-group" style="display:none;">
+        <label asp-for="Order.CouponId" class="control-label"></label>
+        <select asp-for="Order.CouponId" class="form-control" id="CouponId">
+            <option value="">Select Coupon</option>
+        </select>
+        <span asp-validation-for="Order.CouponId" class="text-danger"></span>
+    </div>
+    <div class="form-group" id="giftcard-group" style="display:none;">
+        <label asp-for="Order.GiftCardId" class="control-label"></label>
+        <select asp-for="Order.GiftCardId" class="form-control" id="GiftCardId">
+            <option value="">Select Gift Card</option>
+        </select>
+        <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="IsPaid" class="control-label"></label>
+        <input asp-for="IsPaid" class="form-control" type="checkbox" />
+        <span asp-validation-for="IsPaid" class="text-danger"></span>
+    </div>
+    <div id="seatInputContainer"></div>
+    <div id="concessionInputContainer"></div>
+    <button type="submit" id="submitOrder" style="display:none;">Submit Order</button>
+</form>
+
+<button id="backButton" style="display:none;">Go Back</button>
+
+@section Scripts {
+    <script>
+                $(document).ready(function() {
+            $('#CustomerId').change(function() {
+                var customerId = $(this).val();
+                if (customerId) {
+                    // Fetch coupons based on the entered CustomerId
+                    $.get(`http://localhost:5280/api/Coupons/GetCouponsByUserId/${customerId}`)
+                        .done(function(response) {
+                            var data = response.result; // Access the actual data
+                            var couponSelect = $('#CouponId');
+                            couponSelect.empty();
+                            couponSelect.append($('<option>', {
+                                value: '',
+                                text: 'Select Coupon'
+                            }));
+                            if (Array.isArray(data)) {
+                                data.forEach(function(coupon) {
+                                    couponSelect.append($('<option>', {
+                                        value: coupon.couponId,
+                                        text: coupon.code
+                                    }));
+                                    $('#coupon-group').show();
+                                });
+                            } else if (data) {
+                                couponSelect.append($('<option>', {
+                                    value: data.couponId,
+                                    text: data.code
+                                }));
+                                $('#coupon-group').show();
+                            }
+                        })
+                        .fail(function() {
+                            $('#coupon-group').hide();
+                        });
+
+                    // Fetch gift cards based on the entered CustomerId
+                    $.get(`http://localhost:5280/api/GiftCards/GetGiftCardsByUserId/${customerId}`)
+                        .done(function(response) {
+                            var data = response.result; // Access the actual data
+                            var giftCardSelect = $('#GiftCardId');
+                            giftCardSelect.empty();
+                            giftCardSelect.append($('<option>', {
+                                value: '',
+                                text: 'Select Gift Card'
+                            }));
+                            if (Array.isArray(data)) {
+                                data.forEach(function(giftCard) {
+                                    giftCardSelect.append($('<option>', {
+                                        value: giftCard.giftCardId,
+                                        text: giftCard.code
+                                    }));
+                                    $('#giftcard-group').show();
+                                });
+                            } else if (data) {
+                                giftCardSelect.append($('<option>', {
+                                    value: data.giftCardId,
+                                    text: data.code
+                                }));
+                                $('#giftcard-group').show();
+                            }
+                        })
+                        .fail(function() {
+                            $('#giftcard-group').hide();
+                        });
+                } else {
+                    $('#coupon-group').hide();
+                    $('#giftcard-group').hide();
+                }
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            const contentDiv = document.getElementById('content');
+            const orderForm = document.getElementById('orderForm');
+            const showtimeInput = document.getElementById('ShowtimeId');
+            const seatInput = document.getElementById('SeatId');
+            const submitOrderButton = document.getElementById('submitOrder');
+            const backButton = document.getElementById('backButton');
+
+            let historyStack = [];
+            $('#SelectedMovieId').change(function() {
+                var selectedMovieId = $(this).val();
+                if (selectedMovieId) {
+                    fetch(`http://localhost:5280/api/Theater/GetTheaterByMovieId/${selectedMovieId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            contentDiv.innerHTML = `<h2>Theaters showing the movie</h2><ul>${data.map(theater => `<li><a href="#" class="theater-link" data-theater-id="${theater.theaterId}">${theater.name}</a></li>`).join('')}</ul>`;
+                            attachTheaterLinks(selectedMovieId);
+                        })
+                        .catch(error => {
+                            contentDiv.innerHTML = `<p>Error loading theaters: ${error}</p>`;
+                        });
+                } else {
+                    contentDiv.html(`<p>Please select a movie.</p>`);
+                }
+
+                function attachTheaterLinks(selectedMovieId) {
+                    document.querySelectorAll('.theater-link').forEach(link => {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const selectedTheaterId = this.getAttribute('data-theater-id');
+                            historyStack.push(contentDiv.innerHTML);
+                            fetchShowtimes(selectedMovieId, selectedTheaterId);
+                            backButton.style.display = 'block';
+                        });
+                    });
+                }
+
+                function fetchShowtimes(movieId, theaterId) {
+                    fetch(`http://localhost:5280/api/Showtime/GetShowTimeByMovieTheater/${movieId}/${theaterId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            contentDiv.innerHTML = `<h2>Showtimes</h2><ul>${data.map(showtime => `<li><a href="#" class="showtime-link" data-showtime-id="${showtime.showtimeId}">${new Date(showtime.startTime).toLocaleString()} - ${new Date(showtime.endTime).toLocaleString()} - ${showtime.roomeName}</a></li>`).join('')}</ul>`;
+                            attachShowtimeLinks();
+                        })
+                        .catch(error => {
+                            contentDiv.innerHTML = `<p>Error loading showtimes: ${error}</p>`;
+                        });
+                }
+
+                function attachShowtimeLinks() {
+                    document.querySelectorAll('.showtime-link').forEach(link => {
+                        link.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            const selectedShowtimeId = this.getAttribute('data-showtime-id');
+                            showtimeInput.value = selectedShowtimeId;
+                            historyStack.push(contentDiv.innerHTML);
+                            fetchSeats(selectedShowtimeId);
+                            backButton.style.display = 'block';
+                        });
+                    });
+                }
+
+                function fetchSeats(showtimeId) {
+                    fetch(`http://localhost:5280/api/Seat/GetSeatByShowTime/${showtimeId}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const rows = [...new Set(data.map(seat => seat.rowName))].sort();
+                            const columns = [...new Set(data.map(seat => seat.seatNumber.replace(/^\D+/g, '')))].sort((a, b) => a - b);
+                            contentDiv.innerHTML = `<h2>Seats</h2><div class="seat-container">${generateSeatGrid(rows, columns, data)}</div>`;
+                            attachSeatLinks();
+                        })
+                        .catch(error => {
+                            contentDiv.innerHTML = `<p>Error loading seats: ${error}</p>`;
+                        });
+                }
+
+                function generateSeatGrid(rows, columns, seats) {
+                    let grid = '<div class="seat-grid">';
+                    grid += '<div class="seat-row"><div class="seat-label"></div>' + columns.map(col => `<div class="seat-label">${col}</div>`).join('') + '</div>';
+                    rows.forEach(row => {
+                        grid += `<div class="seat-row"><div class="seat-label">${row}</div>`;
+                        columns.forEach(col => {
+                            const seat = seats.find(seat => seat.rowName === row && seat.seatNumber.endsWith(col));
+                            if (seat) {
+                                grid += `<div class="seat-box ${seat.typeName.toLowerCase()}" data-seat-id="${seat.seatId}" title="${seat.seatNumber}">${seat.seatNumber}</div>`;
+                            } else {
+                                grid += '<div class="seat-box empty"></div>';
+                            }
+                        });
+                        grid += '</div>';
+                    });
+                    grid += '</div>';
+                    return grid;
+                }
+
+                async function attachSeatLinks() {
+                    let selectedSeats = [];
+                    const concessions = await fetch('http://localhost:5280/api/Concessions/GetAllConcessions')
+                        .then(response => response.json())
+                        .then(data => data.filter(c => c.isActive));
+
+                    document.querySelectorAll('.seat-box').forEach(box => {
+                        if (!box.classList.contains('empty')) {
+                            box.addEventListener('click', function() {
+                                const seatId = this.getAttribute('data-seat-id');
+                                if (selectedSeats.includes(seatId)) {
+                                    selectedSeats = selectedSeats.filter(id => id !== seatId);
+                                    this.classList.remove('selected');
+                                } else {
+                                    selectedSeats.push(seatId);
+                                    this.classList.add('selected');
+                                }
+                                updateSeatInputs(selectedSeats);
+                                submitOrderButton.style.display = selectedSeats.length > 0 ? 'block' : 'none';
+                                showConcessions(concessions);
+                            });
+                        }
+                    });
+                }
+
+                function updateSeatInputs(selectedSeats) {
+                    const seatInputContainer = document.getElementById('seatInputContainer');
+                    seatInputContainer.innerHTML = '';
+                    selectedSeats.forEach((seatId, index) => {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = `SeatIds[${index}]`;
+                        input.value = seatId;
+                        seatInputContainer.appendChild(input);
+                    });
+                }
+
+                function showConcessions(concessions) {
+                    const concessionTitle = document.getElementById('concession-title');
+                    const concessionContainer = document.getElementById('concession-container');
+
+                    concessionContainer.innerHTML = ''; // Clear the concession container
+                    concessionTitle.innerHTML = `<h2>Concessions</h2>`;
+                    concessions.forEach(concession => {
+                        const concessionDiv = document.createElement('div');
+                        concessionDiv.classList.add('concession-item');
+                        concessionDiv.innerHTML = `
+                    <span>${concession.productName} - $${concession.price}</span>
+                    <input type="number" min="0" value="0" max="50" data-concession-id="${concession.productId}" class="concession-quantity">
+                `;
+                        attachConcessionLinks();
+                        concessionContainer.appendChild(concessionDiv);
+                    });
+                }
+
+                function attachConcessionLinks() {
+                    let selectedConcessions = [];
+
+                    document.querySelectorAll('.concession-quantity').forEach(input => {
+                        input.addEventListener('change', function() {
+                            const concessionId = this.getAttribute('data-concession-id');
+                            const quantity = parseInt(this.value, 10);
+
+                            const existingConcession = selectedConcessions.find(c => c.id === concessionId);
+                            if (existingConcession) {
+                                if (quantity > 0) {
+                                    existingConcession.quantity = quantity;
+                                } else {
+                                    selectedConcessions = selectedConcessions.filter(c => c.id !== concessionId);
+                                }
+                            } else if (quantity > 0) {
+                                selectedConcessions.push({
+                                    id: concessionId,
+                                    quantity: quantity
+                                });
+                            }
+
+                            updateConcessionInputs(selectedConcessions);
+                        });
+                    });
+                }
+
+                function updateConcessionInputs(selectedConcessions) {
+                    const concessionInputContainer = document.getElementById('concessionInputContainer');
+                    concessionInputContainer.innerHTML = '';
+                    selectedConcessions.forEach((concession, index) => {
+                        const concessionIdInput = document.createElement('input');
+                        concessionIdInput.type = 'hidden';
+                        concessionIdInput.name = `SelectedConcessions[${index}].ConcessionId`;
+                        concessionIdInput.value = concession.id;
+                        concessionInputContainer.appendChild(concessionIdInput);
+
+                        const quantityInput = document.createElement('input');
+                        quantityInput.type = 'hidden';
+                        quantityInput.name = `SelectedConcessions[${index}].Quantity`;
+                        quantityInput.value = concession.quantity;
+                        concessionInputContainer.appendChild(quantityInput);
+                    });
+                }
+                backButton.addEventListener('click', function() {
+                    if (historyStack.length > 0) {
+                        contentDiv.innerHTML = historyStack.pop();
+                        if (historyStack.length === 0) {
+                            backButton.style.display = 'none';
+                        }
+                        reattachEventListeners();
+                    }
+                });
+
+                function reattachEventListeners() {
+                    attachTheaterLinks();
+                    attachMovieLinks();
+                    attachShowtimeLinks();
+                    attachSeatLinks();
+                    attachConcessionLinks();
+                }
+            });
+        });
+    </script>
+}
+<style>
+    .seat-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seat-grid {
+        display: grid;
+        gap: 5px;
+    }
+
+    .seat-row {
+        display: flex;
+    }
+
+    .seat-label {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .seat-box {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+        .seat-box.selected {
+            border: 2px solid #0000FF; /* Blue border for selected seats */
+        }
+
+        .seat-box.economic {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .seat-box.vip {
+            background-color: #FFD700; /* Gold */
+        }
+
+        .seat-box.premium {
+            background-color: #FF4500; /* OrangeRed */
+        }
+
+        .seat-box.empty {
+            background-color: #E0E0E0; /* Light Gray */
+        }
+
+    .concession-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Single column on small screens */
+    }
+
+    .concession-title{
+        margin-top: 30px;
+    }
+    .concession-quantity{
+        width: 40px;
+    }
+</style>

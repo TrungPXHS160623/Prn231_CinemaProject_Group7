@@ -30,8 +30,32 @@ namespace Prn231_CinemaProject_Group7.Repository
 				return await Task.FromResult(false);
 			}
 		}
-
-		public async Task<bool> DeleteGiftCard(int id)
+        public async Task<bool> CreateGiftCardUser(int id, int userId)
+        {
+            try
+            {
+				var data = _context.GiftCards.Where(g => g.GiftCardId == id && g.IsActive != false).FirstOrDefault();
+                if (data == null)
+                {
+                    return await Task.FromResult(false);
+                }
+                var copounUser = new GiftCardUser
+                {
+                    GiftCardId = data.GiftCardId,
+                    CreateAt = DateTime.Now.ToLocalTime(),
+                    UpdateAt = DateTime.Now.ToLocalTime(),
+                    UserId = userId
+                };
+                _context.GiftCardUsers.Add(copounUser);
+                _context.SaveChanges();
+                return await Task.FromResult(true);
+            }
+            catch (Exception)
+            {
+                return await Task.FromResult(false);
+            }
+        }
+        public async Task<bool> DeleteGiftCard(int id)
 		{
 			try
 			{
@@ -59,9 +83,11 @@ namespace Prn231_CinemaProject_Group7.Repository
         public async Task<List<GiftCard>> GetGiftCardsByUserId(int id)
         {
             return await _context.GiftCardUsers
-                                 .Where(cu => cu.UserId == id)
-                                 .Select(cu => cu.GiftCard)
-                                 .ToListAsync();
+                            .Include(cu => cu.GiftCard)
+							.Where(cu => cu.UserId == id
+                            && cu.GiftCard.IsActive != false)
+                            .Select(cu => cu.GiftCard)
+							.ToListAsync();
         }
         public async Task<bool> UpdateGiftCard(int id, GiftCardDTO GiftCard)
 		{

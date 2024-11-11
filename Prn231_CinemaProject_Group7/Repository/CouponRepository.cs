@@ -32,7 +32,33 @@ namespace Prn231_CinemaProject_Group7.Repository
 			}
 		}
 
-		public async Task<bool> DeleteCoupon(int id)
+        public async Task<bool> CreateCouponUser(string coupon, int userId)
+        {
+            try
+            {
+				var data = _context.Coupons.Where(c => c.Code.Equals(coupon) && c.IsActive != false).FirstOrDefault();
+				if(data == null)
+				{
+                    return await Task.FromResult(false);
+                }
+				var copounUser = new CouponUser
+				{
+					CouponId = data.CouponId,
+					CreateAt = DateTime.Now.ToLocalTime(),
+					UpdateAt = DateTime.Now.ToLocalTime(),
+					UserId = userId
+                };
+				_context.CouponUsers.Add(copounUser);
+				_context.SaveChanges();
+                return await Task.FromResult(true);
+            }
+            catch (Exception)
+            {
+                return await Task.FromResult(false);
+            }
+        }
+
+        public async Task<bool> DeleteCoupon(int id)
 		{
 			try
 			{
@@ -58,10 +84,12 @@ namespace Prn231_CinemaProject_Group7.Repository
         }
         public async Task<List<Coupon>> GetCouponsByUserId(int id)
         {
-            return await _context.CouponUsers
-                                 .Where(cu => cu.UserId == id)
-                                 .Select(cu => cu.Coupon)
-                                 .ToListAsync();
+            return _context.CouponUsers
+                .Include(cu => cu.Coupon)
+				.Where(cu => cu.UserId == id 
+				&& cu.Coupon.IsActive != false)
+				.Select(cu => cu.Coupon)
+				.ToList();
         }
 
         public async Task<bool> UpdateCoupon(int id, CouponDTO Coupon)

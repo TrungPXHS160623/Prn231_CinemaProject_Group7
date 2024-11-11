@@ -84,11 +84,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                 .Select(order => new OrderSummaryDTO
                 {
                     OrderId = order.OrderId,
-                    Customer = new CustomerInfoDTO
-                    {
-                        FirstName = order.Customer.FirstName,
-                        LastName = order.Customer.LastName
-                    },
+                    CustomerId = order.CustomerId,
                     OrderDate = order.OrderDate,
                     TotalAmount = order.TotalAmount,
                     IsPaid = order.IsPaid,
@@ -153,6 +149,10 @@ namespace Prn231_CinemaProject_Group7.Repository
                     .ThenInclude(oc => oc.Concession)
                 .Include(o => o.OrderDetails)
                     .ThenInclude(od => od.Showtime)
+                        .ThenInclude(st => st.Movie)
+                .Include(o => o.OrderDetails)
+                    .ThenInclude(od => od.Seat)
+                        .ThenInclude(s => s.SeatType)
                 .Include(o => o.OrderDetails)
                     .ThenInclude(od => od.Seat)
                         .ThenInclude(s => s.Room)
@@ -160,28 +160,9 @@ namespace Prn231_CinemaProject_Group7.Repository
                 .Select(order => new OrderSummaryDTO
                 {
                     OrderId = order.OrderId,
-                    Customer = new CustomerInfoDTO
-                    {
-                        FirstName = order.Customer.FirstName,
-                        LastName = order.Customer.LastName
-                    },
-                    OrderDate = order.OrderDate,
-                    TotalAmount = order.TotalAmount,
-                    IsPaid = order.IsPaid,
+                    CustomerId = order.CustomerId,
                     PaymentMethod = order.PaymentMethod,
                     StatusId = order.StatusId,
-                    OrderStatus = new OrderStatusDTO
-                    {
-                        StatusName = order.OrderStatus.StatusName
-                    },
-                    Coupon = order.Coupon != null ? new CouponInfoDTO
-                    {
-                        Discount = order.Coupon.Discount
-                    } : null,
-                    GiftCard = order.GiftCard != null ? new GiftCardInfoDTO
-                    {
-                        Balance = order.GiftCard.Balance
-                    } : null,
                     OrderConcessions = order.OrderConcessions.Select(oc => new OrderConcessionInfoDTO
                     {
                         OrderConcessionId = oc.OrderConcessionId,
@@ -198,11 +179,19 @@ namespace Prn231_CinemaProject_Group7.Repository
                         Showtime = new ShowtimeInfoDTO
                         {
                             StartTime = od.Showtime.StartTime,
-                            EndTime = od.Showtime.EndTime
+                            EndTime = od.Showtime.EndTime,
+                            Movie = new MovieInfoDTO
+                            {
+                                Title = od.Showtime.Movie.Title
+                            }
                         },
                         Seat = new SeatInfoDTO
                         {
                             SeatNumber = od.Seat.SeatNumber,
+                            SeatType = new SeatTypeDTO 
+                            { 
+                                TypeName = od.Seat.SeatType.TypeName
+                            },
                             Room = new RoomInfoDTO
                             {
                                 Name = od.Seat.Room.Name,

@@ -1,4 +1,5 @@
 ﻿using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Models.Dtos.SeatTypeDtos;
 using System.Net.Http;
 
 namespace Prn231_CinemaProject_Group7.DTO
@@ -20,6 +21,7 @@ namespace Prn231_CinemaProject_Group7.DTO
     public class OrderSummaryDTO
     {
         public int OrderId { get; set; }
+        public int CustomerId { get; set; }
         public CustomerInfoDTO Customer { get; set; }
         public DateTime? OrderDate { get; set; }
         public decimal TotalAmount { get; set; }
@@ -78,6 +80,7 @@ namespace Prn231_CinemaProject_Group7.DTO
 
     public class ShowtimeInfoDTO
     {
+        public MovieInfoDTO Movie { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
     }
@@ -86,8 +89,12 @@ namespace Prn231_CinemaProject_Group7.DTO
     {
         public string SeatNumber { get; set; }
         public RoomInfoDTO Room { get; set; }
+        public SeatTypeDTO SeatType { get; set; }
     }
-
+    public class SeatTypeDTO
+    {
+        public string TypeName { get; set; }
+    }
     public class RoomInfoDTO
     {
         public string Name { get; set; }
@@ -97,5 +104,9 @@ namespace Prn231_CinemaProject_Group7.DTO
     public class TheaterInfoDTO
     {
         public string Name { get; set; }
+    }
+    public class MovieInfoDTO
+    {
+        public string Title { get; set; }
     }
 }

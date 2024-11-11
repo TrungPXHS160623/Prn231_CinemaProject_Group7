@@ -738,6 +738,22 @@
   },
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
+    "Method": "GetOrdersByCustomerId",
+    "RelativePath": "api/Orders/GetOrdersByCustomerId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.OrdersController",
     "Method": "UpdateOrder",
     "RelativePath": "api/Orders/UpdateOrder/{id}",
     "HttpMethod": "PUT",

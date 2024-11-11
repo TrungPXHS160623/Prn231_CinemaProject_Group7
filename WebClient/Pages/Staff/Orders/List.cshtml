@@ -1,5 +1,5 @@
 ﻿@page
-@model WebClient.Pages.Admin.Orders.ListModel
+@model WebClient.Pages.Staff.Orders.ListModel
 @{
     ViewData["Title"] = "Order List";
 }
@@ -35,7 +35,6 @@
                     <td>@order.GiftCard?.Balance</td>
                     <td>
                         <a asp-page="./Update" asp-route-id="@order.OrderId" class="btn btn-primary">Edit</a>
-                        <button class="btn btn-danger" onclick="deleteOrder(@order.OrderId)">Delete</button>
                         <button class="btn btn-info" onclick="toggleDetails(@order.OrderId)">Details</button>
                     </td>
                 </tr>
@@ -106,7 +105,7 @@
     </table>
 </div>
 
-<a asp-page="./Add"  class="btn btn-success">Add New Order</a>
+<a asp-page="./Add" class="btn btn-success">Add New Order</a>
 
 @section Scripts {
     <script>

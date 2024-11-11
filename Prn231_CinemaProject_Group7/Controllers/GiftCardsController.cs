@@ -21,6 +21,19 @@ namespace Prn231_CinemaProject_Group7.Controllers
             var data = await repository.GetAllGiftCards();
             return Ok(data);
         }
+        [HttpGet("CreateGiftCardUser/{id}/{userId}")]
+        public async Task<IActionResult> CreateGiftCardUser(int id, int userId)
+        {
+            var data = await repository.CreateGiftCardUser(id,userId);
+            if (data)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
         [HttpGet("GetGiftCard/{id}")]
         public IActionResult GetGiftCard(int id)

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Text.Json;
 using WebClient.Models;
 
-namespace WebClient.Pages.Admin.Orders
+namespace WebClient.Pages.Staff.Orders
 {
     public class AddModel : PageModel
     {
@@ -17,60 +17,66 @@ namespace WebClient.Pages.Admin.Orders
 
         [BindProperty]
         public Order Order { get; set; } = new Order();
+        public int ShowtimeId { get; set; }
+        [BindProperty]
+        public List<int> SeatIds { get; set; } = new List<int>();
         [BindProperty]
         public bool IsPaid { get; set; }
         public List<Coupon> Coupons { get; set; }
         public List<GiftCard> GiftCards { get; set; }
-        public IList<Concession> Concessions { get; set; }
-
         [BindProperty]
-        public int SelectedTheaterId { get; set; }
-
+        public List<OrderConcession> SelectedConcessions { get; set; } = new List<OrderConcession>();
         [BindProperty]
         public int SelectedMovieId { get; set; }
-
-        public List<SelectListItem> Theaters { get; set; }
         public List<SelectListItem> Movies { get; set; }
-        public List<SelectListItem> Showtimes { get; set; }
-        public List<SelectListItem> Seats { get; set; }
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGet()
         {
-            Concessions = await _httpClient.GetFromJsonAsync<IList<Concession>>("http://localhost:5280/api/Concessions/GetAllConcessions");
-            Concessions = Concessions.Where(c => c.IsActive == true).ToList();
-            var theaters = await _httpClient.GetFromJsonAsync<List<Theater>>("http://localhost:5280/api/Theater/active");
-            Theaters = theaters.Select(t => new SelectListItem { Value = t.TheaterId.ToString(), Text = t.Name }).ToList();
-            Movies = new List<SelectListItem>();
-            Showtimes = new List<SelectListItem>();
-            Seats = new List<SelectListItem>();
+            Coupons = await _httpClient.GetFromJsonAsync<List<Coupon>>("http://localhost:5280/api/Coupons/GetAllCoupons");
+            Coupons = Coupons.Where(c => c.IsActive == true).ToList();
+            GiftCards = await _httpClient.GetFromJsonAsync<List<GiftCard>>("http://localhost:5280/api/GiftCards/GetAllGiftCards");
+            GiftCards = GiftCards.Where(c => c.IsActive == true).ToList();
+            var theaters = await _httpClient.GetFromJsonAsync<List<Movie>>("http://localhost:5280/api/Movie/GetAllMovies");
+            Movies = theaters.Where(x => x.IsActive != false).Select(t => new SelectListItem { Value = t.MovieId.ToString(), Text = t.Title }).ToList();
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPost()
         {
-            // Calculate TotalAmount
             Order.StatusId = 1;
-            foreach (var concession in Order.OrderConcessions)
+            Order.OrderDate = DateTime.Now;
+            Order.IsPaid = IsPaid;
+            foreach (var selectedConcession in SelectedConcessions)
             {
-                concession.Price = GetConcessionPrice(concession.ConcessionId, concession.Quantity);
+                Order.OrderConcessions.Add(new OrderConcession
+                {
+                    ConcessionId = selectedConcession.ConcessionId,
+                    Quantity = selectedConcession.Quantity,
+                    Price = GetConcessionPrice(selectedConcession.ConcessionId, selectedConcession.Quantity)
+                });
             }
-            foreach (var detail in Order.OrderDetails)
+            foreach (var seatId in SeatIds)
             {
-                detail.Price = GetSeatPrice(detail.SeatId);
+                Order.OrderDetails.Add(new OrderDetail
+                {
+                    SeatId = seatId,
+                    ShowtimeId = ShowtimeId,
+                    Quantity = 1,
+                    Price = GetSeatPrice(seatId)
+                });
             }
             Order.TotalAmount = CalculateTotalAmount(Order);
-            Order.IsPaid = IsPaid;
+            Order.IsPaid = false;
             var data = JsonSerializer.Serialize(Order);
-            // Save Order to the database using API
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/Orders/CreateOrder", Order);
 
             if (response.IsSuccessStatusCode)
             {
-                return RedirectToPage("./List");
+                return RedirectToPage("./MyTicket");
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "An error occurred while adding the order.");
-                return Page();
+                return RedirectToPage();
             }
         }
         private decimal GetSeatPrice(int seatId)
@@ -130,3 +136,4 @@ namespace WebClient.Pages.Admin.Orders
         }
     }
 }
+

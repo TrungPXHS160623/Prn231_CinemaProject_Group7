@@ -9,7 +9,8 @@ namespace Prn231_CinemaProject_Group7.Irepository
 		Task<Coupon?> GetCoupon(int id);
 		Task<List<Coupon>> GetCouponsByUserId(int id);
         Task<bool> CreateCoupon(CouponDTO coupon);
-		Task<bool> UpdateCoupon(int id, CouponDTO coupon);
+		Task<bool> CreateCouponUser(string coupon, int userId);
+        Task<bool> UpdateCoupon(int id, CouponDTO coupon);
 		Task<bool> DeleteCoupon(int id);
 	}
 }

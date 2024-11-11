@@ -11,41 +11,28 @@
             <form method="post">
                 <div class="form-group">
                     <label asp-for="Order.CustomerId" class="control-label"></label>
-                    <input asp-for="Order.CustomerId" class="form-control" />
-                    @*<select asp-for="Order.CustomerId" class="form-control">
-                        <option value="">Select Customer</option>
-
-                         @foreach (var customer in Model.Customers)
-                        {
-                            <option value="@customer.CustomerId">@customer.FirstName @customer.LastName</option>
-                        } 
-                    </select>*@
+                    <input asp-for="Order.CustomerId" id="CustomerId" class="form-control" />
                     <span asp-validation-for="Order.CustomerId" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label asp-for="Order.PaymentMethod" class="control-label"></label>
-                    <input asp-for="Order.PaymentMethod" class="form-control" />
+                    <select asp-for="Order.PaymentMethod" class="form-control">
+                        <option value="Transfer">Transfer</option>
+                        <option value="Cash">Cash</option>
+                    </select>
                     <span asp-validation-for="Order.PaymentMethod" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="coupon-group" style="display:none;">
                     <label asp-for="Order.CouponId" class="control-label"></label>
-                    <select asp-for="Order.CouponId" class="form-control">
+                    <select asp-for="Order.CouponId" class="form-control" id="CouponId">
                         <option value="">Select Coupon</option>
-                        @foreach (var coupon in Model.Coupons)
-                        {
-                            <option value="@coupon.">@coupon.Code</option>
-                        }
                     </select>
                     <span asp-validation-for="Order.CouponId" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="giftcard-group" style="display:none;">
                     <label asp-for="Order.GiftCardId" class="control-label"></label>
-                    <select asp-for="Order.GiftCardId" class="form-control">
+                    <select asp-for="Order.GiftCardId" class="form-control" id="GiftCardId">
                         <option value="">Select Gift Card</option>
-                        @foreach (var giftCard in Model.GiftCards)
-                        {
-                            <option value="@giftCard.">@giftCard.Code</option>
-                        }
                     </select>
                     <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
                 </div>
@@ -114,6 +101,69 @@
         let concessionIndex = 1;
         let detailIndex = 1;
 
+    $(document).ready(function () {
+    $('#CustomerId').change(function () {
+        var customerId = $(this).val();
+        if (customerId) {
+            // Fetch coupons based on the entered CustomerId
+            $.get(`http://localhost:5280/api/Coupons/GetCouponsByUserId/${customerId}`)
+                .done(function (response) {
+                    var data = response.result; // Access the actual data
+                    var couponSelect = $('#CouponId');
+                    couponSelect.empty();
+                    couponSelect.append($('<option>', { value: '', text: 'Select Coupon' }));
+                    if (Array.isArray(data)) {
+                        data.forEach(function (coupon) {
+                            couponSelect.append($('<option>', {
+                                value: coupon.couponId,
+                                text: coupon.code
+                            }));
+                            $('#coupon-group').show();
+                        });
+                    } else if (data) {
+                        couponSelect.append($('<option>', {
+                            value: data.couponId,
+                            text: data.code
+                        }));
+                        $('#coupon-group').show();
+                    }
+                })
+                .fail(function () {
+                    $('#coupon-group').hide();
+                });
+
+            // Fetch gift cards based on the entered CustomerId
+            $.get(`http://localhost:5280/api/GiftCards/GetGiftCardsByUserId/${customerId}`)
+                .done(function (response) {
+                    var data = response.result; // Access the actual data
+                    var giftCardSelect = $('#GiftCardId');
+                    giftCardSelect.empty();
+                    giftCardSelect.append($('<option>', { value: '', text: 'Select Gift Card' }));
+                    if (Array.isArray(data)) {
+                        data.forEach(function (giftCard) {
+                            giftCardSelect.append($('<option>', {
+                                value: giftCard.giftCardId,
+                                text: giftCard.code
+                            }));
+                            $('#giftcard-group').show();
+                        });
+                    } else if (data) {
+                        giftCardSelect.append($('<option>', {
+                            value: data.giftCardId,
+                            text: data.code
+                        }));
+                        $('#giftcard-group').show();
+                    }
+                })
+                .fail(function () {
+                    $('#giftcard-group').hide();
+                });
+        } else {
+            $('#coupon-group').hide();
+            $('#giftcard-group').hide();
+        }
+    });
+});
         function addConcession() {
             const container = document.getElementById('orderConcessions');
             const newConcession = document.createElement('div');

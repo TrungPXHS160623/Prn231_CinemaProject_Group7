@@ -2,3 +2,58 @@
 @model WebClient.Pages.Cinema.MyTicketModel
 @{
 }
+<section class="after-head d-flex section-text-white position-relative">
+    <div class="d-background bg-black-80"></div>
+    <div class="top-block top-inner container">
+        <h1 class="section-title">My Tickets</h1>
+        <div class="page-breadcrumbs">
+            <a class="content-link" asp-page="./Index">Home</a>
+            <span class="text-theme mx-2"><i class="fas fa-chevron-right"></i></span>
+            <span>My Tickets</span>
+        </div>
+    </div>
+</section>
+<div class="container">
+    @foreach (var order in Model.Orders)
+    {
+        <div class="row order-section">
+            <div class="col-md-8">
+                <h3 style="margin:20px 0px">Tickets</h3>
+                @foreach (var detail in order.OrderDetails)
+                {
+                    <div class="ticket-box">
+                        <h3>@detail.Seat.Room.Theater.Name</h3>
+                        <h4>@detail.Showtime.Movie.Title</h4>
+                        <p>@detail.Showtime.StartTime.ToLocalTime().ToString("d/M/yyyy - HH:mm")
+                            - @detail.Showtime.EndTime.ToLocalTime().ToString("d/M/yyyy - HH:mm") 
+                            - @detail.Seat.Room.Name</p>
+                        <p>Seat: @detail.Seat.SeatNumber - @detail.Seat.SeatType.TypeName</p>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4">
+                <h3 style ="margin:20px 0px">Concessions</h3>
+                <ul>
+                    @foreach (var concession in order.OrderConcessions)
+                    {
+                        <li>@concession.Quantity x @concession.Concession.ProductName </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .order-section {
+        margin-bottom: 30px;
+    }
+
+    .ticket-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        background: #f9f9f9;
+    }
+</style>

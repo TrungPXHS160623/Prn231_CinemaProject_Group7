@@ -23,8 +23,21 @@ namespace Prn231_CinemaProject_Group7.Controllers
 			var data = await repository.GetAllCoupons();
 			return Ok(data);
 		}
+        [HttpGet("CreateCouponUser/{code}/{userId}")]
+        public async Task<IActionResult> CreateCouponUser(string code, int userId)
+        {
+            var data = await repository.CreateCouponUser(code, userId);
+            if (data)
+            {
+                return Ok();
+            }
+            else
+            {
+                return NotFound();
+            }
+        }
 
-		[HttpGet("GetCoupon/{id}")]
+        [HttpGet("GetCoupon/{id}")]
 		public IActionResult GetCoupon(int id)
 		{
 			var data = repository.GetCoupon(id);

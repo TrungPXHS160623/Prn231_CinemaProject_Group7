@@ -2,22 +2,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebClient.Models;
 
-namespace WebClient.Pages.Cinema
+namespace WebClient.Pages.Staff.Orders
 {
-    public class MyTicketModel : PageModel
+    public class ListModel : PageModel
     {
         private readonly HttpClient _httpClient;
 
-        public MyTicketModel(HttpClient httpClient)
+        public ListModel(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
 
         public List<Order> Orders { get; set; }
 
-        public async Task OnGetAsync(int id)
+        public async Task OnGetAsync()
         {
-            var data = await _httpClient.GetFromJsonAsync<List<Order>>($"http://localhost:5280/api/Orders/GetOrdersByCustomerId/1");
+            var data = await _httpClient.GetFromJsonAsync<List<Order>>("http://localhost:5280/api/Orders/GetAllOrders");
             Orders = data.Where(x => x.StatusId != 3).ToList();
         }
     }
