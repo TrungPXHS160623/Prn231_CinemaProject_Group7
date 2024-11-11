@@ -31,15 +31,15 @@
                                         </a>
                                     </div>
                                     <h4 class="entity-title">
-                                        <a class="content-link" asp-page="./MovieDetail" asp-route-id="@movie.MovieId">@movie.Title</a>
+                                        <a class="content-link" href="Cinema/Order?MovieId=@movie.MovieId" tabindex="0">@movie.Title</a>
                                     </h4>
                                     <div class="entity-category">
                                         @foreach (var category in movie.Categories)
                                         {
                                             <a class="content-link" asp-page="./Movie" asp-route-id="@category.CategoryId">@category.CategoryName</a>
-                                            @if (category != movie.Categories.Last()) 
+                                            @if (category != movie.Categories.Last())
                                             {
-                                                <p>,</p> 
+                                                <p>,</p>
                                             }
                                         }
                                     </div>
@@ -109,7 +109,7 @@
                             </div>
                             <div class="entity-content">
                                 <h4 class="entity-title">
-                                    <a class="content-link" asp-page="./MovieDetail" asp-route-id="@movie.MovieId">@movie.Title</a>
+                                    <a class="content-link" href="./Order?MovieId=@movie.MovieId" asp-route-id="@movie.MovieId">@movie.Title</a>
                                 </h4>
                                 <div class="entity-category">
                                     @foreach (var category in movie.Categories)
