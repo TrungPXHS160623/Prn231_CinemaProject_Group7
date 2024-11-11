@@ -1,4 +1,5 @@
-﻿namespace Prn231_CinemaProject_Group7.DTO
+﻿using WebClient.Models;
+namespace WebClient.DTO
 {
     public class CategoryDTO
     {
@@ -8,7 +9,7 @@
         public bool? IsActive { get; set; } = true;
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
-        public virtual List<MovieDTO> Movies { get; set; }
+        public List<MovieDTO>? Movies { get; set; }
 
     }
 }

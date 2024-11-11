@@ -5,8 +5,8 @@ namespace Prn231_CinemaProject_Group7.IRepository
 {
     public interface IMovieRepository
     {
-        Task<List<Movie>> GetAllMovies();
-        Movie? GetMovies(int id);
+        Task<List<MovieDTO>> GetAllMovies();
+        MovieDTO? GetMovies(int id);
         Task<bool> CreateMovies(MovieDTO Movies);
         Task<bool> UpdateMovies(int id, MovieDTO Movies);
         Task<bool> ChangeStatus(int id);
