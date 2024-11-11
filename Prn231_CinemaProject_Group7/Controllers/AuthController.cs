@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models.Dtos;
+using System.Security.Claims;
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
@@ -70,6 +72,17 @@ namespace Prn231_CinemaProject_Group7.Controllers
                 }
             }
             return BadRequest("UserName or PassWord incorrect!!!");
+        }
+        // New endpoint to get UserId of the currently logged-in user
+        [HttpGet("GetUserId")]
+        [Authorize]
+        public IActionResult GetUserId()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null)
+                return Unauthorized("User not logged in.");
+
+            return Ok(new { UserId = userId });
         }
     }
 }

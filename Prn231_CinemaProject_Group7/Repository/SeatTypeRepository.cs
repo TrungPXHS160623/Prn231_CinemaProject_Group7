@@ -1,6 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Prn231_CinemaProject_Group7.Repository
 {
@@ -15,67 +19,179 @@ namespace Prn231_CinemaProject_Group7.Repository
 
         public async Task<SeatType> AddSeatType(SeatType seatType)
         {
-            await dbContext.SeatTypes.AddAsync(seatType);
-            await dbContext.SaveChangesAsync();
-            return seatType;
+            try
+            {
+                if (seatType == null)
+                {
+                    throw new ArgumentNullException(nameof(seatType), "SeatType cannot be null.");
+                }
+
+                await dbContext.SeatTypes.AddAsync(seatType);
+                await dbContext.SaveChangesAsync();
+                return seatType;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while adding the seat type.", ex);
+            }
         }
 
         public async Task<SeatType> UpdateSeatType(SeatType seatType)
         {
-            var existingSeatType = await dbContext.SeatTypes.FirstOrDefaultAsync(st => st.SeatTypeId == seatType.SeatTypeId);
-            if (existingSeatType != null)
+            try
             {
-                existingSeatType.TypeName = seatType.TypeName;
-                existingSeatType.Description = seatType.Description;
-                existingSeatType.Price = seatType.Price;
-                existingSeatType.IsActive = seatType.IsActive;
-            }
+                if (seatType == null)
+                {
+                    throw new ArgumentNullException(nameof(seatType), "SeatType cannot be null.");
+                }
 
-            await dbContext.SaveChangesAsync();
-            return existingSeatType;
+                var existingSeatType = await dbContext.SeatTypes
+                    .FirstOrDefaultAsync(st => st.SeatTypeId == seatType.SeatTypeId);
+
+                if (existingSeatType == null)
+                {
+                    throw new KeyNotFoundException($"SeatType with ID {seatType.SeatTypeId} not found.");
+                }
+
+                // Only update if there are changes
+                if (existingSeatType.TypeName != seatType.TypeName ||
+                    existingSeatType.Description != seatType.Description ||
+                    existingSeatType.Price != seatType.Price ||
+                    existingSeatType.IsActive != seatType.IsActive)
+                {
+                    existingSeatType.TypeName = seatType.TypeName;
+                    existingSeatType.Description = seatType.Description;
+                    existingSeatType.Price = seatType.Price;
+                    existingSeatType.IsActive = seatType.IsActive;
+
+                    await dbContext.SaveChangesAsync();
+                }
+
+                return existingSeatType;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while updating the seat type.", ex);
+            }
         }
 
-        // Xóa loại ghế theo ID
         public async Task<SeatType> DeleteSeatType(int seatTypeId)
         {
-            var seatType = await dbContext.SeatTypes.FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
-            if (seatType != null)
+            try
             {
+                var seatType = await dbContext.SeatTypes
+                    .FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
+
+                if (seatType == null)
+                {
+                    throw new KeyNotFoundException($"SeatType with ID {seatTypeId} not found.");
+                }
+
                 dbContext.SeatTypes.Remove(seatType);
                 await dbContext.SaveChangesAsync();
+
+                return seatType;
             }
-            return seatType;
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while deleting the seat type.", ex);
+            }
         }
-        // Lấy tất cả các loại ghế đang hoạt động
+
         public async Task<List<SeatType>> GetActiveSeatTypes()
         {
-            return await dbContext.SeatTypes.Where(st => st.IsActive == true).ToListAsync();
+            try
+            {
+                return await dbContext.SeatTypes
+                    .Where(st => st.IsActive == true)
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while retrieving active seat types.", ex);
+            }
         }
-        // Lấy tất cả các loại ghế
+
         public async Task<List<SeatType>> GetAllSeatType()
         {
-            return await dbContext.SeatTypes.ToListAsync();
+            try
+            {
+                return await dbContext.SeatTypes.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while retrieving all seat types.", ex);
+            }
         }
-        // Lấy loại ghế theo ID
+
         public async Task<SeatType> GetSeatTypeById(int seatTypeId)
         {
-            return await dbContext.SeatTypes.FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
+            try
+            {
+                var seatType = await dbContext.SeatTypes
+                    .FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
+
+                if (seatType == null)
+                {
+                    throw new KeyNotFoundException($"SeatType with ID {seatTypeId} not found.");
+                }
+
+                return seatType;
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while retrieving the seat type by ID.", ex);
+            }
         }
-        // Tìm kiếm loại ghế theo tên
+
         public async Task<List<SeatType>> SearchSeatType(string typeName)
         {
-            return await dbContext.SeatTypes.Where(st => st.TypeName.Contains(typeName)).ToListAsync();
+            try
+            {
+                if (string.IsNullOrEmpty(typeName))
+                {
+                    throw new ArgumentException("Search term cannot be null or empty.", nameof(typeName));
+                }
+
+                return await dbContext.SeatTypes
+                    .Where(st => st.TypeName.Contains(typeName))
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while searching for seat types.", ex);
+            }
         }
 
         public async Task<SeatType?> DeActiveASeatType(int seatTypeId)
         {
-            var seatType = await dbContext.SeatTypes.FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
-            if(seatType != null)
+            try
             {
+                var seatType = await dbContext.SeatTypes
+                    .FirstOrDefaultAsync(st => st.SeatTypeId == seatTypeId);
+
+                if (seatType == null)
+                {
+                    throw new KeyNotFoundException($"SeatType with ID {seatTypeId} not found.");
+                }
+
                 seatType.IsActive = false;
                 await dbContext.SaveChangesAsync();
+
+                return seatType;
             }
-            return seatType;
+            catch (Exception ex)
+            {
+                // Log the exception here
+                throw new InvalidOperationException("An error occurred while deactivating the seat type.", ex);
+            }
         }
     }
 }
