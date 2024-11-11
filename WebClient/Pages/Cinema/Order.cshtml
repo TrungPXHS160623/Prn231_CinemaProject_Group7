@@ -2,17 +2,20 @@
 @model WebClient.Pages.Cinema.OrderModel
 @{
 }
+<div id="content">
 
+</div>
+<div id="concession-title" class="concession-title"></div>
+<div id="concession-container" class="concession-grid"></div>
 <form method="post" id="orderForm">
-    <input type="hidden" asp-for="Order.ShowtimeId" name="ShowtimeId" id="ShowtimeId" />
-    <input type="hidden" asp-for="Order.SeatId" name="SeatId" id="SeatId" />
+    <input type="hidden" asp-for="ShowtimeId" name="ShowtimeId" id="ShowtimeId" />
     <div class="form-group">
         <label asp-for="Order.CouponId" class="control-label"></label>
         <select asp-for="Order.CouponId" class="form-control">
             <option value="">Select Coupon</option>
             @foreach (var coupon in Model.Coupons)
             {
-                <option value="@coupon.">@coupon.Code</option>
+                <option value="@coupon.CouponId">@coupon.Code</option>
             }
         </select>
         <span asp-validation-for="Order.CouponId" class="text-danger"></span>
@@ -23,11 +26,13 @@
             <option value="">Select Gift Card</option>
             @foreach (var giftCard in Model.GiftCards)
             {
-                <option value="@giftCard.">@giftCard.Code</option>
+                <option value="@giftCard.GiftCardId">@giftCard.Code</option>
             }
         </select>
         <span asp-validation-for="Order.GiftCardId" class="text-danger"></span>
     </div>
+    <div id="seatInputContainer"></div>
+    <div id="concessionInputContainer"></div>
     <button type="submit" id="submitOrder" style="display:none;">Submit Order</button>
 </form>
 
@@ -100,7 +105,7 @@
                 fetch(`http://localhost:5280/api/Showtime/GetShowTimeByMovieTheater/${movieId}/${theaterId}`)
                     .then(response => response.json())
                     .then(data => {
-                        contentDiv.innerHTML = `<h2>Showtimes</h2><ul>${data.map(showtime => `<li><a href="#" class="showtime-link" data-showtime-id="${showtime.showtimeId}">${new Date(showtime.startTime).toLocaleString()} - ${new Date(showtime.endTime).toLocaleString()} - ${showtime.roomName}</a></li>`).join('')}</ul>`;
+                        contentDiv.innerHTML = `<h2>Showtimes</h2><ul>${data.map(showtime => `<li><a href="#" class="showtime-link" data-showtime-id="${showtime.showtimeId}">${new Date(showtime.startTime).toLocaleString()} - ${new Date(showtime.endTime).toLocaleString()} - ${showtime.roomeName}</a></li>`).join('')}</ul>`;
                         attachShowtimeLinks();
                     })
                     .catch(error => {
@@ -128,7 +133,6 @@
                         const rows = [...new Set(data.map(seat => seat.rowName))].sort();
                         const columns = [...new Set(data.map(seat => seat.seatNumber.replace(/^\D+/g, '')))].sort((a, b) => a - b);
                         contentDiv.innerHTML = `<h2>Seats</h2><div class="seat-container">${generateSeatGrid(rows, columns, data)}</div>`;
-                        applySeatStyles();
                         attachSeatLinks();
                     })
                     .catch(error => {
@@ -155,65 +159,99 @@
                 return grid;
             }
 
-            function attachSeatLinks() {
+            async function attachSeatLinks() {
+                let selectedSeats = [];
+                const concessions = await fetch('http://localhost:5280/api/Concessions/GetAllConcessions')
+                    .then(response => response.json())
+                    .then(data => data.filter(c => c.isActive));
+
                 document.querySelectorAll('.seat-box').forEach(box => {
                     if (!box.classList.contains('empty')) {
                         box.addEventListener('click', function () {
-                            seatInput.value = this.getAttribute('data-seat-id');
-                            submitOrderButton.click();
+                            const seatId = this.getAttribute('data-seat-id');
+                            if (selectedSeats.includes(seatId)) {
+                                selectedSeats = selectedSeats.filter(id => id !== seatId);
+                                this.classList.remove('selected');
+                            } else {
+                                selectedSeats.push(seatId);
+                                this.classList.add('selected');
+                            }
+                            updateSeatInputs(selectedSeats);
+                            submitOrderButton.style.display = selectedSeats.length > 0 ? 'block' : 'none';
+                            showConcessions(concessions);
                         });
                     }
                 });
             }
+            function updateSeatInputs(selectedSeats) {
+                const seatInputContainer = document.getElementById('seatInputContainer');
+                seatInputContainer.innerHTML = '';
+                selectedSeats.forEach((seatId, index) => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = `SeatIds[${index}]`;
+                    input.value = seatId;
+                    seatInputContainer.appendChild(input);
+                });
+            }
+            function showConcessions(concessions) {
+                const concessionTitle = document.getElementById('concession-title');
+                const concessionContainer = document.getElementById('concession-container');
+                
+                concessionContainer.innerHTML = ''; // Clear the concession container
+                concessionTitle.innerHTML = `<h2>Concessions</h2>`;
+                concessions.forEach(concession => {
+                    const concessionDiv = document.createElement('div');
+                    concessionDiv.classList.add('concession-item');
+                    concessionDiv.innerHTML = `
+                    <span>${concession.productName} - $${concession.price}</span>
+                    <input type="number" min="0" value="0" max="50" data-concession-id="${concession.productId}" class="concession-quantity">
+                `;
+                    attachConcessionLinks();
+                    concessionContainer.appendChild(concessionDiv);
+                });
+            }
+            function attachConcessionLinks() {
+                let selectedConcessions = [];
 
-            function applySeatStyles() {
-                const style = document.createElement('style');
-                style.innerHTML = `
-                            .seat-container {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
+                document.querySelectorAll('.concession-quantity').forEach(input => {
+                    input.addEventListener('change', function () {
+                        const concessionId = this.getAttribute('data-concession-id');
+                        const quantity = parseInt(this.value, 10);
+
+                        const existingConcession = selectedConcessions.find(c => c.id === concessionId);
+                        if (existingConcession) {
+                            if (quantity > 0) {
+                                existingConcession.quantity = quantity;
+                            } else {
+                                selectedConcessions = selectedConcessions.filter(c => c.id !== concessionId);
                             }
-                            .seat-grid {
-                                display: grid;
-                                gap: 5px;
-                            }
-                            .seat-row {
-                                display: flex;
-                            }
-                            .seat-label {
-                                width: 50px;
-                                height: 50px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-weight: bold;
-                            }
-                            .seat-box {
-                                width: 50px;
-                                height: 50px;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                border: 1px solid #000;
-                                cursor: pointer;
-                            }
-                            .seat-box.economic {
-                                background-color: #4CAF50; /* Green */
-                            }
-                            .seat-box.vip {
-                                background-color: #FFD700; /* Gold */
-                            }
-                            .seat-box.premium {
-                                background-color: #FF4500; /* OrangeRed */
-                            }
-                            .seat-box.empty {
-                                background-color: #E0E0E0; /* Light Gray */
-                            }
-                        `;
-                document.head.appendChild(style);
+                        } else if (quantity > 0) {
+                            selectedConcessions.push({ id: concessionId, quantity: quantity });
+                        }
+
+                        updateConcessionInputs(selectedConcessions);
+                    });
+                });
             }
 
+            function updateConcessionInputs(selectedConcessions) {
+                const concessionInputContainer = document.getElementById('concessionInputContainer');
+                concessionInputContainer.innerHTML = '';
+                selectedConcessions.forEach((concession, index) => {
+                    const concessionIdInput = document.createElement('input');
+                    concessionIdInput.type = 'hidden';
+                    concessionIdInput.name = `SelectedConcessions[${index}].ConcessionId`;
+                    concessionIdInput.value = concession.id;
+                    concessionInputContainer.appendChild(concessionIdInput);
+
+                    const quantityInput = document.createElement('input');
+                    quantityInput.type = 'hidden';
+                    quantityInput.name = `SelectedConcessions[${index}].Quantity`;
+                    quantityInput.value = concession.quantity;
+                    concessionInputContainer.appendChild(quantityInput);
+                });
+            }
             backButton.addEventListener('click', function () {
                 if (historyStack.length > 0) {
                     contentDiv.innerHTML = historyStack.pop();
@@ -229,7 +267,76 @@
                 attachMovieLinks();
                 attachShowtimeLinks();
                 attachSeatLinks();
+                attachConcessionLinks();
             }
         });
     </script>
 }
+<style>
+    .seat-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .seat-grid {
+        display: grid;
+        gap: 5px;
+    }
+
+    .seat-row {
+        display: flex;
+    }
+
+    .seat-label {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+    }
+
+    .seat-box {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #000;
+        cursor: pointer;
+    }
+
+        .seat-box.selected {
+            border: 2px solid #0000FF; /* Blue border for selected seats */
+        }
+
+        .seat-box.economic {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .seat-box.vip {
+            background-color: #FFD700; /* Gold */
+        }
+
+        .seat-box.premium {
+            background-color: #FF4500; /* OrangeRed */
+        }
+
+        .seat-box.empty {
+            background-color: #E0E0E0; /* Light Gray */
+        }
+
+    .concession-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Single column on small screens */
+    }
+
+    .concession-title{
+        margin-top: 30px;
+    }
+    .concession-quantity{
+        width: 40px;
+    }
+</style>

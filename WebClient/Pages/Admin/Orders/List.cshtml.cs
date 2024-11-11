@@ -12,11 +12,12 @@ namespace WebClient.Pages.Admin.Orders
             _httpClient = httpClient;
         }
 
-        public IList<Order> Orders { get; set; }
+        public List<Order> Orders { get; set; }
 
         public async Task OnGetAsync()
         {
-            Orders = await _httpClient.GetFromJsonAsync<IList<Order>>("http://localhost:5280/api/Orders/GetAllOrders");
+            var data = await _httpClient.GetFromJsonAsync<List<Order>>("http://localhost:5280/api/Orders/GetAllOrders");
+            Orders = data.Where(x => x.StatusId != 3).ToList();
         }
     }
 }

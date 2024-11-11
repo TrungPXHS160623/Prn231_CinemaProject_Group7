@@ -29,6 +29,12 @@ namespace Prn231_CinemaProject_Group7.Controllers
             return Ok(data);
         }
 
+        [HttpGet("GetOrdersByCustomerId/{id}")]
+        public async Task<IActionResult> GetOrdersByCustomerId(int id)
+        {
+            var data = await repository.GetOrdersByCustomerId(id);
+            return Ok(data);
+        }
         [HttpPost("CreateOrder")]
         public IActionResult CreateOrder(OrderDTO Order)
         {

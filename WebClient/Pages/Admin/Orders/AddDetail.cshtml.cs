@@ -43,7 +43,7 @@ namespace WebClient.Pages.Admin.Orders
             var couponResponse = _httpClient.GetFromJsonAsync<Seat>($"http://localhost:5280/api/Seat/{OrderDetail.SeatId}").Result;
             if (couponResponse != null)
             {
-                OrderDetail.Price = (decimal)(couponResponse.Price * OrderDetail.Quantity);
+                OrderDetail.Price = (decimal)couponResponse.Price;
             }
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/OrderDetails/CreateOrderDetail", OrderDetail);
 

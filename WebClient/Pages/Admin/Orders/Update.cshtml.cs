@@ -16,6 +16,8 @@ namespace WebClient.Pages.Admin.Orders
 
         [BindProperty]
         public Order Order { get; set; }
+
+        [BindProperty]
         public bool IsPaid { get; set; }
         public int StatusId { get; set; }
         public List<OrderStatus> Statuses { get; set; }
@@ -40,7 +42,7 @@ namespace WebClient.Pages.Admin.Orders
                 CustomerId = orderElement.GetProperty("customerId").GetInt32(),
                 OrderDate = orderElement.GetProperty("orderDate").GetDateTime(),
                 TotalAmount = orderElement.GetProperty("totalAmount").GetDecimal(),
-                IsPaid = orderElement.GetProperty("isPaid").GetBoolean(),
+                IsPaid = orderElement.TryGetProperty("isPaid", out var isPaidElement) && isPaidElement.ValueKind != JsonValueKind.Null ? isPaidElement.GetBoolean() : false,
                 PaymentMethod = orderElement.GetProperty("paymentMethod").GetString(),
                 StatusId = orderElement.GetProperty("statusId").GetInt32(),
                 CouponId = orderElement.TryGetProperty("couponId", out var couponIdElement) && couponIdElement.ValueKind != JsonValueKind.Null ? couponIdElement.GetInt32() : (int?)null,
@@ -95,7 +97,8 @@ namespace WebClient.Pages.Admin.Orders
             }
 
             Order.TotalAmount = totalAmount;
-
+            Order.IsPaid = IsPaid;
+            
             var response = await _httpClient.PutAsJsonAsync($"http://localhost:5280/api/Orders/UpdateOrder/{Order.OrderId}", Order);
 
             if (response.IsSuccessStatusCode)

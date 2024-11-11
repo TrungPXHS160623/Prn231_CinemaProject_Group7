@@ -14,8 +14,8 @@ namespace Prn231_CinemaProject_Group7.DTO
         public int StatusId { get; set; }
         public int? CouponId { get; set; }
         public int? GiftCardId { get; set; }
-        public virtual ICollection<OrderConcession> OrderConcessions { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<OrderConcessionDTO> OrderConcessions { get; set; }
+        public virtual ICollection<OrderDetailDTO> OrderDetails { get; set; }
     }
     public class OrderSummaryDTO
     {
@@ -25,6 +25,7 @@ namespace Prn231_CinemaProject_Group7.DTO
         public decimal TotalAmount { get; set; }
         public bool? IsPaid { get; set; }
         public string PaymentMethod { get; set; } = null!;
+        public int StatusId { get; set; }
         public OrderStatusDTO OrderStatus { get; set; }
         public CouponInfoDTO? Coupon { get; set; }
         public GiftCardInfoDTO? GiftCard { get; set; }

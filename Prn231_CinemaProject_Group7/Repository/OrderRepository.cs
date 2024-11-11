@@ -56,7 +56,7 @@ namespace Prn231_CinemaProject_Group7.Repository
             try
             {
                 var Order = _context.Orders.Find(id);
-                Order.StatusId = 4;
+                Order.StatusId = 3;
                 _context.SaveChanges();
                 return await Task.FromResult(true);
             }
@@ -93,6 +93,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                     TotalAmount = order.TotalAmount,
                     IsPaid = order.IsPaid,
                     PaymentMethod = order.PaymentMethod,
+                    StatusId = order.StatusId,
                     OrderStatus = new OrderStatusDTO
                     {
                         StatusName = order.OrderStatus.StatusName
@@ -141,7 +142,82 @@ namespace Prn231_CinemaProject_Group7.Repository
                 })
                 .ToListAsync();
         }
-
+        public async Task<List<OrderSummaryDTO>> GetOrdersByCustomerId(int id)
+        {
+            return await _context.Orders.Where(o => o.CustomerId == id)
+                .Include(o => o.Customer)
+                .Include(o => o.OrderStatus)
+                .Include(o => o.Coupon)
+                .Include(o => o.GiftCard)
+                .Include(o => o.OrderConcessions)
+                    .ThenInclude(oc => oc.Concession)
+                .Include(o => o.OrderDetails)
+                    .ThenInclude(od => od.Showtime)
+                .Include(o => o.OrderDetails)
+                    .ThenInclude(od => od.Seat)
+                        .ThenInclude(s => s.Room)
+                            .ThenInclude(r => r.Theater)
+                .Select(order => new OrderSummaryDTO
+                {
+                    OrderId = order.OrderId,
+                    Customer = new CustomerInfoDTO
+                    {
+                        FirstName = order.Customer.FirstName,
+                        LastName = order.Customer.LastName
+                    },
+                    OrderDate = order.OrderDate,
+                    TotalAmount = order.TotalAmount,
+                    IsPaid = order.IsPaid,
+                    PaymentMethod = order.PaymentMethod,
+                    StatusId = order.StatusId,
+                    OrderStatus = new OrderStatusDTO
+                    {
+                        StatusName = order.OrderStatus.StatusName
+                    },
+                    Coupon = order.Coupon != null ? new CouponInfoDTO
+                    {
+                        Discount = order.Coupon.Discount
+                    } : null,
+                    GiftCard = order.GiftCard != null ? new GiftCardInfoDTO
+                    {
+                        Balance = order.GiftCard.Balance
+                    } : null,
+                    OrderConcessions = order.OrderConcessions.Select(oc => new OrderConcessionInfoDTO
+                    {
+                        OrderConcessionId = oc.OrderConcessionId,
+                        Concession = new ConcessionInfoDTO
+                        {
+                            ProductName = oc.Concession.ProductName
+                        },
+                        Quantity = oc.Quantity,
+                        Price = oc.Price
+                    }).ToList(),
+                    OrderDetails = order.OrderDetails.Select(od => new OrderDetailInfoDTO
+                    {
+                        OrderDetailId = od.OrderDetailId,
+                        Showtime = new ShowtimeInfoDTO
+                        {
+                            StartTime = od.Showtime.StartTime,
+                            EndTime = od.Showtime.EndTime
+                        },
+                        Seat = new SeatInfoDTO
+                        {
+                            SeatNumber = od.Seat.SeatNumber,
+                            Room = new RoomInfoDTO
+                            {
+                                Name = od.Seat.Room.Name,
+                                Theater = new TheaterInfoDTO
+                                {
+                                    Name = od.Seat.Room.Theater.Name
+                                }
+                            }
+                        },
+                        Quantity = od.Quantity,
+                        Price = od.Price
+                    }).ToList()
+                })
+                .ToListAsync();
+        }
         public async Task<Order?> GetOrder(int id)
         {
             return _context.Orders.Find(id);
