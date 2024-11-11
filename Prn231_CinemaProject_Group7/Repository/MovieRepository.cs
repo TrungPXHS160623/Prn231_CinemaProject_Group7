@@ -42,6 +42,14 @@ namespace Prn231_CinemaProject_Group7.Repository
                     UpdatedAt = DateTime.Now,
                     IsActive = Movies.IsActive,
                 };
+                foreach (var item in Movies.Categories)
+                {
+                    var cate = _context.Categories.FirstOrDefault(c => c.CategoryId == item.CategoryId);
+                    if (cate != null)
+                    {
+                        movie.Categories.Add(cate);
+                    }
+                }
                 _context.Movies.Add(movie);
                 await _context.SaveChangesAsync();
                 return true;
@@ -71,28 +79,90 @@ namespace Prn231_CinemaProject_Group7.Repository
             }
         }
 
-        public async Task<List<Movie>> GetAllMovies()
+        public async Task<List<MovieDTO>> GetAllMovies()
         {
-            return await _context.Movies.ToListAsync();
+            return await _context.Movies.Select(m => new MovieDTO
+            {
+                MovieId = m.MovieId,
+                Title = m.Title,
+                Description = m.Description,
+                Duration = m.Duration,
+                ReleaseDate = m.ReleaseDate,
+                Language = m.Language,
+                Director = m.Director,
+                Cast = m.Cast,
+                AgeRating = m.AgeRating,
+                TrailerUrl = m.TrailerUrl,
+                PosterUrl = m.PosterUrl,
+                IsActive = m.IsActive,
+                Categories = m.Categories.Select(c => new CategoryDTO
+                {
+                    CategoryId = c.CategoryId,
+                    CategoryName = c.CategoryName,
+                    Description = c.Description,
+                    CreatedAt = c.CreatedAt,
+                    UpdatedAt = c.UpdatedAt,
+                    IsActive = c.IsActive
+                }).ToList(),
+            })
+                .ToListAsync();
         }
 
-        public Movie? GetMovies(int id)
+        public MovieDTO? GetMovies(int id)
         {
-            return _context.Movies.FirstOrDefault(m => m.MovieId == id); ;
+            return _context.Movies
+                .Select(m => new MovieDTO
+                {
+                    MovieId = m.MovieId,
+                    Title = m.Title,
+                    Description = m.Description,
+                    Duration = m.Duration,
+                    ReleaseDate = m.ReleaseDate,
+                    Language = m.Language,
+                    Director = m.Director,
+                    Cast = m.Cast,
+                    AgeRating = m.AgeRating,
+                    TrailerUrl = m.TrailerUrl,
+                    PosterUrl = m.PosterUrl,
+                    IsActive = m.IsActive,
+                    Categories = m.Categories.Select(c => new CategoryDTO
+                    {
+                        CategoryId = c.CategoryId,
+                        CategoryName = c.CategoryName,
+                        Description = c.Description,
+                        CreatedAt = c.CreatedAt,
+                        UpdatedAt = c.UpdatedAt,
+                        IsActive = c.IsActive
+                    }).ToList(),
+                }).Where(m => m.MovieId == id).FirstOrDefault();
         }
 
         public async Task<bool> UpdateMovies(int id, MovieDTO Movies)
         {
             try
             {
-                var data = await _context.Movies.FindAsync(id);
+                var data = await _context.Movies.Where(m => m.MovieId == id).FirstAsync();
                 if (data == null)
                 {
                     return false;
                 }
-                
-                await _context.SaveChangesAsync();
-                return true;
+                else
+                {
+                    data.Title = Movies.Title;
+                    data.Description = Movies.Description;
+                    data.Duration = Movies.Duration;
+                    data.ReleaseDate = Movies.ReleaseDate;
+                    data.Language = Movies.Language;
+                    data.Director = Movies.Director;
+                    data.AgeRating = Movies.AgeRating;
+                    data.Cast = Movies.Cast;
+                    data.IsActive = Movies.IsActive;
+                    data.UpdatedAt = DateTime.Now;
+
+                    _context.Movies.Update(data);
+                    await _context.SaveChangesAsync();
+                    return true;
+                }
             }
             catch (Exception)
             {

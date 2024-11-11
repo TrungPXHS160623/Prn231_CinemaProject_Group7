@@ -1,0 +1,90 @@
+﻿@page
+@using WebClient.DTO
+@using WebClient.Models
+@model WebClient.Pages.Admin.Movies.AddModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var categories = ViewData["categories"] as List<Category>;
+}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label for="Title" class="control-label">Title</label>
+                    <input id="Title" class="form-control" type="text" name="Title" />
+                    <span for="Title" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="control-label">Description</label>
+                    <textarea id="Description" class="form-control" name="Description"></textarea>
+                    <span for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Duration" class="control-label">Duration</label>
+                    <input id="Duration" class="form-control" type="number" name="Duration" />
+                    <span for="Duration" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ReleaseDate" class="control-label">Release Date</label>
+                    <input id="ReleaseDate" class="form-control" type="datetime-local" name="ReleaseDate" />
+                    <span for="ReleaseDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Language" class="control-label">Language</label>
+                    <input id="Language" class="form-control" type="text" name="Language" />
+                    <span for="Language" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Director" class="control-label">Director</label>
+                    <input id="Director" class="form-control" type="text" name="Director" />
+                    <span for="Director" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Cast" class="control-label">Cast</label>
+                    <input id="Cast" class="form-control" type="text" name="Cast" />
+                    <span for="Cast" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="AgeRating" class="control-label">Age Rating</label>
+                    <input id="AgeRating" class="form-control" type="text" name="AgeRating" />
+                    <span for="AgeRating" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="TrailerUrl" class="control-label">Trailer URL</label>
+                    <input id="TrailerUrl" class="form-control" type="text" name="TrailerUrl" />
+                    <span for="TrailerUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="PosterUrl" class="control-label">Poster URL</label>
+                    <input id="PosterUrl" class="form-control" type="text" name="PosterUrl" />
+                    <span for="PosterUrl" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="IsActive" class="control-label">Is Active</label>
+                    <div class="form-check">
+                        <input id="IsActive" class="form-check-input" type="radio" name="IsActive" value="true" />
+                        <label class="form-check-label" for="IsActive">Active</label>
+                    </div>
+                    <div class="form-check">
+                        <input id="IsInactive" class="form-check-input" type="radio" name="IsActive" value="false" />
+                        <label class="form-check-label" for="IsInactive">Inactive</label>
+                    </div>
+                </div>
+                <label>Select Options</label>
+                @foreach (var cate in categories)
+                {
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="selectedOptions" value="@cate.CategoryId" id=$"option{@cate.CategoryId}">
+                        <label class="form-check-label" for=$"option{@cate.CategoryId}">@cate.CategoryName</label>
+                    </div>
+                }
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

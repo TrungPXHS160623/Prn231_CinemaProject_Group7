@@ -384,3 +384,4 @@ FodyWeavers.xsd
 *.v2
 *.json
 *.bin
+/Prn231_CinemaProject_Group7/appsettings.json

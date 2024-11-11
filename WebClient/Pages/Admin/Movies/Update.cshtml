@@ -1,0 +1,96 @@
+﻿@page
+@using WebClient.DTO
+@using WebClient.Models
+@model WebClient.Pages.Admin.Movies.UpdateModel
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var movie = ViewData["movies"] as MovieDTO;
+    var categories = ViewData["categories"] as List<Category>;
+}
+
+@if (movie != null)
+{
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form method="post">
+                    <input readonly type="number" value="@movie.MovieId" name="MovieId" />
+                    <div class="form-group">
+                        <label for="Title" class="control-label">Title</label>
+                        <input id="Title" class="form-control" type="text" name="Title" value="@movie.Title" />
+                        <span for="Title" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Description" class="control-label">Description</label>
+                        <textarea id="Description" class="form-control" name="Description">@movie.Description</textarea>
+                        <span for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Duration" class="control-label">Duration</label>
+                        <input id="Duration" class="form-control" type="number" name="Duration" value="@movie.Duration" />
+                        <span for="Duration" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="ReleaseDate" class="control-label">ReleaseDate</label>
+                        <input id="ReleaseDate" class="form-control" type="datetime" name="ReleaseDate" value="@movie.ReleaseDate" />
+                        <span for="ReleaseDate" class="was-validated"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Language" class="control-label">Language</label>
+                        <input id="Language" class="form-control" type="text" name="Language" value="@movie.Language" />
+                        <span for="Language" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Director" class="control-label">Director</label>
+                        <input id="Director" class="form-control" type="text" name="Director" value="@movie.Director" />
+                        <span for="Director" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="Cast" class="control-label">Cast</label>
+                        <input id="Cast" class="form-control" type="text" name="Cast" value="@movie.Cast" />
+                        <span for="Cast" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="AgeRating" class="control-label">AgeRating</label>
+                        <input id="AgeRating" class="form-control" type="text" name="AgeRating" value="@movie.AgeRating" />
+                        <span for="AgeRating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="TrailerUrl" class="control-label">TrailerUrl</label>
+                        <input id="TrailerUrl" class="form-control" type="text" name="TrailerUrl" value="@movie.TrailerUrl" />
+                        <span for="TrailerUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="PosterUrl" class="control-label">PosterUrl</label>
+                        <input id="PosterUrl" class="form-control" type="text" name="PosterUrl" value="@movie.PosterUrl" />
+                        <span for="PosterUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="IsActive" class="control-label">IsActive</label>
+                        <div class="form-check">
+                            <input id="IsActive" class="form-check-input" type="radio" name="IsActive" checked="@movie.IsActive" />
+                            <label class="form-check-label" for="IsActive">
+                                Active
+                            </label>
+                        </div>
+                    </div>
+
+                    <label>Select Options</label>
+                    @foreach (var cate in categories)
+                    {
+                        <div class="form-check"> 
+                            <input class="form-check-input" type="checkbox" checked="@movie.Categories.Any(c=>c.CategoryId==cate.CategoryId)" name="selectedOptions" value="@cate.CategoryId" id=$"option{@cate.CategoryId}">
+                            <label class="form-check-label" for=$"option{@cate.CategoryId}">@cate.CategoryName</label>
+                        </div>
+                    }
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
