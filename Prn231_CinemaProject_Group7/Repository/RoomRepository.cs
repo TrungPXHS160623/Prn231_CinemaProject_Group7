@@ -71,7 +71,9 @@ namespace Prn231_CinemaProject_Group7.Repository
 
         public async Task<List<Room>> GetAllRooms()
         {
-            return await dbContext.Rooms.ToListAsync();
+            return await dbContext.Rooms
+                .Include(r => r.Theater)
+                .ToListAsync();
         }
 
         public async Task<Room?> GetRoomById(int roomId)
@@ -109,19 +111,25 @@ namespace Prn231_CinemaProject_Group7.Repository
             var theaterExists = await dbContext.Theaters.AnyAsync(t => t.TheaterId == room.TheaterId);
             if (!theaterExists)
             {
-                throw new ArgumentException($"TheaterId {room.RoomId} does not exist.");
+                throw new ArgumentException($"TheaterId {room.TheaterId} does not exist.");
             }
-            var existingRoom = await dbContext.Rooms.FirstOrDefaultAsync(r => r.RoomId == room.RoomId);
+
+            // Tìm Room theo RoomId
+            var existingRoom = await GetRoomById(room.RoomId); // Sử dụng hàm GetRoomById
             if (existingRoom != null)
             {
                 existingRoom.Name = room.Name;
                 existingRoom.SeatCapacity = room.SeatCapacity;
                 existingRoom.IsActive = room.IsActive;
-
+                existingRoom.TheaterId = room.TheaterId;
                 await dbContext.SaveChangesAsync();
                 return existingRoom;
             }
-            return null; // Hoặc có thể ném một ngoại lệ
+
+            // Nếu không tìm thấy Room, có thể ném ngoại lệ hoặc trả về null
+            throw new ArgumentException($"Room with ID {room.RoomId} does not exist.");
         }
+
+
     }
 }

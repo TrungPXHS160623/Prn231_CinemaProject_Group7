@@ -92,35 +92,6 @@ D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\refint
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.pdb
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.genruntimeconfig.cache
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\ref\WebClient.dll
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\appsettings.Development.json
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\appsettings.json
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.staticwebassets.runtime.json
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.exe
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.deps.json
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.runtimeconfig.json
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.dll
-C:\FPT\Final Project\WebClient\bin\Debug\net6.0\WebClient.pdb
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.GeneratedMSBuildEditorConfig.editorconfig
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.AssemblyInfoInputs.cache
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.AssemblyInfo.cs
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.csproj.CoreCompileInputs.cache
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.MvcApplicationPartsAssemblyInfo.cache
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.RazorAssemblyInfo.cache
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.RazorAssemblyInfo.cs
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.sourcelink.json
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets.build.json
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets.development.json
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets\msbuild.WebClient.Microsoft.AspNetCore.StaticWebAssets.props
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets\msbuild.build.WebClient.props
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.WebClient.props
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.WebClient.props
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\staticwebassets.pack.json
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\scopedcss\Pages\Shared\_AdminLayout.cshtml.rz.scp.css
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\scopedcss\bundle\WebClient.styles.css
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\scopedcss\projectbundle\WebClient.bundle.scp.css
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.dll
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\refint\WebClient.dll
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.pdb
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.genruntimeconfig.cache
-C:\FPT\Final Project\WebClient\obj\Debug\net6.0\ref\WebClient.dll
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.csproj.AssemblyReference.cache
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.csproj.Up2Date

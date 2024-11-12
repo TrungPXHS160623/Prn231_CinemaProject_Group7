@@ -1,0 +1,59 @@
+﻿@page
+@model WebClient.Pages.Admin.Rooms.UpdateModel
+@{
+    ViewData["Title"] = "Update Room";
+}
+
+<div class="container mt-4">
+    <h1>Update Room</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <!-- RoomId Readonly Input -->
+                <div class="form-group">
+                    <label asp-for="Room.RoomId" class="control-label"></label>
+                    <input asp-for="Room.RoomId" class="form-control" readonly style="background-color: #f5f5f5; color: #555;" />
+                    <span asp-validation-for="Room.RoomId" class="text-danger"></span>
+                </div>
+
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label asp-for="Room.Name" class="control-label"></label>
+                    <input asp-for="Room.Name" class="form-control" />
+                    <span asp-validation-for="Room.Name" class="text-danger"></span>
+                </div>
+
+                <!-- SeatCapacity Field -->
+                <div class="form-group">
+                    <label asp-for="Room.SeatCapacity" class="control-label"></label>
+                    <input asp-for="Room.SeatCapacity" class="form-control" type="number" />
+                    <span asp-validation-for="Room.SeatCapacity" class="text-danger"></span>
+                </div>
+
+                <!-- TheaterId Field -->
+                <div class="form-group">
+                    <label asp-for="Room.TheaterId" class="control-label"></label>
+                    <select asp-for="Room.TheaterId" class="form-control" asp-items="Model.Theaters">
+                        <option value="">-- Select Theater --</option>
+                    </select>
+                    <span asp-validation-for="Room.TheaterId" class="text-danger"></span>
+                </div>
+
+                <!-- IsActive Checkbox -->
+                <div class="form-group form-check">
+                    <input asp-for="Room.IsActive" class="form-check-input" type="checkbox" />
+                    <label asp-for="Room.IsActive" class="form-check-label"></label>
+                    <span asp-validation-for="Room.IsActive" class="text-danger"></span>
+                </div>
+
+                <!-- Submit and Cancel Buttons -->
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

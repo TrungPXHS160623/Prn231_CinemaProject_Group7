@@ -226,6 +226,9 @@ namespace Prn231_CinemaProject_Group7.Repository
             return existingSeat;
         }
 
-
+        public async Task<List<Seat>> GetAllSeats()
+        {
+            return await dbContext.Seats.ToListAsync();
+        }
     }
 }
