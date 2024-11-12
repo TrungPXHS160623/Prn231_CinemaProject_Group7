@@ -1,0 +1,97 @@
+﻿@page
+@using WebClient.Models
+@model WebClient.Pages.Admin.Movies.ListModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var movies = ViewData["movies"] as List<Movie>;
+}
+<h1>Movies List</h1>
+
+<div class="table-responsive">
+    <table class="table table-bordered data-table">
+        <thead class="thead-dark">
+            <tr>
+                <th>MovieId</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>ReleaseDate</th>
+                <th>Language</th>
+                <th>Director</th>
+                <th>Cast</th>
+                <th>AgeRating</th>
+                <th>Categories</th>
+                <@* th>TrailerUrl</th>
+                    <th>PosterUrl</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th> *@
+                <th>IsActive</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var movie in movies)
+            {
+                <tr>
+                    <th>@movie.MovieId</th>
+                    <th>@movie.Title</th>
+                    <th>@movie.Description</th>
+                    <th>@movie.Duration</th>
+                    <th>@movie.ReleaseDate</th>
+                    <th>@movie.Language</th>
+                    <th>@movie.Director</th>
+                    <th>@movie.Cast</th>
+                    <th>@movie.AgeRating</th>
+                    <th>
+                        @foreach (var cate in movie.Categories)
+                        {
+                            @cate.CategoryName
+                            ;
+                            @if (cate != movie.Categories.Last())
+                            {
+                                @:,
+                            }
+                        }
+                    </th>
+                    @* <th>@movie.TrailerUrl</th>
+                    <th>@movie.PosterUrl</th>
+                    <th>@movie.CreatedAt</th>
+                    <th>@movie.UpdatedAt</th> *@
+                    <th>@movie.IsActive</th>
+                    <td>
+                        <a asp-page="Update" asp-route-id="@movie.MovieId" class="btn btn-primary">Edit</a>
+                        <button class="btn btn-danger" onclick="deleteMovie(@movie.MovieId)">@(movie.IsActive==true?"Deactive":"Active")</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<a asp-page="./Add" class="btn btn-success">Add New Movie</a>
+
+@section Scripts {
+    <script>
+        async function deleteMovie(MovieId) {
+            if (confirm('Are you sure you want to do this?')) {
+                window.location.href = `/Admin/Movies/Delete?movieid=${MovieId}`;
+            } else {
+                alert('Failed to delete the movie.');
+            }
+        }
+    </script>
+}
+
+<style>
+    .table tbody {
+        display: block;
+        overflow-y: auto;
+        height: 400px;
+    }
+
+        .table thead, .table tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+</style>
