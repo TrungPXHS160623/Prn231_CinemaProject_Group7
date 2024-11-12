@@ -84,18 +84,5 @@ namespace Prn231_CinemaProject_Group7.Controllers
                 return BadRequest();
             }
         }
-        [HttpPut("AddMovie")]
-        public IActionResult AddNewMovie(MovieDTO movieDTO)
-        {
-            var rs = repository.CreateMovies(movieDTO);
-            if (rs.Result)
-            {
-                return Ok("ok");
-            }
-            else
-            {
-                return BadRequest();
-            }
-        }
     }
 }

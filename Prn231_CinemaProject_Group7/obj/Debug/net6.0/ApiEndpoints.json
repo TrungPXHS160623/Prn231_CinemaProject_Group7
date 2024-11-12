@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
+    "Method": "GetUserId",
+    "RelativePath": "api/Auth/GetUserId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",
     "HttpMethod": "POST",
@@ -410,6 +420,22 @@
       {
         "Name": "GiftCard",
         "Type": "Prn231_CinemaProject_Group7.DTO.GiftCardDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.MovieController",
+    "Method": "AddNewMovie",
+    "RelativePath": "api/Movie/AddMovie",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "movieDTO",
+        "Type": "Prn231_CinemaProject_Group7.DTO.MovieDTO",
         "IsRequired": true
       }
     ],
@@ -1483,7 +1509,6 @@
   },
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
-
     "Method": "GetShowTimeByMovieTheater",
     "RelativePath": "api/Showtime/GetShowTimeByMovieTheater/{movieId}/{theaterId}",
     "HttpMethod": "GET",
@@ -1505,7 +1530,6 @@
   },
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
-
     "Method": "GetShowtimesByMovieId",
     "RelativePath": "api/Showtime/movie/{movieId}",
     "HttpMethod": "GET",

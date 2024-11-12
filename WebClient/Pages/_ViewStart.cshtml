@@ -4,6 +4,10 @@
     {
         Layout = "_AdminLayout";
     }
+    if (currentPath.StartsWithSegments("/Staff", StringComparison.OrdinalIgnoreCase))
+    {
+        Layout = "_StaffLayout";
+    }
     else
     {
         Layout = "_Layout";

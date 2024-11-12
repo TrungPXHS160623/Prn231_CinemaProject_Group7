@@ -11,6 +11,5 @@ namespace Prn231_CinemaProject_Group7.IRepository
         bool UpdateCategories(int id, CategoryDTO category);
         Task<List<int>> GetMovieCountByCategories();
         bool ChangeStatus(int id);
-        Task<List<int>> GetMovieCountByCategories();
     }
 }

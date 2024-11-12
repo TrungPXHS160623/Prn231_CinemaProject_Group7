@@ -48,79 +48,25 @@
                 <div class="navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Thearters/List">Thearter</a>
+                            <a class="nav-link" asp-page="/Staff/Orders/List">Order List</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Movies/List">Movie</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Users/List">User</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Orders/List">Order</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/News/List">News</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Concessions/List">Concession</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Coupons/List">Coupons</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Rooms/List">Rooms</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Seats/List">Seats</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/SeatTypes/List">SeatTypes</a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" asp-page="/Admin/Theaters/List">Theaters</a>
-                        </li>
-                        <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
-                            <a class="nav-link">Misc</a>
-                            <div class="nav-arrow"><i class="fas fa-chevron-down"></i></div>
-                            <ul class="collapse nav">
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-page="/Admin/Categories/List">Category</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-page="/Admin/Roles/List">Role</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" asp-page="/Admin/SeatTypes/List">Seat Type</a>
-                                </li>
-                            </ul>
+                            <a class="nav-link" asp-page="/Staff/Orders/Add">Order Add</a>
                         </li>
                     </ul>
                     <div class="navbar-extra">
-    <ul class="navbar-nav">
-        <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
-            <a class="nav-link">User</a>
-            <div class="nav-arrow"><i class="fas fa-chevron-down"></i></div>
-            <ul class="collapse nav">          
-                @if (User.Identity.IsAuthenticated) 
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Auth/Logout">Log out</a>
-                    </li>
-                }
-                else 
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Auth/Login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Auth/Register">Register</a>
-                    </li>
-                }
-            </ul>
-        </li>
-    </ul>
-</div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item nav-item-arrow-down nav-hover-show-sub">
+                                <a class="nav-link" asp-page="/Admin/Concessions/List">User</a>
+                                <div class="nav-arrow"><i class="fas fa-chevron-down"></i></div>
+                                <ul class="collapse nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" asp-page="#">Log out</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </nav>
         </div>
@@ -147,43 +93,21 @@
                 <div class="col-sm-6 col-lg-3">
                     <ul class="list-unstyled list-wide footer-content">
                         <li>
-                            <a class="content-link" asp-page="/Admin/Thearters/List">Thearter</a>
+                            <a class="content-link" asp-page="/Staff/Orders/List">Order List</a>
                         </li>
                         <li>
-                            <a class="content-link" asp-page="/Admin/Movies/List">Movie</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Categories/List">Category</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/SeatTypes/List">Seat Type</a>
+                            <a class="content-link" asp-page="/Staff/Orders/Add">Order Add</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <ul class="list-unstyled list-wide footer-content">
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Users/List">User</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Orders/List">Order</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Roles/List">Role</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 <div class="col-sm-6 col-lg-3">
                     <ul class="list-unstyled list-wide footer-content">
-                        <li>
-                            <a class="content-link" asp-page="/Admin/News/List">News</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Concessions/List">Concession</a>
-                        </li>
-                        <li>
-                            <a class="content-link" asp-page="/Admin/Coupons/List">Coupon</a>
-                        </li>
+                        
                     </ul>
                 </div>
             </div>

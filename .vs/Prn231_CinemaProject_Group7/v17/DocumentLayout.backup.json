@@ -3,16 +3,64 @@
   "WorkspaceRootPath": "D:\\API\\Prn231_CinemaProject_Group7\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\news.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\news.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\newsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\newsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\shared\\_adminlayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\shared\\_stafflayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\shared\\_stafflayout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\controllers\\moviecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\irepository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\irepository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\myticket.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\myticket.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\mycoupon\u0026giftcard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\mycoupon\u0026giftcard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\order.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\order.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\mycoupon\u0026giftcard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\mycoupon\u0026giftcard.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\mycoupon\u0026giftcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -21,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\staff\\orders\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\staff\\orders\\update.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|solutionrelative:prn231_cinemaproject_group7\\repository\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{55D2BB39-7DA5-4BA4-A01B-DC767B291F26}|Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7.csproj|d:\\api\\prn231_cinemaproject_group7\\prn231_cinemaproject_group7\\models\\prn231_project_finalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -69,10 +113,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\admin\\orders\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\admin\\orders\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|d:\\api\\prn231_cinemaproject_group7\\webclient\\pages\\cinema\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{46FDD20A-4771-4E99-A925-8B82E382F653}|WebClient\\WebClient.csproj|solutionrelative:webclient\\pages\\cinema\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,8 +122,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NewsRepository.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\NewsRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\NewsRepository.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\NewsRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\NewsRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:58:54.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\Index.cshtml.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\Index.cshtml.cs",
+              "RelativeToolTip": "WebClient\\Pages\\Cinema\\Index.cshtml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowDYAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:55:35.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_AdminLayout.cshtml",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_AdminLayout.cshtml",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Shared\\_AdminLayout.cshtml",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_AdminLayout.cshtml",
+              "RelativeToolTip": "WebClient\\Pages\\Shared\\_AdminLayout.cshtml",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAG4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:48:10.931Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
@@ -94,20 +173,110 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MyTicket.cshtml.cs",
-              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
-              "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
-              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
-              "RelativeToolTip": "WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBQAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:20:17.888Z",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebClient\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAH4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:52:31.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "WebClient\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:50:26.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "_StaffLayout.cshtml",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_StaffLayout.cshtml",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Shared\\_StaffLayout.cshtml",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Shared\\_StaffLayout.cshtml",
+              "RelativeToolTip": "WebClient\\Pages\\Shared\\_StaffLayout.cshtml",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAAAEwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T00:48:38.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebClient\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebClient\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-12T00:47:36.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MovieController.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\MovieController.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\MovieController.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\MovieController.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\Controllers\\MovieController.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAiwFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:46:58.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ICategoryRepository.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\ICategoryRepository.cs",
+              "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\IRepository\\ICategoryRepository.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\ICategoryRepository.cs",
+              "RelativeToolTip": "Prn231_CinemaProject_Group7\\IRepository\\ICategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:46:45.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "News.cshtml.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\News.cshtml.cs",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\News.cshtml.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\News.cshtml.cs",
+              "RelativeToolTip": "WebClient\\Pages\\Cinema\\News.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:27:44.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MyTicket.cshtml.cs",
+              "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
+              "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
+              "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
+              "RelativeToolTip": "WebClient\\Pages\\Cinema\\MyTicket.cshtml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAzwBQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T00:20:17.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Prn231_Project_FinalContext.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Models\\Prn231_Project_FinalContext.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Models\\Prn231_Project_FinalContext.cs",
@@ -115,25 +284,23 @@
               "RelativeToolTip": "Prn231_CinemaProject_Group7\\Models\\Prn231_Project_FinalContext.cs",
               "ViewState": "AgIAAEkBAAAAAAAAAAApwFwBAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:16:35.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:16:35.182Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "OrderRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\OrderRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\OrderRepository.cs",
               "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\OrderRepository.cs",
               "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\OrderRepository.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAlwBIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAD4v6UAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:14:34.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:14:34.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 18,
               "Title": "ShowtimeRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\ShowtimeRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\ShowtimeRepository.cs",
@@ -141,25 +308,23 @@
               "RelativeToolTip": "Prn231_CinemaProject_Group7\\Repository\\ShowtimeRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:14:27.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:14:27.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
               "Title": "Order.cshtml.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\Order.cshtml.cs",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\Order.cshtml.cs",
               "ToolTip": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\Order.cshtml.cs",
               "RelativeToolTip": "WebClient\\Pages\\Cinema\\Order.cshtml.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBMAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAIwBMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T00:12:45.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-12T00:12:45.909Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 19,
               "Title": "GiftCardsController.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\GiftCardsController.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\GiftCardsController.cs",
@@ -171,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 22,
               "Title": "CouponsController.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Controllers\\CouponsController.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Controllers\\CouponsController.cs",
@@ -183,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "ICouponRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\ICouponRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\IRepository\\ICouponRepository.cs",
@@ -195,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 23,
               "Title": "IGiftCardRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\IRepository\\IGiftCardRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\IRepository\\IGiftCardRepository.cs",
@@ -207,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 20,
               "Title": "GiftCardRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\GiftCardRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\GiftCardRepository.cs",
@@ -219,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 21,
               "Title": "CouponRepository.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\Prn231_CinemaProject_Group7\\Repository\\CouponRepository.cs",
               "RelativeDocumentMoniker": "Prn231_CinemaProject_Group7\\Repository\\CouponRepository.cs",
@@ -231,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 16,
               "Title": "Update.cshtml.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Staff\\Orders\\Update.cshtml.cs",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Staff\\Orders\\Update.cshtml.cs",
@@ -239,12 +404,11 @@
               "RelativeToolTip": "WebClient\\Pages\\Staff\\Orders\\Update.cshtml.cs",
               "ViewState": "AgIAAEcAAAAAAAAAAAAUwFwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T19:26:44.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T19:26:44.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "GiftCard.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Models\\GiftCard.cs",
               "RelativeDocumentMoniker": "WebClient\\Models\\GiftCard.cs",
@@ -256,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 27,
               "Title": "Add.cshtml",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Admin\\Orders\\Add.cshtml",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Admin\\Orders\\Add.cshtml",
@@ -268,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 26,
               "Title": "Coupon.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Models\\Coupon.cs",
               "RelativeDocumentMoniker": "WebClient\\Models\\Coupon.cs",
@@ -280,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 2,
               "Title": "News.cshtml",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\News.cshtml",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\News.cshtml",
@@ -288,11 +452,12 @@
               "RelativeToolTip": "WebClient\\Pages\\Cinema\\News.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T18:27:37.944Z"
+              "WhenOpened": "2024-11-11T18:27:37.944Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 15,
               "Title": "MyCoupon\u0026GiftCard.cshtml",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml",
@@ -300,12 +465,11 @@
               "RelativeToolTip": "WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T17:26:31.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:26:31.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 14,
               "Title": "MyCoupon\u0026GiftCard.cshtml.cs",
               "DocumentMoniker": "D:\\API\\Prn231_CinemaProject_Group7\\WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml.cs",
               "RelativeDocumentMoniker": "WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml.cs",
@@ -313,8 +477,7 @@
               "RelativeToolTip": "WebClient\\Pages\\Cinema\\MyCoupon\u0026GiftCard.cshtml.cs",
               "ViewState": "AgIAAB4AAAAAAAAAAAAYwD4AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T17:26:30.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T17:26:30.37Z"
             }
           ]
         },

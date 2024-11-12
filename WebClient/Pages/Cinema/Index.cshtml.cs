@@ -16,7 +16,7 @@ namespace WebClient.Pages.Cinema
         public IList<Movie> MoviesUp { get; set; }
         public IList<News> News { get; set; }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
             int count = 0;
             MoviesNow = new List<Movie>();
@@ -51,6 +51,8 @@ namespace WebClient.Pages.Cinema
             response = _httpClient.GetAsync("http://localhost:5280/api/Category/GetAllCategories").Result;
             var categories = response.Content.ReadFromJsonAsync<List<Category>>().Result;
             ViewData["categories"] = categories.ToList();
+            var data = await _httpClient.GetFromJsonAsync<List<News>>("http://localhost:5280/api/News/GetAllNews");
+            News = data.OrderByDescending(x => x.PublishedDate).Take(4).ToList();
         }
     }
 }
