@@ -1,18 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Net.Http;
+using System.Diagnostics;
 using System.Text.Json;
 using WebClient.Models;
+using WebClient.Service;
+using WebClient.Pages;
 
 namespace WebClient.Pages.Cinema
 {
     public class OrderModel : PageModel
     {
+        private readonly IMomoService _service;
+
         private readonly HttpClient _httpClient;
 
-        public OrderModel(HttpClient httpClient)
+        public OrderModel(HttpClient httpClient, IMomoService service)
         {
             _httpClient = httpClient;
+            _service = service;
         }
 
         [BindProperty]
@@ -62,17 +67,32 @@ namespace WebClient.Pages.Cinema
             Order.TotalAmount = CalculateTotalAmount(Order);
             Order.IsPaid = false;
             var data = JsonSerializer.Serialize(Order);
-            var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/Orders/CreateOrder", Order);
 
-            if (response.IsSuccessStatusCode)
+            OrderInfo orderInfo = new OrderInfo()
             {
-                return RedirectToPage("./MyTicket");
-            }
-            else
+                Amount = ((int) Order.TotalAmount).ToString(),
+                OrderInformation = "Thanh toan mua ve",
+                FullName = "Cinema"
+            };
+        thanhtoan:
             {
-                ModelState.AddModelError(string.Empty, "An error occurred while adding the order.");
-                return RedirectToPage();
+                var res = await _service.CreatePaymentMomo(orderInfo);
+                OpenTab(res.PayUrl);
+                MomoModel momoModel = new MomoModel();
+                momoModel.OnPost(Order, orderInfo);
+                return Page();
             }
+            //var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/Orders/CreateOrder", Order);
+
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    return RedirectToPage("./MyTicket");
+            //}
+            //else
+            //{
+            //    ModelState.AddModelError(string.Empty, "An error occurred while adding the order.");
+            //    return RedirectToPage();
+            //}
         }
         private decimal GetSeatPrice(int seatId)
         {
@@ -129,5 +149,14 @@ namespace WebClient.Pages.Cinema
 
             return totalAmount;
         }
+        private void OpenTab(string url)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
     }
 }
+

@@ -124,3 +124,7 @@ C:\FPT\Final Project\WebClient\obj\Debug\net6.0\refint\WebClient.dll
 C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.pdb
 C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.genruntimeconfig.cache
 C:\FPT\Final Project\WebClient\obj\Debug\net6.0\ref\WebClient.dll
+C:\FPT\Final Project\WebClient\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\FPT\Final Project\WebClient\bin\Debug\net6.0\RestSharp.dll
+C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.csproj.AssemblyReference.cache
+C:\FPT\Final Project\WebClient\obj\Debug\net6.0\WebClient.csproj.CopyComplete
