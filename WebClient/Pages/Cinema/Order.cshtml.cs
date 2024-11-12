@@ -17,6 +17,7 @@ namespace WebClient.Pages.Cinema
 
         [BindProperty]
         public Order Order { get; set; } = new Order();
+        [BindProperty]
         public int ShowtimeId { get; set; }
         [BindProperty]
         public List<int> SeatIds { get; set; } = new List<int>();
@@ -61,7 +62,6 @@ namespace WebClient.Pages.Cinema
             }
             Order.TotalAmount = CalculateTotalAmount(Order);
             Order.IsPaid = false;
-            var data = JsonSerializer.Serialize(Order);
             var response = await _httpClient.PostAsJsonAsync("http://localhost:5280/api/Orders/CreateOrder", Order);
 
             if (response.IsSuccessStatusCode)

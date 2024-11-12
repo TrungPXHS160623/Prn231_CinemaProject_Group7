@@ -18,7 +18,7 @@ namespace WebClient.Pages.Cinema
         public async Task OnGetAsync(int id)
         {
             var data = await _httpClient.GetFromJsonAsync<List<Order>>($"http://localhost:5280/api/Orders/GetOrdersByCustomerId/1");
-            Orders = data.Where(x => x.StatusId != 3).ToList();
+            Orders = data.Where(x => x.StatusId != 3).OrderByDescending(x => x.OrderDate).ToList();
         }
     }
 }

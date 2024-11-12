@@ -163,6 +163,7 @@ namespace Prn231_CinemaProject_Group7.Repository
                     CustomerId = order.CustomerId,
                     PaymentMethod = order.PaymentMethod,
                     StatusId = order.StatusId,
+                    OrderDate = order.OrderDate,
                     OrderConcessions = order.OrderConcessions.Select(oc => new OrderConcessionInfoDTO
                     {
                         OrderConcessionId = oc.OrderConcessionId,
