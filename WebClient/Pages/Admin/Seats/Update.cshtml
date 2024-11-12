@@ -1,0 +1,56 @@
+﻿@page
+@model WebClient.Pages.Admin.Seats.UpdateModel
+@{
+    ViewData["Title"] = "Update Seat";
+}
+
+<div class="container mt-4">
+    <h1>Update Seat</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="SeatRequest.SeatNumber" class="control-label"></label>
+                    <input asp-for="SeatRequest.SeatNumber" class="form-control" />
+                    <span asp-validation-for="SeatRequest.SeatNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SeatRequest.RowName" class="control-label"></label>
+                    <input asp-for="SeatRequest.RowName" class="form-control" />
+                    <span asp-validation-for="SeatRequest.RowName" class="text-danger"></span>
+                </div>
+
+                <!-- IsActive Checkbox -->
+                <div class="form-group form-check">
+                    <input asp-for="SeatRequest.IsActive" class="form-check-input" type="checkbox" />
+                    <label asp-for="SeatRequest.IsActive" class="form-check-label"></label>
+                    <span asp-validation-for="SeatRequest.IsActive" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SeatRequest.RoomId" class="control-label"></label>
+                    <select asp-for="SeatRequest.RoomId" class="form-control" asp-items="Model.RoomList">
+                        <option value="">-- Select Room --</option>
+                    </select>
+                    <span asp-validation-for="SeatRequest.RoomId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SeatRequest.SeatTypeId" class="control-label"></label>
+                    <select asp-for="SeatRequest.SeatTypeId" class="form-control" asp-items="Model.SeatTypes">
+                        <option value="">-- Select Seat Type --</option>
+                    </select>
+                    <span asp-validation-for="SeatRequest.SeatTypeId" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a asp-page="./List" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -42,5 +42,8 @@ namespace Prn231_CinemaProject_Group7.IRepository
         // Tìm kiếm ghế theo loại ghế trong một phòng chiếu
         Task<List<Seat>> GetSeatByShowTime(int showtimeId);
         Task<List<Seat>> SearchSeatsByType(int roomId, int seatTypeId);
+
+        // Lấy tất cả ghế trong hệ thống
+        Task<List<Seat>> GetAllSeats();
     }
 }

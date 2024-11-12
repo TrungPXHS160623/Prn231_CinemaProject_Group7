@@ -1,12 +1,12 @@
-﻿namespace Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos
+﻿namespace WebClient.DTO
 {
-    public class RoomDtos
+    public class RoomDto
     {
         public int RoomId { get; set; }
         public int TheaterId { get; set; }
         public string Name { get; set; } = null!;
         public int SeatCapacity { get; set; }
-        public bool? IsActive { get; set; }
+        public bool IsActive { get; set; }
         public int? RoomUtilazation { get; set; }
         public string TheaterName { get; set; } // Thêm TheaterName
     }

@@ -20,7 +20,8 @@ namespace Prn231_CinemaProject_Group7.Mapping
             CreateMap<AddSeatRequestDto,Seat>().ReverseMap();
             CreateMap<UpdateSeatRequestDto, Seat>().ReverseMap();
 
-            CreateMap<Room,RoomDtos>().ReverseMap();
+            CreateMap<Room, RoomDtos>()
+            .ForMember(dest => dest.TheaterName, opt => opt.MapFrom(src => src.Theater.Name));
             CreateMap<AddRoomRequestDto,Room>().ReverseMap();
             CreateMap<UpdateRoomRequestDto, Room>().ReverseMap();
 

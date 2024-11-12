@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos;
 using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Repository;
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
@@ -18,6 +19,14 @@ namespace Prn231_CinemaProject_Group7.Controllers
         {
             this.seatRepository = seatRepository;
             this.mapper = mapper;
+        }
+        // Phương thức GET để lấy tất cả ghế
+        [HttpGet]
+        [Route("all")]
+        public async Task<IActionResult> GetAllSeats()
+        {
+            var seats = await seatRepository.GetAllSeats();
+            return Ok(seats);
         }
         // Tạo mới ghế
         [HttpPost]

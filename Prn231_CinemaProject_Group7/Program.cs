@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Irepository;
 using Prn231_CinemaProject_Group7.Models;
@@ -19,6 +19,16 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<Prn231_Project_FinalContext>(opt =>
 {
 	opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDatabase"));
+});
+// Thêm dịch vụ CORS vào DI container
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()   // Cho phép tất cả các nguồn gốc
+               .AllowAnyMethod()   // Cho phép tất cả các phương thức HTTP (GET, POST, DELETE, PUT, ...)
+               .AllowAnyHeader();  // Cho phép tất cả các header
+    });
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -98,7 +108,8 @@ builder.Services.AddScoped<ITokenRepository, TokenRepository>();
 
 
 var app = builder.Build();
-
+// Sử dụng CORS trước khi các middleware khác
+app.UseCors("AllowAll"); // Áp dụng chính sách CORS cho toàn bộ ứng dụng
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

@@ -92,3 +92,6 @@ D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\refint
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.pdb
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.genruntimeconfig.cache
 D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\ref\WebClient.dll
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.csproj.AssemblyReference.cache
+D:\PrnFinalProject\Prn231_CinemaProject_Group7\WebClient\obj\Debug\net6.0\WebClient.csproj.Up2Date

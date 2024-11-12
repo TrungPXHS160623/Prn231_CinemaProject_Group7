@@ -1,4 +1,4 @@
-﻿namespace Prn231_CinemaProject_Group7.Models.Dtos.SeatDtos
+﻿namespace WebClient.DTO
 {
     public class SeatDto
     {
@@ -8,6 +8,6 @@
         public string SeatNumber { get; set; } = null!;
         public string RowName { get; set; } = null!;
         public bool? IsAvailable { get; set; }
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
     }
 }

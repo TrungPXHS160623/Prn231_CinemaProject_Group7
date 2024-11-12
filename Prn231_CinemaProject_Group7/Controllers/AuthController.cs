@@ -84,5 +84,15 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
             return Ok(new { UserId = userId });
         }
+        [HttpGet("GetUserRole")]
+        [Authorize]
+        public IActionResult GetUserRole()
+        {
+            var role = User.FindFirstValue(ClaimTypes.Role);
+            if (role == null)
+                return Unauthorized("User role not found.");
+
+            return Ok(new { Role = role });
+        }
     }
 }

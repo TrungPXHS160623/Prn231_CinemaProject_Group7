@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models.Dtos.RoomDtos;
 using Prn231_CinemaProject_Group7.Models;
+using Prn231_CinemaProject_Group7.Repository;
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
@@ -12,11 +13,13 @@ namespace Prn231_CinemaProject_Group7.Controllers
     public class RoomController : ControllerBase
     {
         private readonly IRoomRepository roomRepository;
+        private readonly ITheaterRepository theaterRepository;
         private readonly IMapper mapper;
 
-        public RoomController(IRoomRepository roomRepository,IMapper mapper)
+        public RoomController(IRoomRepository roomRepository,ITheaterRepository theaterRepository,IMapper mapper)
         {
             this.roomRepository = roomRepository;
+            this.theaterRepository = theaterRepository;
             this.mapper = mapper;
         }
         // Lấy danh sách tất cả các phòng
@@ -41,6 +44,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
             return Ok(roomDto);
         }
 
+
         // Thêm một phòng mới
         [HttpPost]
         public async Task<IActionResult> AddRoom([FromBody] AddRoomRequestDto addRoomRequest)
@@ -53,19 +57,24 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
         // Cập nhật thông tin phòng
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRoom([FromBody] UpdateRoomRequestDto updateRoomRequest)
+        public async Task<IActionResult> UpdateRoom(int id, [FromBody] UpdateRoomRequestDto updateRoomRequest)
         {
-
+            // Chuyển đổi DTO thành model Room và gán thêm RoomId
             var room = mapper.Map<Room>(updateRoomRequest);
+            room.RoomId = id; // Thêm RoomId từ URL vào đối tượng room
+
+            // Cập nhật phòng trong database
             var updatedRoom = await roomRepository.UpdateRoom(room);
             if (updatedRoom == null)
             {
-                return NotFound();
+                return NotFound(); // Trả về NotFound nếu không tìm thấy phòng
             }
 
+            // Chuyển đổi Room thành RoomDtos và trả về kết quả
             var roomDto = mapper.Map<RoomDtos>(updatedRoom);
             return Ok(roomDto);
         }
+
 
         // Xóa phòng theo ID
         [HttpDelete("{id}")]
@@ -119,12 +128,5 @@ namespace Prn231_CinemaProject_Group7.Controllers
             return Ok(new { exists });
         }
 
-        // Kiểm tra xem phòng có đủ sức chứa cho một số lượng ghế cụ thể
-        [HttpGet("{roomId}/capacity/{requiredSeats}")]
-        public async Task<IActionResult> HasEnoughCapacity(int roomId, int requiredSeats)
-        {
-            var hasCapacity = await roomRepository.HasEnoughCapacity(roomId, requiredSeats);
-            return Ok(new { hasCapacity });
-        }
     }
 }
