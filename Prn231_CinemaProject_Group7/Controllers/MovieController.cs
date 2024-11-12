@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.DTO;
 using Prn231_CinemaProject_Group7.IRepository;
+using System.Collections.Generic;
 
 namespace Prn231_CinemaProject_Group7.Controllers
 {
@@ -29,7 +30,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
         [HttpGet("GetMovie/{id}")]
         public IActionResult GetMovie(int id)
         {
-            return  Ok( repository.GetMovies(id));
+            return Ok(repository.GetMovies(id));
         }
         [HttpPut("UpdateMovie/{id}")]
         public IActionResult UpdateMovie(int id, MovieDTO movieDTO)
@@ -58,9 +59,22 @@ namespace Prn231_CinemaProject_Group7.Controllers
             }
         }
         [HttpPut("UpdateCategory/{id}")]
-        public IActionResult UpdateCategory(int id,List<int> list)
+        public IActionResult UpdateCategory(int id, List<int> list)
         {
-            var rs=repository.EditCategories(id,list);
+            var rs = repository.EditCategories(id, list);
+            if (rs.Result)
+            {
+                return Ok("ok");
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+        [HttpPut("AddMovie")]
+        public IActionResult AddNewMovie(MovieDTO movieDTO)
+        {
+            var rs = repository.CreateMovies(movieDTO);
             if (rs.Result)
             {
                 return Ok("ok");
