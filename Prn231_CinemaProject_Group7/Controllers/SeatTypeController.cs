@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Prn231_CinemaProject_Group7.IRepository;
 using Prn231_CinemaProject_Group7.Models;
@@ -21,6 +22,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
         // Tạo loại ghế mới
         [HttpPost]
+        [Authorize(Roles ="Writer")]
         public async Task<IActionResult> CreateSeatType([FromBody] AddSeatTypeRequestDto addSeatTypeRequestDto)
         {
             // Kiểm tra tính hợp lệ của dữ liệu đầu vào
@@ -36,6 +38,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
         // Cập nhật loại ghế
         [HttpPut]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> UpdateSeatType([FromBody] UpdateSeatTypeRequestDto updateSeatTypeRequestDto)
         {
 
@@ -50,6 +53,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
         // Xóa loại ghế theo ID
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Writer")]
         public async Task<IActionResult> DeleteSeatType(int id)
         {
             var deletedSeatType = await seatTypeRepository.DeleteSeatType(id);
@@ -61,6 +65,7 @@ namespace Prn231_CinemaProject_Group7.Controllers
 
         // Lấy tất cả các loại ghế
         [HttpGet]
+        [Authorize(Roles = "Reader,Writer")]
         public async Task<IActionResult> GetAllSeatTypes()
         {
             var seatTypes = await seatTypeRepository.GetAllSeatType();

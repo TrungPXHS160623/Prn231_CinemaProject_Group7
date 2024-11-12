@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequestDtos",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.LoginRequestDtos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Prn231_CinemaProject_Group7.Controllers.AuthController",
+    "Method": "Register",
+    "RelativePath": "api/Auth/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerRequestDto",
+        "Type": "Prn231_CinemaProject_Group7.Models.Dtos.RegisterRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.CategoryController",
     "Method": "ChangeStatusMovie",
     "RelativePath": "api/Category/ChangeStatus/{id}",
@@ -1451,6 +1483,7 @@
   },
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+
     "Method": "GetShowTimeByMovieTheater",
     "RelativePath": "api/Showtime/GetShowTimeByMovieTheater/{movieId}/{theaterId}",
     "HttpMethod": "GET",
@@ -1472,6 +1505,7 @@
   },
   {
     "ContainingType": "Prn231_CinemaProject_Group7.Controllers.ShowtimeController",
+
     "Method": "GetShowtimesByMovieId",
     "RelativePath": "api/Showtime/movie/{movieId}",
     "HttpMethod": "GET",
